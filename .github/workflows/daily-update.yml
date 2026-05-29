@@ -2,8 +2,8 @@ name: Daily Update and Auto-Merge PR
 
 on:
   schedule:
-    - cron: '0 0 * * *'        # 每天 UTC 0:00
-  workflow_dispatch:            # 手动触发
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
   update-and-pr:
@@ -12,13 +12,13 @@ jobs:
       contents: write
       pull-requests: write
     env:
-      AUTO_MERGE_DAYS: 3        # 无人干预时自动合并天数
+      AUTO_MERGE_DAYS: 3
 
     steps:
       - name: Checkout master branch
         uses: actions/checkout@v4
         with:
-          ref: master            # 适配主干为 master
+          ref: master
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -52,18 +52,25 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+          # 暂存新生成的文件，保证切换分支时工作区干净
+          git stash push --include-untracked -m "temp for branch switch"
+
           # 检查远程是否已有该日期的分支
           if git ls-remote --heads origin "$BRANCH_NAME" | grep "$BRANCH_NAME" > /dev/null; then
             echo "Branch $BRANCH_NAME already exists, checking out..."
             git fetch origin "$BRANCH_NAME"
             git checkout "$BRANCH_NAME"
-            # 合并 master 最新内容，降低冲突
+            # 合并 master 最新内容
             git merge master --no-edit || echo "Merge with master failed, continuing anyway..."
           else
             echo "Creating new branch $BRANCH_NAME"
             git checkout -b "$BRANCH_NAME"
           fi
 
+          # 恢复之前暂存的新文件
+          git stash pop || echo "No stash to pop"
+
+          # 添加并提交新 manifest
           git add bucket/
           git commit -m "🤖 Add new apps on $(date +%Y-%m-%d)" || echo "No changes to commit"
           git push origin "$BRANCH_NAME" --force-with-lease
