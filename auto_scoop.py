@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
 自动从 GitHub Trending 发现热门仓库，过滤非软件项目，
-智能识别安装包/便携版/变体，利用已有哈希文件，生成符合 Scoop 规范的 manifest。
-增强错误处理：网络异常不会中断流程。
+仅挑选 Windows 安装包/压缩包，利用已有哈希，生成 Scoop manifest。
 """
 
 import os
@@ -32,6 +31,13 @@ SKIP_LANGUAGES = {
 SKIP_TOPICS = {"awesome-list", "cheatsheet", "config", "dotfiles"}
 
 VARIANT_KEYWORDS = ["desktop", "client", "server", "lite", "console"]
+
+# 文件名中若包含这些关键词，说明不是 Windows 资产，直接跳过
+NON_WINDOWS_TERMS = [
+    "darwin", "mac", "linux", "android", "ios",
+    "freebsd", "openbsd", "solaris", "aix", "hpux",
+    "snap", "appimage", "flatpak"
+]
 
 
 def get_token():
@@ -106,6 +112,18 @@ def get_latest_release(owner, repo, token):
     return api_get(url, token)
 
 
+def is_windows_asset(name):
+    """判断是否为 Windows 系统的安装文件"""
+    name_lower = name.lower()
+    # 排除明确其他系统的文件
+    for term in NON_WINDOWS_TERMS:
+        if term in name_lower:
+            return False
+    # 必须有常见的 Windows 扩展名
+    win_exts = (".exe", ".msi", ".msix", ".appx", ".zip", ".7z", ".tar.gz", ".tar.xz", ".tgz")
+    return name_lower.endswith(win_exts)
+
+
 def classify_arch(asset_name):
     name = asset_name.lower()
     if any(k in name for k in ("amd64", "x86_64", "x64", "win64", "64bit", "64-bit")):
@@ -145,10 +163,6 @@ def extract_hash_map_from_assets(assets):
 
 
 def get_sha256(url, filename, hash_map):
-    """
-    优先使用已有哈希，否则下载文件计算。
-    任何失败返回 None，不中断流程。
-    """
     filename_lower = filename.lower()
     if filename_lower in hash_map:
         h = hash_map[filename_lower]
@@ -275,78 +289,84 @@ def main():
         if added >= max_new:
             break
 
-        existing = is_existing(repo_full, bucket_dir)
-        if existing:
-            print(f"⏭️  {repo_full} 已存在 ({existing})")
-            continue
+        try:
+            existing = is_existing(repo_full, bucket_dir)
+            if existing:
+                print(f"⏭️  {repo_full} 已存在 ({existing})")
+                continue
 
-        print(f"\n🔍 检查新项目: {repo_full}")
-        owner, repo = repo_full.split("/")
+            print(f"\n🔍 检查新项目: {repo_full}")
+            owner, repo = repo_full.split("/")
 
-        repo_info = get_repo_info(owner, repo, token)
-        if not repo_info:
-            print("  无法获取仓库信息，跳过")
-            continue
-        if not is_software_project(repo_info):
-            continue
+            repo_info = get_repo_info(owner, repo, token)
+            if not repo_info:
+                print("  无法获取仓库信息，跳过")
+                continue
+            if not is_software_project(repo_info):
+                continue
 
-        release = get_latest_release(owner, repo, token)
-        if not release:
-            print("  无法获取 release，跳过")
-            continue
+            release = get_latest_release(owner, repo, token)
+            if not release:
+                print("  无法获取 release，跳过")
+                continue
 
-        version = release["tag_name"].lstrip("v")
-        assets = release.get("assets", [])
-        if not assets:
-            print("  无发布资产，跳过")
-            continue
+            version = release["tag_name"].lstrip("v")
+            assets = release.get("assets", [])
+            if not assets:
+                print("  无发布资产，跳过")
+                continue
 
-        hash_map = extract_hash_map_from_assets(assets)
+            hash_map = extract_hash_map_from_assets(assets)
 
-        valid_exts = (".exe", ".msi", ".msix", ".appx", ".zip", ".7z", ".tar.gz", ".tar.xz")
-        candidates = []
-        for a in assets:
-            name = a["name"].lower()
-            if name.endswith(valid_exts) and "checksum" not in name and "sha" not in name:
-                candidates.append(a)
+            # 挑选 Windows 资产
+            candidates = []
+            for a in assets:
+                name = a["name"]
+                if is_windows_asset(name) and "checksum" not in name.lower() and "sha" not in name.lower():
+                    candidates.append(a)
 
-        if not candidates:
-            print("  无合适的 Windows 资产，跳过")
-            continue
+            if not candidates:
+                print("  无 Windows 资产，跳过")
+                continue
 
-        manifest_groups = defaultdict(lambda: defaultdict(list))
-        for a in candidates:
-            mname = decide_manifest_name(repo, a["name"])
-            arch = classify_arch(a["name"])
-            manifest_groups[mname][arch].append(a)
+            # 按 manifest 名和架构分组
+            manifest_groups = defaultdict(lambda: defaultdict(list))
+            for a in candidates:
+                mname = decide_manifest_name(repo, a["name"])
+                arch = classify_arch(a["name"])
+                manifest_groups[mname][arch].append(a)
 
-        description = (repo_info.get("description") or "")[:200]
-        homepage = repo_info.get("html_url") or f"https://github.com/{owner}/{repo}"
+            description = (repo_info.get("description") or "")[:200]
+            homepage = repo_info.get("html_url") or f"https://github.com/{owner}/{repo}"
 
-        for mname, arch_dict in manifest_groups.items():
-            assets_info = {}
-            for arch, asset_list in arch_dict.items():
-                best = choose_best_asset_for_arch(asset_list)
-                sha = get_sha256(best["browser_download_url"], best["name"], hash_map)
-                if sha is None:
-                    print(f"    ⚠️ 无法获取哈希，跳过架构 {arch} 的资产 {best['name']}")
+            for mname, arch_dict in manifest_groups.items():
+                assets_info = {}
+                for arch, asset_list in arch_dict.items():
+                    best = choose_best_asset_for_arch(asset_list)
+                    sha = get_sha256(best["browser_download_url"], best["name"], hash_map)
+                    if sha is None:
+                        print(f"    ⚠️ 无法获取哈希，跳过架构 {arch} 的 {best['name']}")
+                        continue
+                    assets_info[arch] = (best, sha)
+
+                if not assets_info:
+                    print(f"  ⚠️ 无有效哈希，跳过 manifest: {mname}")
                     continue
-                assets_info[arch] = (best, sha)
 
-            if not assets_info:
-                print(f"  ⚠️ 所有架构哈希获取失败，跳过 manifest: {mname}")
-                continue
+                manifest = generate_manifest(mname, version, assets_info, None, description, homepage)
+                if not manifest:
+                    continue
 
-            manifest = generate_manifest(mname, version, assets_info, None, description, homepage)
-            if not manifest:
-                continue
+                manifest_file = bucket_dir / f"{mname}.json"
+                with open(manifest_file, "w", encoding="utf-8") as f:
+                    json.dump(manifest, f, indent=2)
+                print(f"✅ 已生成 {manifest_file.relative_to(repo_root)}")
+                added += 1
+                time.sleep(0.5)
 
-            manifest_file = bucket_dir / f"{mname}.json"
-            with open(manifest_file, "w", encoding="utf-8") as f:
-                json.dump(manifest, f, indent=2)
-            print(f"✅ 已生成 {manifest_file.relative_to(repo_root)}")
-            added += 1
-            time.sleep(0.5)
+        except Exception as e:
+            print(f"  ❌ 处理仓库 {repo_full} 时发生未预期错误: {e}")
+            continue
 
     if added > 0:
         print(f"\n🎉 共生成 {added} 个新 manifest，等待 Git 操作。")
