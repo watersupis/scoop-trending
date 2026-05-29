@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
-自动从 GitHub Trending (每日/每周/每月) 发现热门仓库，
-过滤非软件项目，将 manifest 生成到 bucket/ 目录。
-所有 Git 操作由外部 workflow 负责。
+自动从 GitHub Trending 发现热门仓库，过滤非软件项目，
+智能识别安装包/便携版/变体，利用已有哈希文件，生成符合 Scoop 规范的 manifest。
 """
 
 import os
@@ -12,6 +11,7 @@ import hashlib
 import sys
 import tempfile
 import time
+from collections import defaultdict
 from pathlib import Path
 
 import requests
@@ -29,6 +29,9 @@ SKIP_LANGUAGES = {
 }
 
 SKIP_TOPICS = {"awesome-list", "cheatsheet", "config", "dotfiles"}
+
+# 文件名中若包含这些关键词，将生成对应的变体 manifest（如 -desktop, -client）
+VARIANT_KEYWORDS = ["desktop", "client", "server", "lite", "console"]
 
 
 def get_token():
@@ -103,38 +106,51 @@ def get_latest_release(owner, repo, token):
     return api_get(url, token)
 
 
-def choose_assets(assets):
-    exts = (".exe", ".msi", ".zip", ".7z", ".msix", ".appx")
-    selected = []
+def classify_arch(asset_name):
+    name = asset_name.lower()
+    if any(k in name for k in ("amd64", "x86_64", "x64", "win64", "64bit", "64-bit")):
+        return "64bit"
+    if any(k in name for k in ("arm64", "aarch64", "arm")):
+        return "arm64"
+    if any(k in name for k in ("386", "x86", "win32", "32bit", "32-bit")):
+        return "32bit"
+    return "64bit"
+
+
+def extract_hash_map_from_assets(assets):
+    hash_map = {}
     for a in assets:
         name = a["name"].lower()
-        if name.endswith(exts) and "checksum" not in name and "sha" not in name:
-            selected.append(a)
-    if not selected:
-        return {}
+        if name.endswith((".sha256", ".sha256sum", ".sha256.txt", ".sha256sums")):
+            print(f"  🔑 发现哈希文件: {a['name']}")
+            try:
+                resp = requests.get(a["browser_download_url"])
+                resp.raise_for_status()
+                content = resp.text
+            except Exception as e:
+                print(f"    ⚠️ 下载哈希文件失败: {e}")
+                continue
 
-    arch_map = {"64bit": [], "32bit": []}
-    for a in selected:
-        name = a["name"].lower()
-        if "x64" in name or "win64" in name or "amd64" in name:
-            arch_map["64bit"].append(a)
-        elif "x86" in name or "win32" in name or "386" in name:
-            arch_map["32bit"].append(a)
-        else:
-            arch_map["64bit"].append(a)
-
-    result = {}
-    if arch_map["64bit"]:
-        result["64bit"] = arch_map["64bit"][0]
-    if arch_map["32bit"]:
-        result["32bit"] = arch_map["32bit"][0]
-    if not result:
-        result["64bit"] = selected[0]
-    return result
+            for line in content.splitlines():
+                line = line.strip()
+                if not line:
+                    continue
+                parts = line.split()
+                if len(parts) >= 2:
+                    h = parts[0].lower()
+                    if re.fullmatch(r"[0-9a-f]{64}", h):
+                        fname = parts[-1].strip("*")
+                        hash_map[fname.lower()] = h
+    return hash_map
 
 
-def download_and_hash(url):
-    print(f"  ⬇️ 下载 {url} ...")
+def get_sha256(url, filename, hash_map):
+    filename_lower = filename.lower()
+    if filename_lower in hash_map:
+        h = hash_map[filename_lower]
+        print(f"  ✅ 使用已有哈希: {h}")
+        return h
+    print(f"  ⬇️ 下载计算哈希: {url}")
     resp = requests.get(url, stream=True)
     resp.raise_for_status()
     hasher = hashlib.sha256()
@@ -147,32 +163,74 @@ def download_and_hash(url):
     return hasher.hexdigest()
 
 
-def generate_manifest(app_name, version, assets_info, bin_name, description, homepage):
+def decide_manifest_name(repo, asset_name):
+    """
+    根据仓库名和资产文件名决定 manifest 名称。
+    - 文件名含 "portable" -> repo-portable
+    - 文件名含特定关键词（如 desktop） -> repo-keyword
+    - 否则 -> repo
+    """
+    stem = Path(asset_name).stem.lower()
+    # 便携版
+    if re.search(r'\bportable\b', stem):
+        return f"{repo}-portable"
+    # 变体关键词
+    for kw in VARIANT_KEYWORDS:
+        if re.search(r'\b' + re.escape(kw) + r'\b', stem):
+            if kw not in repo.lower():  # 避免 repo 本身就含关键词时重复
+                return f"{repo}-{kw}"
+    return repo
+
+
+def choose_best_asset_for_arch(assets_list):
+    for a in assets_list:
+        if a["name"].lower().endswith((".exe", ".msi", ".msix", ".appx")):
+            return a
+    for a in assets_list:
+        if a["name"].lower().endswith((".zip", ".7z", ".tar.gz", ".tar.xz")):
+            return a
+    return assets_list[0]
+
+
+def generate_manifest(app_name, version, assets_info, description, homepage):
     manifest = {
         "version": version,
         "description": description,
         "homepage": homepage,
         "license": "unknown",
     }
-    architecture = {}
-    for arch, (asset, sha) in assets_info.items():
+    if not assets_info:
+        return None
+
+    if len(assets_info) == 1:
+        arch, (asset, sha) = next(iter(assets_info.items()))
         url = asset["browser_download_url"]
         ext = Path(asset["name"]).suffix.lower()
-        entry = {"url": url, "hash": f"sha256:{sha}"}
+        manifest["url"] = url
+        manifest["hash"] = f"sha256:{sha}"
         if ext in (".exe", ".msi", ".msix", ".appx"):
-            entry["installer"] = {"args": ["/S"]}
-            if bin_name:
-                entry["bin"] = bin_name
+            manifest["installer"] = {"args": ["/S"]}
+            bin_name = Path(asset["name"]).stem + ".exe"
+            manifest["bin"] = bin_name
         else:
-            if not bin_name:
-                base = re.sub(rf"{re.escape(ext)}$", "", asset["name"])
-                bin_name = base + ".exe"
-            entry["bin"] = bin_name
-        architecture[arch] = entry
-
-    if len(architecture) == 1 and "64bit" in architecture:
-        manifest.update(architecture["64bit"])
+            bin_name = Path(asset["name"]).stem + ".exe"
+            manifest["bin"] = bin_name
+            manifest["extract_dir"] = ""
     else:
+        architecture = {}
+        for arch, (asset, sha) in assets_info.items():
+            url = asset["browser_download_url"]
+            ext = Path(asset["name"]).suffix.lower()
+            entry = {"url": url, "hash": f"sha256:{sha}"}
+            if ext in (".exe", ".msi", ".msix", ".appx"):
+                entry["installer"] = {"args": ["/S"]}
+                bin_name = Path(asset["name"]).stem + ".exe"
+                entry["bin"] = bin_name
+            else:
+                bin_name = Path(asset["name"]).stem + ".exe"
+                entry["bin"] = bin_name
+                entry["extract_dir"] = ""
+            architecture[arch] = entry
         manifest["architecture"] = architecture
     return manifest
 
@@ -242,30 +300,49 @@ def main():
             print("  无发布资产，跳过")
             continue
 
-        assets_by_arch = choose_assets(assets)
-        if not assets_by_arch:
+        hash_map = extract_hash_map_from_assets(assets)
+
+        valid_exts = (".exe", ".msi", ".msix", ".appx", ".zip", ".7z", ".tar.gz", ".tar.xz")
+        candidates = []
+        for a in assets:
+            name = a["name"].lower()
+            if name.endswith(valid_exts) and "checksum" not in name and "sha" not in name:
+                candidates.append(a)
+
+        if not candidates:
             print("  无合适的 Windows 资产，跳过")
             continue
 
-        assets_info = {}
-        for arch, asset in assets_by_arch.items():
-            print(f"  {arch}: {asset['name']}")
-            sha = download_and_hash(asset["browser_download_url"])
-            assets_info[arch] = (asset, sha)
+        # 按 manifest 名和架构分组
+        manifest_groups = defaultdict(lambda: defaultdict(list))
+        for a in candidates:
+            mname = decide_manifest_name(repo, a["name"])
+            arch = classify_arch(a["name"])
+            manifest_groups[mname][arch].append(a)
 
         description = (repo_info.get("description") or "")[:200]
         homepage = repo_info.get("html_url") or f"https://github.com/{owner}/{repo}"
-        manifest = generate_manifest(repo, version, assets_info, None, description, homepage)
 
-        manifest_file = bucket_dir / f"{repo}.json"
-        with open(manifest_file, "w", encoding="utf-8") as f:
-            json.dump(manifest, f, indent=2)
-        print(f"✅ 已生成 {manifest_file.relative_to(repo_root)}")
-        added += 1
-        time.sleep(1)
+        for mname, arch_dict in manifest_groups.items():
+            assets_info = {}
+            for arch, asset_list in arch_dict.items():
+                best = choose_best_asset_for_arch(asset_list)
+                sha = get_sha256(best["browser_download_url"], best["name"], hash_map)
+                assets_info[arch] = (best, sha)
+
+            manifest = generate_manifest(mname, version, assets_info, None, description, homepage)
+            if not manifest:
+                continue
+
+            manifest_file = bucket_dir / f"{mname}.json"
+            with open(manifest_file, "w", encoding="utf-8") as f:
+                json.dump(manifest, f, indent=2)
+            print(f"✅ 已生成 {manifest_file.relative_to(repo_root)}")
+            added += 1
+            time.sleep(0.5)
 
     if added > 0:
-        print(f"\n🎉 共生成 {added} 个新 manifest，等待外部 Git 提交。")
+        print(f"\n🎉 共生成 {added} 个新 manifest，等待 Git 操作。")
     else:
         print("没有添加新应用。")
 
