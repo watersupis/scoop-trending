@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 自动从 GitHub Trending (每日/每周/每月) 发现热门仓库，
-过滤掉文档/配置/教程类项目，添加到当前 Scoop bucket。
+过滤非软件项目，将 manifest 生成到 bucket/ 目录。
+所有 Git 操作由外部 workflow 负责。
 """
 
 import os
@@ -14,20 +15,19 @@ import time
 from pathlib import Path
 
 import requests
-from git import Repo
 from pyquery import PyQuery as pq
 
 GITHUB_API = "https://api.github.com"
 BASE_URL = "https://github.com/trending"
 HEADERS = {"Accept": "application/vnd.github.v3+json"}
 
-# 默认排除的语言（这些通常是文档、配置或非独立软件项目）
+BUCKET_SUBDIR = "bucket"
+
 SKIP_LANGUAGES = {
     "markdown", "html", "css", "shell", "dockerfile",
     "makefile", "roff", "tex", "powershell",
 }
 
-# 默认排除的 topic 关键字
 SKIP_TOPICS = {"awesome-list", "cheatsheet", "config", "dotfiles"}
 
 
@@ -52,10 +52,6 @@ def api_get(url, token):
 
 
 def fetch_trending_repos(periods):
-    """
-    抓取指定周期的 trending 页面，返回去重后的 owner/repo 列表。
-    periods: 列表，例如 ["daily", "weekly", "monthly"]
-    """
     all_repos = set()
     for period in periods:
         url = f"{BASE_URL}?since={period}"
@@ -81,33 +77,24 @@ def fetch_trending_repos(periods):
 
 
 def get_repo_info(owner, repo, token):
-    """获取仓库的基本信息（语言、主题、描述等）"""
     url = f"{GITHUB_API}/repos/{owner}/{repo}"
     return api_get(url, token)
 
 
 def is_software_project(repo_info):
-    """判断仓库是否可能是可安装的软件项目"""
     if not repo_info:
         return False
-
-    # 1. 检查主要语言
     language = (repo_info.get("language") or "").lower()
     if language in SKIP_LANGUAGES:
         print(f"    🚫 语言排除 ({language})")
         return False
-
-    # 2. 检查 topics
     topics = [t.lower() for t in repo_info.get("topics", [])]
     if any(t in SKIP_TOPICS for t in topics):
         print(f"    🚫 主题排除")
         return False
-
-    # 3. 额外：归档/弃用/仅文档的仓库
     if repo_info.get("archived", False):
         print("    🚫 已归档")
         return False
-
     return True
 
 
@@ -190,8 +177,10 @@ def generate_manifest(app_name, version, assets_info, bin_name, description, hom
     return manifest
 
 
-def is_existing(repo_full, bucket_dir):
-    for f in bucket_dir.glob("*.json"):
+def is_existing(repo_full, bucket_subdir):
+    if not bucket_subdir.exists():
+        return None
+    for f in bucket_subdir.glob("*.json"):
         try:
             with open(f, "r", encoding="utf-8") as fh:
                 data = json.load(fh)
@@ -208,13 +197,11 @@ def is_existing(repo_full, bucket_dir):
 
 
 def main():
-    bucket_dir = Path.cwd()
-    if not (bucket_dir / ".git").exists():
-        print("❌ 当前目录不是 Git 仓库，请在 bucket 根目录运行。")
-        sys.exit(1)
+    repo_root = Path.cwd()
+    bucket_dir = repo_root / BUCKET_SUBDIR
+    bucket_dir.mkdir(exist_ok=True)
 
     token = get_token()
-    # 从环境变量读取要抓取的周期，默认 daily,weekly,monthly
     periods_str = os.environ.get("TRENDING_PERIODS", "daily,weekly,monthly")
     periods = [p.strip() for p in periods_str.split(",") if p.strip()]
 
@@ -224,7 +211,6 @@ def main():
 
     max_new = int(os.environ.get("MAX_APPS", "3"))
     added = 0
-    repo_git = Repo(bucket_dir)
 
     for repo_full in trending:
         if added >= max_new:
@@ -238,7 +224,6 @@ def main():
         print(f"\n🔍 检查新项目: {repo_full}")
         owner, repo = repo_full.split("/")
 
-        # 过滤非软件项目
         repo_info = get_repo_info(owner, repo, token)
         if not repo_info:
             print("  无法获取仓库信息，跳过")
@@ -246,7 +231,6 @@ def main():
         if not is_software_project(repo_info):
             continue
 
-        # 获取 Release
         release = get_latest_release(owner, repo, token)
         if not release:
             print("  无法获取 release，跳过")
@@ -269,7 +253,6 @@ def main():
             sha = download_and_hash(asset["browser_download_url"])
             assets_info[arch] = (asset, sha)
 
-        # 使用仓库的描述作为 manifest 描述
         description = (repo_info.get("description") or "")[:200]
         homepage = repo_info.get("html_url") or f"https://github.com/{owner}/{repo}"
         manifest = generate_manifest(repo, version, assets_info, None, description, homepage)
@@ -277,17 +260,12 @@ def main():
         manifest_file = bucket_dir / f"{repo}.json"
         with open(manifest_file, "w", encoding="utf-8") as f:
             json.dump(manifest, f, indent=2)
-        print(f"✅ 已生成 {manifest_file.name}")
-
-        repo_git.index.add([str(manifest_file.relative_to(bucket_dir))])
-        repo_git.index.commit(f"🤖 Add {repo} {version}")
+        print(f"✅ 已生成 {manifest_file.relative_to(repo_root)}")
         added += 1
         time.sleep(1)
 
     if added > 0:
-        print(f"\n🚀 推送 {added} 个新 manifest ...")
-        repo_git.remotes.origin.push()
-        print("✅ 推送完成")
+        print(f"\n🎉 共生成 {added} 个新 manifest，等待外部 Git 提交。")
     else:
         print("没有添加新应用。")
 

@@ -1,19 +1,23 @@
-name: Daily Update from GitHub Trending
+name: Daily Update and Auto-Merge PR
 
 on:
   schedule:
-    - cron: '0 0 * * *'      # 每天 UTC 0:00（北京时间早上 8 点）
-  workflow_dispatch:           # 允许手动触发
+    - cron: '0 0 * * *'
+  workflow_dispatch:   # 允许手动触发
 
 jobs:
-  update:
+  update-and-pr:
     runs-on: ubuntu-latest
     permissions:
-      contents: write          # 必须，用于推送代码
-
+      contents: write
+      pull-requests: write
+    env:
+      AUTO_MERGE_DAYS: 3   # 无人干预时，几天后自动合并
     steps:
-      - name: Checkout
+      - name: Checkout main branch
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -21,16 +25,65 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests gitpython pyquery
-
-      - name: Configure Git
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+        run: pip install requests pyquery
 
       - name: Run auto_scoop
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # 无需手动设置，Actions 自动提供
-          TRENDING_PERIODS: daily,weekly,monthly   # 默认值，可按需调整
-          MAX_APPS: 10                               # 每次最多新增应用数
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MAX_APPS: 3
         run: python auto_scoop.py
+
+      - name: Check for new files
+        id: git_status
+        run: |
+          if [ -z "$(git status --porcelain bucket/)" ]; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create branch, commit and push
+        if: steps.git_status.outputs.changed == 'true'
+        run: |
+          BRANCH_NAME="scoop-update-$(date +%Y-%m-%d)"
+          git checkout -b "$BRANCH_NAME"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add bucket/
+          git commit -m "🤖 Add new apps from Trending on $(date +%Y-%m-%d)"
+          git push origin "$BRANCH_NAME"
+
+      - name: Create Pull Request
+        if: steps.git_status.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH_NAME="scoop-update-$(date +%Y-%m-%d)"
+          gh pr create \
+            --base main \
+            --head "$BRANCH_NAME" \
+            --title "Auto update $(date +%Y-%m-%d)" \
+            --body "## 🔄 自动更新\n\n以下是今日从 GitHub Trending 新增的应用 manifest。\n\n⏳ 管理员可在 ${AUTO_MERGE_DAYS} 天内自由修改，到期将自动合并。"
+
+      - name: Auto-merge old PRs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # 获取所有状态为 open 且标题以 "Auto update" 开头的 PR
+          pr_list=$(gh pr list --state open --base main --search "Auto update" --json number,createdAt,headRefName --jq '.')
+          if [ -z "$pr_list" ] || [ "$pr_list" == "[]" ]; then
+            echo "No auto-update PRs to check."
+            exit 0
+          fi
+          echo "$pr_list" | jq -c '.[]' | while read -r pr; do
+            number=$(echo "$pr" | jq -r '.number')
+            created=$(echo "$pr" | jq -r '.createdAt')
+            # 计算创建至今的天数
+            days=$(( ($(date -u +%s) - $(date -u -d "$created" +%s)) / 86400 ))
+            if [ "$days" -ge "$AUTO_MERGE_DAYS" ]; then
+              echo "🔀 Merging PR #$number (created $created, $days days ago)..."
+              gh pr merge "$number" --squash --delete-branch
+            else
+              echo "⏳ PR #$number is $days days old, will merge after $AUTO_MERGE_DAYS days."
+            fi
+          done
