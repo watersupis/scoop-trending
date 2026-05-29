@@ -2,6 +2,7 @@
 """
 自动从 GitHub Trending 发现热门仓库，过滤非软件项目，
 智能识别安装包/便携版/变体，利用已有哈希文件，生成符合 Scoop 规范的 manifest。
+增强错误处理：网络异常不会中断流程。
 """
 
 import os
@@ -30,7 +31,6 @@ SKIP_LANGUAGES = {
 
 SKIP_TOPICS = {"awesome-list", "cheatsheet", "config", "dotfiles"}
 
-# 文件名中若包含这些关键词，将生成对应的变体 manifest（如 -desktop, -client）
 VARIANT_KEYWORDS = ["desktop", "client", "server", "lite", "console"]
 
 
@@ -43,7 +43,7 @@ def api_get(url, token):
     if token:
         headers["Authorization"] = f"token {token}"
     try:
-        resp = requests.get(url, headers=headers)
+        resp = requests.get(url, headers=headers, timeout=30)
         resp.raise_for_status()
         return resp.json()
     except requests.exceptions.HTTPError as e:
@@ -60,7 +60,7 @@ def fetch_trending_repos(periods):
         url = f"{BASE_URL}?since={period}"
         print(f"  📡 正在抓取: {url}")
         try:
-            resp = requests.get(url)
+            resp = requests.get(url, timeout=30)
             resp.raise_for_status()
         except Exception as e:
             print(f"    ⚠️ 抓取失败: {e}")
@@ -124,7 +124,7 @@ def extract_hash_map_from_assets(assets):
         if name.endswith((".sha256", ".sha256sum", ".sha256.txt", ".sha256sums")):
             print(f"  🔑 发现哈希文件: {a['name']}")
             try:
-                resp = requests.get(a["browser_download_url"])
+                resp = requests.get(a["browser_download_url"], timeout=30)
                 resp.raise_for_status()
                 content = resp.text
             except Exception as e:
@@ -145,39 +145,44 @@ def extract_hash_map_from_assets(assets):
 
 
 def get_sha256(url, filename, hash_map):
+    """
+    优先使用已有哈希，否则下载文件计算。
+    任何失败返回 None，不中断流程。
+    """
     filename_lower = filename.lower()
     if filename_lower in hash_map:
         h = hash_map[filename_lower]
         print(f"  ✅ 使用已有哈希: {h}")
         return h
     print(f"  ⬇️ 下载计算哈希: {url}")
-    resp = requests.get(url, stream=True)
-    resp.raise_for_status()
+    try:
+        resp = requests.get(url, stream=True, timeout=60)
+        resp.raise_for_status()
+    except Exception as e:
+        print(f"    ❌ 下载失败: {e}")
+        return None
     hasher = hashlib.sha256()
     fd, tmp_path = tempfile.mkstemp()
-    with os.fdopen(fd, "wb") as f:
-        for chunk in resp.iter_content(chunk_size=8192):
-            f.write(chunk)
-            hasher.update(chunk)
+    try:
+        with os.fdopen(fd, "wb") as f:
+            for chunk in resp.iter_content(chunk_size=8192):
+                f.write(chunk)
+                hasher.update(chunk)
+    except Exception as e:
+        print(f"    ❌ 处理下载内容失败: {e}")
+        os.unlink(tmp_path)
+        return None
     os.unlink(tmp_path)
     return hasher.hexdigest()
 
 
 def decide_manifest_name(repo, asset_name):
-    """
-    根据仓库名和资产文件名决定 manifest 名称。
-    - 文件名含 "portable" -> repo-portable
-    - 文件名含特定关键词（如 desktop） -> repo-keyword
-    - 否则 -> repo
-    """
     stem = Path(asset_name).stem.lower()
-    # 便携版
     if re.search(r'\bportable\b', stem):
         return f"{repo}-portable"
-    # 变体关键词
     for kw in VARIANT_KEYWORDS:
         if re.search(r'\b' + re.escape(kw) + r'\b', stem):
-            if kw not in repo.lower():  # 避免 repo 本身就含关键词时重复
+            if kw not in repo.lower():
                 return f"{repo}-{kw}"
     return repo
 
@@ -210,11 +215,9 @@ def generate_manifest(app_name, version, assets_info, description, homepage):
         manifest["hash"] = f"sha256:{sha}"
         if ext in (".exe", ".msi", ".msix", ".appx"):
             manifest["installer"] = {"args": ["/S"]}
-            bin_name = Path(asset["name"]).stem + ".exe"
-            manifest["bin"] = bin_name
+            manifest["bin"] = Path(asset["name"]).stem + ".exe"
         else:
-            bin_name = Path(asset["name"]).stem + ".exe"
-            manifest["bin"] = bin_name
+            manifest["bin"] = Path(asset["name"]).stem + ".exe"
             manifest["extract_dir"] = ""
     else:
         architecture = {}
@@ -224,11 +227,9 @@ def generate_manifest(app_name, version, assets_info, description, homepage):
             entry = {"url": url, "hash": f"sha256:{sha}"}
             if ext in (".exe", ".msi", ".msix", ".appx"):
                 entry["installer"] = {"args": ["/S"]}
-                bin_name = Path(asset["name"]).stem + ".exe"
-                entry["bin"] = bin_name
+                entry["bin"] = Path(asset["name"]).stem + ".exe"
             else:
-                bin_name = Path(asset["name"]).stem + ".exe"
-                entry["bin"] = bin_name
+                entry["bin"] = Path(asset["name"]).stem + ".exe"
                 entry["extract_dir"] = ""
             architecture[arch] = entry
         manifest["architecture"] = architecture
@@ -313,7 +314,6 @@ def main():
             print("  无合适的 Windows 资产，跳过")
             continue
 
-        # 按 manifest 名和架构分组
         manifest_groups = defaultdict(lambda: defaultdict(list))
         for a in candidates:
             mname = decide_manifest_name(repo, a["name"])
@@ -328,7 +328,14 @@ def main():
             for arch, asset_list in arch_dict.items():
                 best = choose_best_asset_for_arch(asset_list)
                 sha = get_sha256(best["browser_download_url"], best["name"], hash_map)
+                if sha is None:
+                    print(f"    ⚠️ 无法获取哈希，跳过架构 {arch} 的资产 {best['name']}")
+                    continue
                 assets_info[arch] = (best, sha)
+
+            if not assets_info:
+                print(f"  ⚠️ 所有架构哈希获取失败，跳过 manifest: {mname}")
+                continue
 
             manifest = generate_manifest(mname, version, assets_info, None, description, homepage)
             if not manifest:
