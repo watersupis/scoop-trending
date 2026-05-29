@@ -1,0 +1,35 @@
+name: Daily Update from GitHub Trending
+
+on:
+  schedule:
+    - cron: '0 0 * * *'      # 每天 UTC 0:00（北京时间早上 8 点）
+  workflow_dispatch:           # 允许手动触发
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write          # 必须，用于推送代码
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests gitpython pyquery
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Run auto_scoop
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # 无需手动设置，Actions 自动提供
+          MAX_APPS: 3                                  # 每次最多添加几个新应用
+        run: python auto_scoop.py
