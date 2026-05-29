@@ -31,5 +31,6 @@ jobs:
       - name: Run auto_scoop
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # 无需手动设置，Actions 自动提供
-          MAX_APPS: 3                                  # 每次最多添加几个新应用
+          TRENDING_PERIODS: daily,weekly,monthly   # 默认值，可按需调整
+          MAX_APPS: 10                               # 每次最多新增应用数
         run: python auto_scoop.py
