@@ -1,0 +1,14 @@
+{
+  "version": "main",
+  "description": "\ud83d\udd75\ufe0f\u200d\u2642\ufe0f Collect a dossier on a person by username from 3000+ sites",
+  "homepage": "https://github.com/soxoj/maigret",
+  "license": "unknown",
+  "url": "https://github.com/soxoj/maigret/releases/download/main/maigret_standalone.exe",
+  "hash": "sha256:54aad2b95567262d13e241c6d23a52127fa97b243e14075ce0aedd7f466f5b22",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "maigret_standalone.exe"
+}
