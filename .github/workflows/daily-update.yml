@@ -2,8 +2,8 @@ name: Daily Update and Auto-Merge PR
 
 on:
   schedule:
-    - cron: '0 0 * * *'
-  workflow_dispatch:   # 允许手动触发
+    - cron: '0 0 * * *'        # 每天 UTC 0:00
+  workflow_dispatch:            # 手动触发
 
 jobs:
   update-and-pr:
@@ -12,12 +12,13 @@ jobs:
       contents: write
       pull-requests: write
     env:
-      AUTO_MERGE_DAYS: 3   # 无人干预时，几天后自动合并
+      AUTO_MERGE_DAYS: 3        # 无人干预时自动合并天数
+
     steps:
       - name: Checkout master branch
         uses: actions/checkout@v4
         with:
-          ref: master
+          ref: master            # 适配主干为 master
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -33,7 +34,7 @@ jobs:
           MAX_APPS: 3
         run: python auto_scoop.py
 
-      - name: Check for new files
+      - name: Check for new manifest files
         id: git_status
         run: |
           if [ -z "$(git status --porcelain bucket/)" ]; then
@@ -42,44 +43,68 @@ jobs:
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
-      - name: Create branch, commit and push
-        if: steps.git_status.outputs.changed == 'true'
-        run: |
-          BRANCH_NAME="scoop-update-$(date +%Y-%m-%d)"
-          git checkout -b "$BRANCH_NAME"
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add bucket/
-          git commit -m "🤖 Add new apps from Trending on $(date +%Y-%m-%d)"
-          git push origin "$BRANCH_NAME"
-
-      - name: Create Pull Request
+      - name: Commit and push to daily branch
         if: steps.git_status.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           BRANCH_NAME="scoop-update-$(date +%Y-%m-%d)"
-          gh pr create \
-            --base main \
-            --head "$BRANCH_NAME" \
-            --title "Auto update $(date +%Y-%m-%d)" \
-            --body "## 🔄 自动更新\n\n以下是今日从 GitHub Trending 新增的应用 manifest。\n\n⏳ 管理员可在 ${AUTO_MERGE_DAYS} 天内自由修改，到期将自动合并。"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # 检查远程是否已有该日期的分支
+          if git ls-remote --heads origin "$BRANCH_NAME" | grep "$BRANCH_NAME" > /dev/null; then
+            echo "Branch $BRANCH_NAME already exists, checking out..."
+            git fetch origin "$BRANCH_NAME"
+            git checkout "$BRANCH_NAME"
+            # 合并 master 最新内容，降低冲突
+            git merge master --no-edit || echo "Merge with master failed, continuing anyway..."
+          else
+            echo "Creating new branch $BRANCH_NAME"
+            git checkout -b "$BRANCH_NAME"
+          fi
+
+          git add bucket/
+          git commit -m "🤖 Add new apps on $(date +%Y-%m-%d)" || echo "No changes to commit"
+          git push origin "$BRANCH_NAME" --force-with-lease
+
+      - name: Create Pull Request (if not exists)
+        if: steps.git_status.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH_NAME="scoop-update-$(date +%Y-%m-%d)"
+          EXISTING_PR=$(gh pr list --state open --base master --head "$BRANCH_NAME" --json number -q '.[0].number')
+          if [ -n "$EXISTING_PR" ]; then
+            echo "PR #$EXISTING_PR already exists for $BRANCH_NAME, no new PR created."
+          else
+            gh pr create \
+              --base master \
+              --head "$BRANCH_NAME" \
+              --title "Auto update $(date +%Y-%m-%d)" \
+              --body "## 🔄 自动更新
+
+              今日从 GitHub Trending 新增的应用 manifest。同一天的多次更新都会累积到此 PR。
+
+              ⏳ 管理员可在 ${AUTO_MERGE_DAYS} 天内自由修改，到期将自动合并。"
+          fi
 
       - name: Auto-merge old PRs
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # 获取所有状态为 open 且标题以 "Auto update" 开头的 PR
-          pr_list=$(gh pr list --state open --base main --search "Auto update" --json number,createdAt,headRefName --jq '.')
+          echo "Checking for auto-update PRs older than $AUTO_MERGE_DAYS days..."
+          pr_list=$(gh pr list --state open --base master --search "Auto update in:title" --json number,createdAt --jq '.')
           if [ -z "$pr_list" ] || [ "$pr_list" == "[]" ]; then
-            echo "No auto-update PRs to check."
+            echo "No auto-update PRs found."
             exit 0
           fi
           echo "$pr_list" | jq -c '.[]' | while read -r pr; do
             number=$(echo "$pr" | jq -r '.number')
             created=$(echo "$pr" | jq -r '.createdAt')
-            # 计算创建至今的天数
-            days=$(( ($(date -u +%s) - $(date -u -d "$created" +%s)) / 86400 ))
+            created_ts=$(date -d "$created" +%s 2>/dev/null || date -u -jf "%Y-%m-%dT%H:%M:%SZ" "$created" +%s)
+            current_ts=$(date -u +%s)
+            days=$(( (current_ts - created_ts) / 86400 ))
             if [ "$days" -ge "$AUTO_MERGE_DAYS" ]; then
               echo "🔀 Merging PR #$number (created $created, $days days ago)..."
               gh pr merge "$number" --squash --delete-branch
