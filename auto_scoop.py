@@ -32,7 +32,6 @@ SKIP_TOPICS = {"awesome-list", "cheatsheet", "config", "dotfiles"}
 
 VARIANT_KEYWORDS = ["desktop", "client", "server", "lite", "console"]
 
-# 文件名中若包含这些关键词，说明不是 Windows 资产，直接跳过
 NON_WINDOWS_TERMS = [
     "darwin", "mac", "linux", "android", "ios",
     "freebsd", "openbsd", "solaris", "aix", "hpux",
@@ -113,13 +112,10 @@ def get_latest_release(owner, repo, token):
 
 
 def is_windows_asset(name):
-    """判断是否为 Windows 系统的安装文件"""
     name_lower = name.lower()
-    # 排除明确其他系统的文件
     for term in NON_WINDOWS_TERMS:
         if term in name_lower:
             return False
-    # 必须有常见的 Windows 扩展名
     win_exts = (".exe", ".msi", ".msix", ".appx", ".zip", ".7z", ".tar.gz", ".tar.xz", ".tgz")
     return name_lower.endswith(win_exts)
 
@@ -353,7 +349,8 @@ def main():
                     print(f"  ⚠️ 无有效哈希，跳过 manifest: {mname}")
                     continue
 
-                manifest = generate_manifest(mname, version, assets_info, None, description, homepage)
+                # 修正：去掉多余的 None 参数
+                manifest = generate_manifest(mname, version, assets_info, description, homepage)
                 if not manifest:
                     continue
 
