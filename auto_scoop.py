@@ -28,16 +28,19 @@ def api_get(url, token):
     headers = HEADERS.copy()
     if token:
         headers["Authorization"] = f"token {token}"
-    resp = requests.get(url, headers=headers)
-    if resp.status_code == 403 and "rate limit" in resp.text.lower():
-        print("⚠️ GitHub API 限速，请检查 GITHUB_TOKEN")
+    try:
+        resp = requests.get(url, headers=headers)
+        resp.raise_for_status()
+        return resp.json()
+    except requests.exceptions.HTTPError as e:
+        print(f"  ⚠️ API 请求失败 ({e.response.status_code}): {url}")
         return None
-    resp.raise_for_status()
-    return resp.json()
+    except Exception as e:
+        print(f"  ⚠️ 请求异常: {e}")
+        return None
 
 
 def fetch_trending_repos():
-    """抓取 GitHub Trending 页面，返回 owner/repo 列表"""
     resp = requests.get(TRENDING_URL)
     resp.raise_for_status()
     doc = pq(resp.text)
@@ -57,7 +60,6 @@ def get_latest_release(owner, repo, token):
 
 
 def choose_assets(assets):
-    """挑选 Windows 安装文件/压缩包，优先按架构分"""
     exts = (".exe", ".msi", ".zip", ".7z", ".msix", ".appx")
     selected = []
     for a in assets:
@@ -88,7 +90,6 @@ def choose_assets(assets):
 
 
 def download_and_hash(url):
-    """下载文件并返回 SHA256 哈希值"""
     print(f"  ⬇️ 下载 {url} ...")
     resp = requests.get(url, stream=True)
     resp.raise_for_status()
@@ -133,12 +134,10 @@ def generate_manifest(app_name, version, assets_info, bin_name, description, hom
 
 
 def is_existing(repo_full, bucket_dir):
-    """检查 bucket 中是否已有指向该 GitHub 仓库的 manifest"""
     for f in bucket_dir.glob("*.json"):
         try:
             with open(f, "r", encoding="utf-8") as fh:
                 data = json.load(fh)
-            # 通过 homepage 或下载 url 匹配
             if "homepage" in data and repo_full in data["homepage"]:
                 return f.stem
             if "url" in data and repo_full in data["url"]:
@@ -193,20 +192,17 @@ def main():
             print("  无合适的 Windows 资产，跳过")
             continue
 
-        # 下载并计算哈希
         assets_info = {}
         for arch, asset in assets_by_arch.items():
             print(f"  {arch}: {asset['name']}")
             sha = download_and_hash(asset["browser_download_url"])
             assets_info[arch] = (asset, sha)
 
-        # 生成 manifest
         app_name = repo
         description = (release.get("body") or "")[:200].split("\n")[0]
         homepage = f"https://github.com/{owner}/{repo}"
         manifest = generate_manifest(app_name, version, assets_info, None, description, homepage)
 
-        # 写入文件
         manifest_file = bucket_dir / f"{app_name}.json"
         with open(manifest_file, "w", encoding="utf-8") as f:
             json.dump(manifest, f, indent=2)
@@ -215,12 +211,11 @@ def main():
         repo_git.index.add([str(manifest_file.relative_to(bucket_dir))])
         repo_git.index.commit(f"🤖 Add {app_name} {version}")
         added += 1
-        time.sleep(1)   # 避免过于频繁请求
+        time.sleep(1)
 
     if added > 0:
         print(f"\n🚀 推送 {added} 个新 manifest ...")
-        origin = repo_git.remotes.origin
-        origin.push()
+        repo_git.remotes.origin.push()
         print("✅ 推送完成")
     else:
         print("没有添加新应用。")
