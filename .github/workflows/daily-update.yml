@@ -31,7 +31,7 @@ jobs:
       - name: Run auto_scoop
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MAX_APPS: 3
+          MAX_APPS: 20
         run: python auto_scoop.py
 
       - name: Check for new manifest files
