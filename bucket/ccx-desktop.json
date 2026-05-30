@@ -1,0 +1,28 @@
+{
+  "version": "2.8.17",
+  "description": "Claude / Codex / Gemini API Proxy - CCX",
+  "homepage": "https://github.com/BenedictKing/ccx",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/BenedictKing/ccx/releases/download/v2.8.17/CCX-Desktop-2.8.17-windows-amd64-setup.exe",
+      "hash": "sha256:4218073a650e2f34ce26b077a3ab46f56440b1024b0d21048bb83b9a51265447",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "CCX-Desktop-2.8.17-windows-amd64-setup.exe"
+    },
+    "arm64": {
+      "url": "https://github.com/BenedictKing/ccx/releases/download/v2.8.17/CCX-Desktop-2.8.17-windows-arm64-setup.exe",
+      "hash": "sha256:45915aec1fdc70dee5ae06cca9af3e209a7e504934487bd0980502dc3382b347",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "CCX-Desktop-2.8.17-windows-arm64-setup.exe"
+    }
+  }
+}
