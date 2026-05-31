@@ -1,0 +1,28 @@
+{
+  "version": "0.17.0",
+  "description": "Coding Agent Harness",
+  "homepage": "https://github.com/1jehuang/jcode",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/1jehuang/jcode/releases/download/v0.17.0/jcode-windows-aarch64.exe",
+      "hash": "sha256:699d22d81d9af45e38cc0b9d3279c3266ba61686290ceb8d10d5dc00b6bfbe72",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "jcode-windows-aarch64.exe"
+    },
+    "64bit": {
+      "url": "https://github.com/1jehuang/jcode/releases/download/v0.17.0/jcode-windows-x86_64.exe",
+      "hash": "sha256:e9ee9d0d4735e041ac035f2f8971776b695fc4ab22a7c0fc6661fe3e0fda5510",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "jcode-windows-x86_64.exe"
+    }
+  }
+}
