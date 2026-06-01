@@ -1,0 +1,20 @@
+{
+  "version": "2.1.159",
+  "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows ",
+  "homepage": "https://github.com/anthropics/claude-code",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/anthropics/claude-code/releases/download/v2.1.159/claude-win32-arm64.zip",
+      "hash": "sha256:4df08a311161078d7c27c5ccf9134a7a6e41f7b022d7127fc6a05f5f92b3d827",
+      "bin": "claude-win32-arm64.exe",
+      "extract_dir": ""
+    },
+    "64bit": {
+      "url": "https://github.com/anthropics/claude-code/releases/download/v2.1.159/claude-win32-x64.zip",
+      "hash": "sha256:6b1e4e6324e21689619a8216aa67345743851dc44dd8278b9715267fb7a5b091",
+      "bin": "claude-win32-x64.exe",
+      "extract_dir": ""
+    }
+  }
+}
