@@ -1,0 +1,20 @@
+{
+  "version": "0.9.8",
+  "description": "Pre-indexed code knowledge graph for Claude Code, Codex, Gemini, Cursor, OpenCode, AntiGravity, Kiro, and Hermes Agent \u2014 fewer tokens, fewer tool calls, 100% local",
+  "homepage": "https://github.com/colbymchenry/codegraph",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/colbymchenry/codegraph/releases/download/v0.9.8/codegraph-win32-arm64.zip",
+      "hash": "sha256:8442c3f913f6fb1f40309021b35c49e2227257666aa81a12dc46efd06805b782",
+      "bin": "codegraph-win32-arm64.exe",
+      "extract_dir": ""
+    },
+    "64bit": {
+      "url": "https://github.com/colbymchenry/codegraph/releases/download/v0.9.8/codegraph-win32-x64.zip",
+      "hash": "sha256:71e3e42feddd97452721c1fa52c5de3a310be481f0b9bded81672c9567add7e3",
+      "bin": "codegraph-win32-x64.exe",
+      "extract_dir": ""
+    }
+  }
+}

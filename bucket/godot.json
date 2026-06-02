@@ -1,0 +1,26 @@
+{
+  "version": "4.6.3-stable",
+  "description": "Godot Engine \u2013 Multi-platform 2D and 3D game engine",
+  "homepage": "https://github.com/godotengine/godot",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/godotengine/godot/releases/download/4.6.3-stable/godot-4.6.3-stable.tar.xz",
+      "hash": "sha256:2261028c0dfc10e0cf4800a5b2e5a57ea241f72965162327f5764d536a69a46a",
+      "bin": "godot-4.6.3-stable.tar.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/godotengine/godot/releases/download/4.6.3-stable/Godot_v4.6.3-stable_mono_win32.zip",
+      "hash": "sha256:6b7d84ee6c3017253a605f00a0f8cb669b05e958c345fd14896b5f4067b246a7",
+      "bin": "Godot_v4.6.3-stable_mono_win32.exe",
+      "extract_dir": ""
+    },
+    "arm64": {
+      "url": "https://github.com/godotengine/godot/releases/download/4.6.3-stable/Godot_v4.6.3-stable_mono_windows_arm64.zip",
+      "hash": "sha256:3da5650a6b7f56211233fbe4b334a40beb538b9990fe44bb0106913bf0068472",
+      "bin": "Godot_v4.6.3-stable_mono_windows_arm64.exe",
+      "extract_dir": ""
+    }
+  }
+}
