@@ -1,0 +1,14 @@
+{
+  "version": "0.5.5",
+  "description": "Desktop Companion for Hermes Agent",
+  "homepage": "https://github.com/fathah/hermes-desktop",
+  "license": "unknown",
+  "url": "https://github.com/fathah/hermes-desktop/releases/download/v0.5.5/hermes-desktop-0.5.5-portable.exe",
+  "hash": "sha256:dd10783defd49b674e1e79dfdd13b24db62bfed1e4eee54e03459b07448d69fc",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "hermes-desktop-0.5.5-portable.exe"
+}

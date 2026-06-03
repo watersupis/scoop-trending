@@ -1,0 +1,20 @@
+{
+  "version": "iii/v0.17.0",
+  "description": "Effortlessly compose, extend, and observe every service in real-time for the first time ever.",
+  "homepage": "https://github.com/iii-hq/iii",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/iii-hq/iii/releases/download/iii/v0.17.0/iii-aarch64-pc-windows-msvc.zip",
+      "hash": "sha256:0ef1938b9e6029e91200eba4b1bb645594d927f7ad5004e895666e6f82753c2d",
+      "bin": "iii-aarch64-pc-windows-msvc.exe",
+      "extract_dir": ""
+    },
+    "64bit": {
+      "url": "https://github.com/iii-hq/iii/releases/download/iii/v0.17.0/iii-i686-pc-windows-msvc.zip",
+      "hash": "sha256:25e9d07bd99d7603d17a3436de007a6ca62fa7bea734bfe351ac148e2d192928",
+      "bin": "iii-i686-pc-windows-msvc.exe",
+      "extract_dir": ""
+    }
+  }
+}
