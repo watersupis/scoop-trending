@@ -1,0 +1,10 @@
+{
+  "version": "2.4.7",
+  "description": "PDF Parser for AI-ready data. Automate PDF accessibility. Open-source.",
+  "homepage": "https://github.com/opendataloader-project/opendataloader-pdf",
+  "license": "unknown",
+  "url": "https://github.com/opendataloader-project/opendataloader-pdf/releases/download/v2.4.7/opendataloader-pdf-cli-2.4.7.zip",
+  "hash": "sha256:dafcadc514cb5fb77f6f108a1a3be9a11937f0304749c5707bdd0881abea20bc",
+  "bin": "opendataloader-pdf-cli-2.4.7.exe",
+  "extract_dir": ""
+}
