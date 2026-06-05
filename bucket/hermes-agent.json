@@ -1,0 +1,10 @@
+{
+  "version": "2026.5.29.2",
+  "description": "The agent that grows with you",
+  "homepage": "https://github.com/NousResearch/hermes-agent",
+  "license": "unknown",
+  "url": "https://github.com/NousResearch/hermes-agent/releases/download/v2026.5.29.2/hermes_agent-0.15.2.tar.gz",
+  "hash": "sha256:3192f8d5d11b1d368b8a8090d68a7fb0a1e485d991f99ff7ed98b53d93e5ce78",
+  "bin": "hermes_agent-0.15.2.tar.exe",
+  "extract_dir": ""
+}
