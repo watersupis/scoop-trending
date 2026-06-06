@@ -1,0 +1,28 @@
+{
+  "version": "0.6.3",
+  "description": "Windows companion suite for OpenClaw - System Tray app, Shared library, Node, and PowerToys Command Palette extension",
+  "homepage": "https://github.com/openclaw/openclaw-windows-node",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/openclaw/openclaw-windows-node/releases/download/v0.6.3/OpenClawCompanion-Setup-arm64.exe",
+      "hash": "sha256:cb33a5f802f5790b2ac25bcb12cc3c6cc98ef5fa9fa8af5f0133f2b47cfcb88a",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "OpenClawCompanion-Setup-arm64.exe"
+    },
+    "64bit": {
+      "url": "https://github.com/openclaw/openclaw-windows-node/releases/download/v0.6.3/OpenClawCompanion-Setup-x64.exe",
+      "hash": "sha256:595a78a223f771adbaead34d56b190f5be5f97222d7707f8013ff4cc81d26983",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "OpenClawCompanion-Setup-x64.exe"
+    }
+  }
+}

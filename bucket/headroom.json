@@ -1,0 +1,10 @@
+{
+  "version": "0.23.0",
+  "description": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 60-95% fewer tokens, same answers. Library, proxy, MCP server.",
+  "homepage": "https://github.com/chopratejas/headroom",
+  "license": "unknown",
+  "url": "https://github.com/chopratejas/headroom/releases/download/v0.23.0/headroom_ai-0.23.0.tar.gz",
+  "hash": "sha256:64e156c0957ba347ab6c0772a46d768246a965d5a6be8e1de40d9d16406d0009",
+  "bin": "headroom_ai-0.23.0.tar.exe",
+  "extract_dir": ""
+}

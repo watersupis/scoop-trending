@@ -1,0 +1,10 @@
+{
+  "version": "1.2.9",
+  "description": "\u5229\u7528AI\u5927\u6a21\u578b\uff0c\u4e00\u952e\u751f\u6210\u9ad8\u6e05\u77ed\u89c6\u9891 Generate short videos with one click using AI LLM.",
+  "homepage": "https://github.com/harry0703/MoneyPrinterTurbo",
+  "license": "unknown",
+  "url": "https://github.com/harry0703/MoneyPrinterTurbo/releases/download/v1.2.9/MoneyPrinterTurbo-Portable-Windows-1.2.9.7z",
+  "hash": "sha256:727c88b6c3c45319989d5c57497d59877bf2c58eac23f970086b4750ee39e938",
+  "bin": "MoneyPrinterTurbo-Portable-Windows-1.2.9.exe",
+  "extract_dir": ""
+}
