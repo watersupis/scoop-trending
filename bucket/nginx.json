@@ -1,0 +1,10 @@
+{
+  "version": "release-1.31.1",
+  "description": "The official NGINX Open Source repository.",
+  "homepage": "https://github.com/nginx/nginx",
+  "license": "unknown",
+  "url": "https://github.com/nginx/nginx/releases/download/release-1.31.1/nginx-1.31.1.tar.gz",
+  "hash": "sha256:9fcaaeb8f22544b09a19a761f3412c4112215422401634bebdd1296a403cc4bc",
+  "bin": "nginx-1.31.1.tar.exe",
+  "extract_dir": ""
+}
