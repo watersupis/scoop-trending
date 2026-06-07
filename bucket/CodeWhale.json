@@ -1,0 +1,14 @@
+{
+  "version": "0.8.50",
+  "description": "DeepSeek + MiMo coding agent in terminal",
+  "homepage": "https://github.com/Hmbown/CodeWhale",
+  "license": "unknown",
+  "url": "https://github.com/Hmbown/CodeWhale/releases/download/v0.8.50/codewhale-tui-windows-x64.exe",
+  "hash": "sha256:6b00681671904e42bfdbc762771951f859f5c59b990989a7bf09e62439525079",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "codewhale-tui-windows-x64.exe"
+}
