@@ -35,6 +35,9 @@ jobs:
           path: 'scoop_core'
       - name: Install test dependencies
         run: |
+          if (-not (Get-PSRepository -Name PSGallery -ErrorAction SilentlyContinue)) {
+              Register-PSRepository -Default
+          }
           Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
           Install-Module BuildHelpers, Pester -Scope CurrentUser -Force -SkipPublisherCheck
       - name: Run tests
