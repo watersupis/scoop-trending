@@ -122,13 +122,18 @@ def is_windows_asset(name):
 
 def classify_arch(asset_name):
     name = asset_name.lower()
-    if any(k in name for k in ("amd64", "x86_64", "x64", "win64", "64bit", "64-bit")):
-        return "64bit"
     if any(k in name for k in ("arm64", "aarch64", "arm")):
         return "arm64"
-    if any(k in name for k in ("386", "x86", "win32", "32bit", "32-bit")):
+    if any(k in name for k in ("i686", "i386", "386", "x86", "win32", "32bit", "32-bit")):
         return "32bit"
+    if any(k in name for k in ("amd64", "x86_64", "x64", "win64", "64bit", "64-bit")):
+        return "64bit"
     return "64bit"
+
+
+def normalize_version(tag_name):
+    version = tag_name.rsplit("/", 1)[-1]
+    return version[1:] if version.lower().startswith("v") else version
 
 
 def extract_hash_map_from_assets(assets):
@@ -306,7 +311,7 @@ def main():
                 print("  无法获取 release，跳过")
                 continue
 
-            version = release["tag_name"].lstrip("v")
+            version = normalize_version(release["tag_name"])
             assets = release.get("assets", [])
             if not assets:
                 print("  无发布资产，跳过")
