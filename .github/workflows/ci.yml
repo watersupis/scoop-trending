@@ -11,13 +11,10 @@ on:
 permissions:
   contents: read
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   test:
     name: Test
-    runs-on: windows-latest
+    runs-on: windows-2025
     strategy:
       matrix:
         shell: [powershell, pwsh]
@@ -36,11 +33,10 @@ jobs:
         with:
           repository: ScoopInstaller/Scoop
           path: 'scoop_core'
-      - name: Install and cache test dependencies
-        uses: potatoqualitee/psmodulecache@ee5e9494714abf56f6efbfa51527b2aec5c761b8 # v6.2.1
-        with:
-          modules-to-cache: BuildHelpers, Pester
-          shell: ${{ matrix.shell }}
+      - name: Install test dependencies
+        run: |
+          Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+          Install-Module BuildHelpers, Pester -Scope CurrentUser -Force -SkipPublisherCheck
       - name: Run tests
         run: |
           $env:SCOOP_HOME="$(Convert-Path '.\scoop_core')"
