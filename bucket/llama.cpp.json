@@ -1,0 +1,20 @@
+{
+  "version": "b9553",
+  "description": "LLM inference in C/C++",
+  "homepage": "https://github.com/ggml-org/llama.cpp",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/ggml-org/llama.cpp/releases/download/b9553/cudart-llama-bin-win-cuda-12.4-x64.zip",
+      "hash": "sha256:8c79a9b226de4b3cacfd1f83d24f962d0773be79f1e7b75c6af4ded7e32ae1d6",
+      "bin": "cudart-llama-bin-win-cuda-12.4-x64.exe",
+      "extract_dir": ""
+    },
+    "arm64": {
+      "url": "https://github.com/ggml-org/llama.cpp/releases/download/b9553/llama-b9553-bin-ubuntu-arm64.tar.gz",
+      "hash": "sha256:84d19757121ee663d03707ed88198f9c9c91373daaeaa9427fedc8ff53eca652",
+      "bin": "llama-b9553-bin-ubuntu-arm64.tar.exe",
+      "extract_dir": ""
+    }
+  }
+}

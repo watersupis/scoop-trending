@@ -1,0 +1,28 @@
+{
+  "version": "0.9.3",
+  "description": "The fastest and the most accurate file search toolkit for AI agents, Neovim, Rust, C, and NodeJS",
+  "homepage": "https://github.com/dmtrKovalenko/fff",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/dmtrKovalenko/fff/releases/download/v0.9.3/fff-mcp-aarch64-pc-windows-msvc.exe",
+      "hash": "sha256:9a7c2bfc68bbf58d3b2ff4cc2e50ee69d5dae4a224110cd6c80bbc09947057cb",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "fff-mcp-aarch64-pc-windows-msvc.exe"
+    },
+    "64bit": {
+      "url": "https://github.com/dmtrKovalenko/fff/releases/download/v0.9.3/fff-mcp-x86_64-pc-windows-msvc.exe",
+      "hash": "sha256:622107033e3fb6c3711ef2b217e9883ba382c642e99512a08ed6825d6c95fc35",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "fff-mcp-x86_64-pc-windows-msvc.exe"
+    }
+  }
+}

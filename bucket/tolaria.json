@@ -1,0 +1,14 @@
+{
+  "version": "2026-06-06",
+  "description": "Desktop app to manage markdown knowledge bases",
+  "homepage": "https://github.com/refactoringhq/tolaria",
+  "license": "unknown",
+  "url": "https://github.com/refactoringhq/tolaria/releases/download/v2026-06-06/Tolaria_2026.6.6_x64-setup.exe",
+  "hash": "sha256:6dc31ce50c99ab22a637359e5d5810b524ab272ed374206944e173c85d046d8a",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "Tolaria_2026.6.6_x64-setup.exe"
+}
