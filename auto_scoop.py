@@ -355,8 +355,12 @@ def main():
                     continue
 
                 manifest_file = bucket_dir / f"{mname}.json"
+                if manifest_file.exists():
+                    print(f"⏭️  {manifest_file.name} 已存在，跳过")
+                    continue
                 with open(manifest_file, "w", encoding="utf-8") as f:
                     json.dump(manifest, f, indent=2)
+                    f.write("\n")
                 print(f"✅ 已生成 {manifest_file.relative_to(repo_root)}")
                 added += 1
                 time.sleep(0.5)

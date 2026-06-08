@@ -12,13 +12,14 @@ jobs:
       contents: write
       pull-requests: write
     env:
-      AUTO_MERGE_DAYS: 3
+      UPDATE_BRANCH_PREFIX: scoop-update-
 
     steps:
       - name: Checkout master branch
         uses: actions/checkout@v4
         with:
           ref: master
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -28,55 +29,101 @@ jobs:
       - name: Install dependencies
         run: pip install requests pyquery
 
+      - name: Configure Git
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Merge previous auto-update PRs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TODAY_BRANCH="${UPDATE_BRANCH_PREFIX}$(date -u +%F)"
+          echo "Merging auto-update PRs older than today's branch: $TODAY_BRANCH"
+
+          pr_list=$(gh pr list \
+            --state open \
+            --base master \
+            --search "Auto update in:title" \
+            --json number,headRefName,createdAt \
+            --jq ".[] | select(.headRefName | startswith(\"$UPDATE_BRANCH_PREFIX\")) | select(.headRefName != \"$TODAY_BRANCH\") | [.number, .headRefName, .createdAt] | @tsv")
+
+          if [ -z "$pr_list" ]; then
+            echo "No previous auto-update PRs found."
+          else
+            echo "$pr_list" | while IFS=$'\t' read -r number branch created; do
+              echo "Merging PR #$number from $branch (created $created)..."
+              if ! merge_output=$(gh pr merge "$number" --squash --delete-branch 2>&1); then
+                echo "$merge_output"
+                if echo "$merge_output" | grep -qiE "merge conflicts|not mergeable|mergePullRequest"; then
+                  echo "::warning::PR #$number has merge conflicts; closing it and deleting its branch."
+                  gh pr close "$number" \
+                    --delete-branch \
+                    --comment "Closing stale auto-update PR because it has merge conflicts. A later run will recreate updates from latest master."
+                  continue
+                fi
+                exit 1
+              fi
+            done
+          fi
+
+          git fetch origin "+master:refs/remotes/origin/master"
+          git checkout master
+          git reset --hard origin/master
+
+      - name: Prepare today's update branch
+        run: |
+          BRANCH_NAME="${UPDATE_BRANCH_PREFIX}$(date -u +%F)"
+          echo "BRANCH_NAME=$BRANCH_NAME" >> "$GITHUB_ENV"
+
+          if git ls-remote --heads origin "$BRANCH_NAME" | grep "$BRANCH_NAME" > /dev/null; then
+            echo "Using existing branch $BRANCH_NAME"
+            git fetch origin "+$BRANCH_NAME:refs/remotes/origin/$BRANCH_NAME"
+            git checkout -B "$BRANCH_NAME" "origin/$BRANCH_NAME"
+            git merge --no-edit origin/master
+          else
+            echo "Creating branch $BRANCH_NAME from latest master"
+            git checkout -B "$BRANCH_NAME" origin/master
+          fi
+
       - name: Run auto_scoop
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MAX_APPS: 20
         run: python auto_scoop.py
 
-      - name: Check for new manifest files
-        id: git_status
+      - name: Commit generated manifests
+        id: branch_status
         run: |
-          if [ -z "$(git status --porcelain bucket/)" ]; then
-            echo "changed=false" >> $GITHUB_OUTPUT
+          if [ -n "$(git status --porcelain bucket/)" ]; then
+            git add bucket/
+            git commit -m "🤖 Add new apps on $(date -u +%F)"
+          fi
+
+          if git show-ref --verify --quiet "refs/remotes/origin/$BRANCH_NAME"; then
+            ahead=$(git rev-list --count "origin/$BRANCH_NAME..HEAD")
           else
-            echo "changed=true" >> $GITHUB_OUTPUT
+            ahead=$(git rev-list --count "origin/master..HEAD")
           fi
 
-      - name: Commit and push to auto-update branch
-        if: steps.git_status.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          if [ "$ahead" -gt 0 ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Push today's update branch
+        if: steps.branch_status.outputs.changed == 'true'
         run: |
-          BRANCH_NAME="scoop-auto-update"
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          # 暂存新生成的文件，保证切换分支时工作区干净
-          git stash push --include-untracked -m "temp for branch switch"
-
-          # 记录远程分支当前状态，保护后续 force-with-lease
-          if git ls-remote --heads origin "$BRANCH_NAME" | grep "$BRANCH_NAME" > /dev/null; then
-            git fetch origin "+$BRANCH_NAME:refs/remotes/origin/$BRANCH_NAME"
-          fi
-
-          # 每次从最新 master 重建滚动分支，避免多个日期分支互相产生 merge conflicts
-          git checkout -B "$BRANCH_NAME" master
-
-          # 恢复之前暂存的新文件
-          git stash pop
-
-          # 添加并提交新 manifest
-          git add bucket/
-          git commit -m "🤖 Add new apps on $(date +%Y-%m-%d)" || echo "No changes to commit"
           git push origin "$BRANCH_NAME" --force-with-lease
 
       - name: Create Pull Request (if not exists)
-        if: steps.git_status.outputs.changed == 'true'
+        if: steps.branch_status.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          BRANCH_NAME="scoop-auto-update"
           EXISTING_PR=$(gh pr list --state open --base master --head "$BRANCH_NAME" --json number -q '.[0].number')
           if [ -n "$EXISTING_PR" ]; then
             echo "PR #$EXISTING_PR already exists for $BRANCH_NAME, no new PR created."
@@ -84,68 +131,10 @@ jobs:
             gh pr create \
               --base master \
               --head "$BRANCH_NAME" \
-              --title "Auto update $(date +%Y-%m-%d)" \
+              --title "Auto update $(date -u +%F)" \
               --body "## 🔄 自动更新
 
-              从 GitHub Trending 新增的应用 manifest。此 PR 会滚动更新，并始终从最新 master 重建以避免合并冲突。
+              从 GitHub Trending 新增的应用 manifest。同一天内多次运行会累积到此 PR。
 
-              ⏳ 管理员可在 ${AUTO_MERGE_DAYS} 天内自由修改，到期将自动合并。"
+              ⏳ 今天暂不自动合并；下一天运行时会先合并此 PR，再生成新的更新。"
           fi
-
-      - name: Close stale auto-update PRs
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          CURRENT_BRANCH="scoop-auto-update"
-          stale_prs=$(gh pr list \
-            --state open \
-            --base master \
-            --search "Auto update in:title" \
-            --json number,headRefName \
-            --jq ".[] | select(.headRefName != \"$CURRENT_BRANCH\") | [.number, .headRefName] | @tsv")
-
-          if [ -z "$stale_prs" ]; then
-            echo "No stale auto-update PRs found."
-            exit 0
-          fi
-
-          echo "$stale_prs" | while IFS=$'\t' read -r number branch; do
-            echo "Closing stale PR #$number from $branch..."
-            gh pr close "$number" \
-              --delete-branch \
-              --comment "Closing stale per-day auto-update PR. The rolling auto-update PR is rebuilt from latest master to avoid merge conflicts."
-          done
-
-      - name: Auto-merge old PRs
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo "Checking for auto-update PRs older than $AUTO_MERGE_DAYS days..."
-          pr_list=$(gh pr list --state open --base master --head scoop-auto-update --search "Auto update in:title" --json number,createdAt --jq '.')
-          if [ -z "$pr_list" ] || [ "$pr_list" == "[]" ]; then
-            echo "No auto-update PRs found."
-            exit 0
-          fi
-          echo "$pr_list" | jq -c '.[]' | while read -r pr; do
-            number=$(echo "$pr" | jq -r '.number')
-            created=$(echo "$pr" | jq -r '.createdAt')
-            created_ts=$(date -d "$created" +%s 2>/dev/null || date -u -jf "%Y-%m-%dT%H:%M:%SZ" "$created" +%s)
-            current_ts=$(date -u +%s)
-            days=$(( (current_ts - created_ts) / 86400 ))
-            if [ "$days" -ge "$AUTO_MERGE_DAYS" ]; then
-              echo "🔀 Merging PR #$number (created $created, $days days ago)..."
-              if ! merge_output=$(gh pr merge "$number" --squash --delete-branch 2>&1); then
-                echo "$merge_output"
-                if echo "$merge_output" | grep -qiE "merge conflicts|not mergeable|mergePullRequest"; then
-                  echo "::warning::PR #$number has merge conflicts; closing it and deleting its branch."
-                  gh pr close "$number" \
-                    --delete-branch \
-                    --comment "Closing stale auto-update PR because it has merge conflicts. The next scheduled run will recreate it from latest master."
-                  continue
-                fi
-                exit 1
-              fi
-            else
-              echo "⏳ PR #$number is $days days old, will merge after $AUTO_MERGE_DAYS days."
-            fi
-          done
