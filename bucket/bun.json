@@ -1,0 +1,20 @@
+{
+  "version": "bun-v1.3.14",
+  "description": "Incredibly fast JavaScript runtime, bundler, test runner, and package manager \u2013 all in one",
+  "homepage": "https://github.com/oven-sh/bun",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/oven-sh/bun/releases/download/bun-v1.3.14/bun-windows-aarch64-profile.zip",
+      "hash": "sha256:9a342170a91463688703127a46c617ef2ab3f2a4694f4de8990e3846e463abed",
+      "bin": "bun-windows-aarch64-profile.exe",
+      "extract_dir": ""
+    },
+    "64bit": {
+      "url": "https://github.com/oven-sh/bun/releases/download/bun-v1.3.14/bun-windows-x64-baseline-profile.zip",
+      "hash": "sha256:905896dfff2e4e84f5c340e69974a58857e88fd330f01de673414d2f6cbeb486",
+      "bin": "bun-windows-x64-baseline-profile.exe",
+      "extract_dir": ""
+    }
+  }
+}
