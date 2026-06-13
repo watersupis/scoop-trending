@@ -1,0 +1,28 @@
+{
+  "version": "0.100.0",
+  "description": "Microsoft PowerToys is a collection of utilities that supercharge productivity and customization on Windows",
+  "homepage": "https://github.com/microsoft/PowerToys",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/microsoft/PowerToys/releases/download/v0.100.0/PowerToysSetup-0.100.0-x64.exe",
+      "hash": "sha256:740c01945528e453c02490921ca2bd0e399021a80cf90dcf01db53158377d0e8",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "PowerToysSetup-0.100.0-x64.exe"
+    },
+    "arm64": {
+      "url": "https://github.com/microsoft/PowerToys/releases/download/v0.100.0/PowerToysSetup-0.100.0-arm64.exe",
+      "hash": "sha256:19c8bd93b9a42b7fc2ff0e6f2091590f8d89b98adea20cc73d9023e464707b12",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "PowerToysSetup-0.100.0-arm64.exe"
+    }
+  }
+}
