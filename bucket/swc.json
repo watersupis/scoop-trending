@@ -1,0 +1,28 @@
+{
+  "version": "1.15.41",
+  "description": "Rust-based platform for the Web",
+  "homepage": "https://github.com/swc-project/swc",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/swc-project/swc/releases/download/v1.15.41/swc-win32-arm64-msvc.exe",
+      "hash": "sha256:7e2fd4ba88cc0f169ca8afc2e446fbf17317457da3375d13da2eb2c241339c6c",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "swc-win32-arm64-msvc.exe"
+    },
+    "32bit": {
+      "url": "https://github.com/swc-project/swc/releases/download/v1.15.41/swc-win32-ia32-msvc.exe",
+      "hash": "sha256:e93206b5a35d02276ce51c11fc2278dfda2ff985ec95309f5019001e265cb13c",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "swc-win32-ia32-msvc.exe"
+    }
+  }
+}
