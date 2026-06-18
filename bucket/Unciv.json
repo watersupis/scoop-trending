@@ -1,0 +1,14 @@
+{
+  "version": "4.20.14",
+  "description": "Open-source Android/Desktop remake of Civ V",
+  "homepage": "https://github.com/yairm210/Unciv",
+  "license": "unknown",
+  "url": "https://github.com/yairm210/Unciv/releases/download/4.20.14/Unciv.msi",
+  "hash": "sha256:b253a0431b4bcacd5c2e2b81ef4f3f74d7acb3970c87a80e4a3f67df221cdc2c",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "Unciv.exe"
+}
