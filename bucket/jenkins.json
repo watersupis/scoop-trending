@@ -1,0 +1,14 @@
+{
+  "version": "jenkins-2.569",
+  "description": "Jenkins automation server",
+  "homepage": "https://github.com/jenkinsci/jenkins",
+  "license": "unknown",
+  "url": "https://github.com/jenkinsci/jenkins/releases/download/jenkins-2.569/jenkins.msi",
+  "hash": "sha256:208ec27289c8fe67723602a8be6c2c08f94e64defa3ec8f7aa643a100f3bcf0d",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "jenkins.exe"
+}

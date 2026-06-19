@@ -1,0 +1,28 @@
+{
+  "version": "biome@2.5.0",
+  "description": "A toolchain for web projects, aimed to provide functionalities to maintain them. Biome offers formatter and linter, usable via CLI and LSP.",
+  "homepage": "https://github.com/biomejs/biome",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.5.0/biome-win32-arm64.exe",
+      "hash": "sha256:d561b19067059dfffb1244f00313958f6fcd41c0eaa9542d7787e362118a915d",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "biome-win32-arm64.exe"
+    },
+    "32bit": {
+      "url": "https://github.com/biomejs/biome/releases/download/%40biomejs/biome%402.5.0/biome-win32-x64.exe",
+      "hash": "sha256:84d4e71fdbb4b15b1aa83c1b1cc033aae9856d48a7a857c1381b1bd499430f7c",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "biome-win32-x64.exe"
+    }
+  }
+}
