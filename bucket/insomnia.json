@@ -1,0 +1,14 @@
+{
+  "version": "core@13.0.1",
+  "description": "The open-source, cross-platform API client for GraphQL, REST, WebSockets, SSE and gRPC. With Cloud, Local and Git storage.",
+  "homepage": "https://github.com/Kong/insomnia",
+  "license": "unknown",
+  "url": "https://github.com/Kong/insomnia/releases/download/core%4013.0.1/Insomnia.Core-13.0.1.exe",
+  "hash": "sha256:78c8fbd4cbe6d7d1d4f43bfe23bfa477ce01291c83d9316d6b55c62200368a48",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "Insomnia.Core-13.0.1.exe"
+}
