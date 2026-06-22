@@ -1,0 +1,24 @@
+{
+  "version": "0.5.0",
+  "description": "The open-source AI voice studio. Clone, dictate, create.",
+  "homepage": "https://github.com/jamiepine/voicebox",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/jamiepine/voicebox/releases/download/v0.5.0/Voicebox_0.5.0_x64-setup.exe",
+      "hash": "sha256:eaf5410e77946f3a76388270112bfc72925dc9d4c305b891ba600b583bc8b3b8",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "Voicebox_0.5.0_x64-setup.exe"
+    },
+    "arm64": {
+      "url": "https://github.com/jamiepine/voicebox/releases/download/v0.5.0/Voicebox_aarch64.app.tar.gz",
+      "hash": "sha256:89f8e1e2a77683102c40d439562dc14463aa9d87cf2df5a8d51530e6459bea09",
+      "bin": "Voicebox_aarch64.app.tar.exe",
+      "extract_dir": ""
+    }
+  }
+}
