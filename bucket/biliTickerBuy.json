@@ -1,0 +1,10 @@
+{
+  "version": "2.15.13",
+  "description": "b\u7ad9\u4f1a\u5458\u8d2d\u8d2d\u7968\u8f85\u52a9\u5de5\u5177",
+  "homepage": "https://github.com/mikumifa/biliTickerBuy",
+  "license": "unknown",
+  "url": "https://github.com/mikumifa/biliTickerBuy/releases/download/v2.15.13/biliTickerBuy_windows_amd64_v2.15.13.zip",
+  "hash": "sha256:2a298dcad6dbc73c544dd66103f25c21a2073df825ca63025f6efbe3de23926a",
+  "bin": "biliTickerBuy_windows_amd64_v2.15.13.exe",
+  "extract_dir": ""
+}
