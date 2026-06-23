@@ -1,0 +1,14 @@
+{
+  "version": "2.13.1",
+  "description": "#1 PDF Application on GitHub that lets you edit PDFs on any device anywhere",
+  "homepage": "https://github.com/Stirling-Tools/Stirling-PDF",
+  "license": "unknown",
+  "url": "https://github.com/Stirling-Tools/Stirling-PDF/releases/download/v2.13.1/Stirling-PDF-windows-x86_64.msi",
+  "hash": "sha256:4c19538e8a530f42717aec2c34ddfedf9b7d44c4a992831b61621e861c04cd07",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "Stirling-PDF-windows-x86_64.exe"
+}
