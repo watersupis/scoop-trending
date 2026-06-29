@@ -1,0 +1,10 @@
+{
+  "version": "26.6.4",
+  "description": "Open Source Identity and Access Management For Modern Applications and Services",
+  "homepage": "https://github.com/keycloak/keycloak",
+  "license": "unknown",
+  "url": "https://github.com/keycloak/keycloak/releases/download/26.6.4/keycloak-26.6.4.tar.gz",
+  "hash": "sha256:386b566bbea05527226e275c43e5cf6f218896ad2441ac4be5c39f1226772e8f",
+  "bin": "keycloak-26.6.4.tar.exe",
+  "extract_dir": ""
+}

@@ -1,0 +1,20 @@
+{
+  "version": "1.17.11",
+  "description": "The open source coding agent.",
+  "homepage": "https://github.com/anomalyco/opencode",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/anomalyco/opencode/releases/download/v1.17.11/opencode-windows-arm64.zip",
+      "hash": "sha256:cdc2c564b0a70bdba57fb94810a437cf64397b042c5a507aaed2840b8171f598",
+      "bin": "opencode-windows-arm64.exe",
+      "extract_dir": ""
+    },
+    "64bit": {
+      "url": "https://github.com/anomalyco/opencode/releases/download/v1.17.11/opencode-windows-x64-baseline.zip",
+      "hash": "sha256:8f635056f0397a0af3376d6e17de7cfc1ba12f6c4100769d446f1041fa685438",
+      "bin": "opencode-windows-x64-baseline.exe",
+      "extract_dir": ""
+    }
+  }
+}
