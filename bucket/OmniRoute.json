@@ -1,0 +1,14 @@
+{
+  "version": "3.8.42",
+  "description": "Never stop coding. Free AI gateway: one endpoint, 231+ providers (50+ free), connect Claude Code, Codex, Cursor, Cline & Copilot to FREE Claude/GPT/Gemini. RTK+Caveman stacked compression saves 15-95%",
+  "homepage": "https://github.com/diegosouzapw/OmniRoute",
+  "license": "unknown",
+  "url": "https://github.com/diegosouzapw/OmniRoute/releases/download/v3.8.42/OmniRoute.3.8.42.exe",
+  "hash": "sha256:d447dc0a9776066d67bce55931f1aa76cc83402ca85fa8e87029f5e15e091691",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "OmniRoute.3.8.42.exe"
+}
