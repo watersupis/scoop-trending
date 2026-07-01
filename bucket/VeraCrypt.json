@@ -1,0 +1,28 @@
+{
+  "version": "eraCrypt_1.26.29",
+  "description": "Disk encryption with strong security based on TrueCrypt",
+  "homepage": "https://github.com/veracrypt/VeraCrypt",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/veracrypt/VeraCrypt/releases/download/VeraCrypt_1.26.29/VeraCrypt.Setup.1.26.29.exe",
+      "hash": "sha256:dca9ddec7934fc0b1c25ac8984db7d504bfe9f37c21861ac91c67a98ecd3964b",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "VeraCrypt.Setup.1.26.29.exe"
+    },
+    "arm64": {
+      "url": "https://github.com/veracrypt/VeraCrypt/releases/download/VeraCrypt_1.26.29/VeraCrypt_Setup_arm64_1.26.29.msi",
+      "hash": "sha256:cdebefa7f8ea6aa6f899199d64d1c1819d9e11d3d9f42b9d762f5d4c7b6b7d1e",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "VeraCrypt_Setup_arm64_1.26.29.exe"
+    }
+  }
+}
