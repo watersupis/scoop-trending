@@ -1,0 +1,28 @@
+{
+  "version": "0.5.43",
+  "description": "15MB, lightweight, cross-platform database client. Supports MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, ClickHouse, SQL Server and more.15MB\uff0c\u8f7b\u91cf\u7ea7\u8de8\u5e73\u53f0\u6570\u636e\u5e93\u5ba2\u6237\u7aef\u3001\u6570\u636e\u5e93\u7ba1\u7406\u5de5\u5177\u3002\u652f\u6301 MySQL\u3001PostgreSQL\u3001SQLite\u3001Redi",
+  "homepage": "https://github.com/t8y2/dbx",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/t8y2/dbx/releases/download/v0.5.43/DBX_0.5.43_x64-setup.exe",
+      "hash": "sha256:8caa401ee3fadd9612b708b138eef10285d7e1eeacdfcde3e6b85bbc4e41551a",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "DBX_0.5.43_x64-setup.exe"
+    },
+    "arm64": {
+      "url": "https://github.com/t8y2/dbx/releases/download/v0.5.43/DBX_0.5.43_arm64-setup.exe",
+      "hash": "sha256:a6f5a99172f639f8ec6eea67aa2eb2f31b5b2f552d30642cce4c5390a7da9c03",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "DBX_0.5.43_arm64-setup.exe"
+    }
+  }
+}
