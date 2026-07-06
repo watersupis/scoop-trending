@@ -1,0 +1,10 @@
+{
+  "version": "1.2.1",
+  "description": "Gas Town - multi-agent workspace manager",
+  "homepage": "https://github.com/gastownhall/gastown",
+  "license": "unknown",
+  "url": "https://github.com/gastownhall/gastown/releases/download/v1.2.1/gastown_1.2.1_windows_amd64.zip",
+  "hash": "sha256:da0b24860f227f31405c67540af539fee5d06b9fda93b674b7b87ff2a0bcd4d6",
+  "bin": "gastown_1.2.1_windows_amd64.exe",
+  "extract_dir": ""
+}
