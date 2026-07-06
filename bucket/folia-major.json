@@ -1,0 +1,14 @@
+{
+  "version": "0.5.21",
+  "description": "\u4e13\u6ce8\u4e8e\u7eda\u4e3d\u7684\u6b4c\u8bcd\u52a8\u753b\u6548\u679c\u7684\u672c\u5730\u97f3\u4e50/navidrome/\u7b2c\u4e09\u65b9\u7f51\u6613\u4e91\u64ad\u653e\u5668",
+  "homepage": "https://github.com/chthollyphile/folia-major",
+  "license": "unknown",
+  "url": "https://github.com/chthollyphile/folia-major/releases/download/v0.5.21/Folia-Setup-0.5.21.exe",
+  "hash": "sha256:15c88cc74f089ae128a6fc08a3ec386d6855844bb21c0b031a18ea04ffb9aa1a",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "Folia-Setup-0.5.21.exe"
+}
