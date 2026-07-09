@@ -1,0 +1,14 @@
+{
+  "version": "3.4.4",
+  "description": "Declarative Continuous Deployment for Kubernetes",
+  "homepage": "https://github.com/argoproj/argo-cd",
+  "license": "unknown",
+  "url": "https://github.com/argoproj/argo-cd/releases/download/v3.4.4/argocd-windows-amd64.exe",
+  "hash": "sha256:c25d18552ded8bd05df14334e542f03381ba84bab63b1528bf9125a62b5d40e7",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "argocd-windows-amd64.exe"
+}
