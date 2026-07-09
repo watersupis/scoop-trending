@@ -1,0 +1,28 @@
+{
+  "version": "1.0.129",
+  "description": "OfficeCLI is the first and best Office suite  purpose-built for AI agents to read, edit, and automate Word, Excel, and PowerPoint files. Free, open-source, single binary, no Office installation requir",
+  "homepage": "https://github.com/iOfficeAI/OfficeCLI",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/iOfficeAI/OfficeCLI/releases/download/v1.0.129/officecli-win-arm64.exe",
+      "hash": "sha256:77fb8f7802593d40d751e59281ca7a454d6f339061c0b4bc97dc0bb37c12a798",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "officecli-win-arm64.exe"
+    },
+    "64bit": {
+      "url": "https://github.com/iOfficeAI/OfficeCLI/releases/download/v1.0.129/officecli-win-x64.exe",
+      "hash": "sha256:e4c84a4a32f4d22f3880575d16b1499856d1c48e86d293274919906f95d81057",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "officecli-win-x64.exe"
+    }
+  }
+}
