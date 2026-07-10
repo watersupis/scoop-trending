@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "description": "Automatic quad remeshing tool",
+  "homepage": "https://github.com/huxingyi/autoremesher",
+  "license": "unknown",
+  "url": "https://github.com/huxingyi/autoremesher/releases/download/1.0.0/autoremesher-1.0.0-win32-x86_64.zip",
+  "hash": "sha256:cfeab5ca09381bef5d50ed196aa80c15790e84f78080948ba68a8482460d3bbf",
+  "bin": "autoremesher-1.0.0-win32-x86_64.exe",
+  "extract_dir": ""
+}
