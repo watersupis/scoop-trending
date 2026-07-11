@@ -1,0 +1,10 @@
+{
+  "version": "6.0.3",
+  "description": "TypeScript is a superset of JavaScript that compiles to clean JavaScript output.",
+  "homepage": "https://github.com/microsoft/TypeScript",
+  "license": "unknown",
+  "url": "https://github.com/microsoft/TypeScript/releases/download/v6.0.3/typescript-6.0.3.tgz",
+  "hash": "sha256:33cd0ee1beaa8c9e9d15a9da836c62ddea4c34a42d7c2d349dbc80d94165d22a",
+  "bin": "typescript-6.0.3.exe",
+  "extract_dir": ""
+}
