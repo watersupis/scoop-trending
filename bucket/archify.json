@@ -1,0 +1,10 @@
+{
+  "version": "2.10.0",
+  "description": "Any agent Skill: generate beautiful architecture diagrams with dark/light theme toggle and PNG/JPEG/WebP/SVG export",
+  "homepage": "https://github.com/tt-a1i/archify",
+  "license": "unknown",
+  "url": "https://github.com/tt-a1i/archify/releases/download/v2.10.0/archify.zip",
+  "hash": "sha256:40ba10f476067a7f0494a8cb3a254eda28c0d9bc962d8e06119850f98f72d348",
+  "bin": "archify.exe",
+  "extract_dir": ""
+}

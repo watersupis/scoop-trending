@@ -1,0 +1,10 @@
+{
+  "version": "1.2",
+  "description": "Mesh optimization library that makes meshes smaller and faster to render",
+  "homepage": "https://github.com/zeux/meshoptimizer",
+  "license": "unknown",
+  "url": "https://github.com/zeux/meshoptimizer/releases/download/v1.2/gltfpack-ubuntu.zip",
+  "hash": "sha256:ebc236f5f6c08c7e5c5750476a187d24805d44d8c680449c4b7369c333f817b1",
+  "bin": "gltfpack-ubuntu.exe",
+  "extract_dir": ""
+}
