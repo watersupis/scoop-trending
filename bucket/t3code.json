@@ -1,0 +1,24 @@
+{
+  "version": "0.0.28",
+  "description": "",
+  "homepage": "https://github.com/pingdotgg/t3code",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/pingdotgg/t3code/releases/download/v0.0.28/T3-Code-0.0.28-arm64.zip",
+      "hash": "sha256:0f23e4233a57e82edb7b0844d1afd150b9ae7f5b6e9d02ac5f797307d8da4b3f",
+      "bin": "T3-Code-0.0.28-arm64.exe",
+      "extract_dir": ""
+    },
+    "64bit": {
+      "url": "https://github.com/pingdotgg/t3code/releases/download/v0.0.28/T3-Code-0.0.28-x64.exe",
+      "hash": "sha256:de5d7a9a22d3a9e46aa0ed49180cfbb6c5b1cefffe1c7575548b1c3508cbb9dc",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "T3-Code-0.0.28-x64.exe"
+    }
+  }
+}

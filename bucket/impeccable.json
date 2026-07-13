@@ -1,0 +1,10 @@
+{
+  "version": "skill-v3.9.1",
+  "description": "The design language that makes your AI harness better at design.",
+  "homepage": "https://github.com/pbakaus/impeccable",
+  "license": "unknown",
+  "url": "https://github.com/pbakaus/impeccable/releases/download/skill-v3.9.1/universal.zip",
+  "hash": "sha256:8c753ed9d3c6b6dd656a7384c8ad5340429bd229042ddfb0e317cb5537787d6c",
+  "bin": "universal.exe",
+  "extract_dir": ""
+}
