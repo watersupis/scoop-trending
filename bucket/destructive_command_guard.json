@@ -1,0 +1,20 @@
+{
+  "version": "0.6.5",
+  "description": "The Destructive Command Guard (dcg) is for blocking dangerous git and shell commands from being executed by agents.",
+  "homepage": "https://github.com/Dicklesworthstone/destructive_command_guard",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/Dicklesworthstone/destructive_command_guard/releases/download/v0.6.5/dcg-aarch64-pc-windows-msvc.zip",
+      "hash": "sha256:28b01875b4b85db17700d092aa92e12d4973760736d013fac9e9e686e5a3d7e2",
+      "bin": "dcg-aarch64-pc-windows-msvc.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/Dicklesworthstone/destructive_command_guard/releases/download/v0.6.5/dcg-x86_64-pc-windows-msvc.zip",
+      "hash": "sha256:ea1b03e4132d50bec4f4eda84fca9365f8d10f1d1cace345071ec98a84dfa1a3",
+      "bin": "dcg-x86_64-pc-windows-msvc.exe",
+      "extract_dir": ""
+    }
+  }
+}
