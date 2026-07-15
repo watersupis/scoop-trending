@@ -1,0 +1,14 @@
+{
+  "version": "0.11.0",
+  "description": "\ud83d\udc96\ud83e\uddf8 Self hosted, you-owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraf",
+  "homepage": "https://github.com/moeru-ai/airi",
+  "license": "unknown",
+  "url": "https://github.com/moeru-ai/airi/releases/download/v0.11.0/AIRI-0.11.0-windows-x64-setup.exe",
+  "hash": "sha256:387deb6dc9498911095d29dbab7e08cb1479b0053376a71384f69783df365776",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "AIRI-0.11.0-windows-x64-setup.exe"
+}
