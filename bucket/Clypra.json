@@ -1,0 +1,24 @@
+{
+  "version": "1.1.1",
+  "description": "A modern video editor built with Tauri, React, and TypeScript. Focus on building free capabilities of premium capcut functionalities",
+  "homepage": "https://github.com/AIEraDev/Clypra",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/AIEraDev/Clypra/releases/download/v1.1.1/Clypra_1.1.1_x64-setup.exe",
+      "hash": "sha256:bba48d3f61448c83e221ef245d738905d09bfac241aaa4f1ffd10542ff4cba07",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "Clypra_1.1.1_x64-setup.exe"
+    },
+    "arm64": {
+      "url": "https://github.com/AIEraDev/Clypra/releases/download/v1.1.1/Clypra_aarch64.app.tar.gz",
+      "hash": "sha256:231d33804ba43a79d0011df571cd6a6b861fbc2655dc6b8d74f073c87be49498",
+      "bin": "Clypra_aarch64.app.tar.exe",
+      "extract_dir": ""
+    }
+  }
+}
