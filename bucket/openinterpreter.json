@@ -1,0 +1,20 @@
+{
+  "version": "rust-v0.0.25",
+  "description": "A coding agent for low-cost models",
+  "homepage": "https://github.com/openinterpreter/openinterpreter",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/openinterpreter/openinterpreter/releases/download/rust-v0.0.25/open-interpreter-package-aarch64-pc-windows-msvc.tar.gz",
+      "hash": "sha256:34cd55945adb2fea991a8e9c80885791ece1230692f08c67ce5152e632084a5f",
+      "bin": "open-interpreter-package-aarch64-pc-windows-msvc.tar.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/openinterpreter/openinterpreter/releases/download/rust-v0.0.25/open-interpreter-package-x86_64-pc-windows-msvc.tar.gz",
+      "hash": "sha256:2480084aeae20b409dccb737257c09b2cdb2d4493f07206c36358e266d935b27",
+      "bin": "open-interpreter-package-x86_64-pc-windows-msvc.tar.exe",
+      "extract_dir": ""
+    }
+  }
+}
