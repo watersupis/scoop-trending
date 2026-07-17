@@ -1,0 +1,20 @@
+{
+  "version": "0.8.4",
+  "description": ":hedgehog: PostHog is the leading platform for building self-driving products. Our developer tools \u2013 AI observability, analytics, session replay, flags, experiments, error tracking, logs, and more \u2013 c",
+  "homepage": "https://github.com/PostHog/posthog",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/PostHog/posthog/releases/download/posthog-cli/v0.8.4/posthog-cli-npm-package.tar.gz",
+      "hash": "sha256:5f622efb8f14dadab40b12ddf4fc4a63d5625c78ba21a1fe1bd8bea5cebd1976",
+      "bin": "posthog-cli-npm-package.tar.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/PostHog/posthog/releases/download/posthog-cli/v0.8.4/posthog-cli-x86_64-pc-windows-msvc.zip",
+      "hash": "sha256:5b0a148eb4fa09244dc30cdcfcb081ec6557a0359aaf6f95efe823500cf9f41d",
+      "bin": "posthog-cli-x86_64-pc-windows-msvc.exe",
+      "extract_dir": ""
+    }
+  }
+}
