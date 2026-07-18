@@ -1,0 +1,20 @@
+{
+  "version": "35.1",
+  "description": "Protocol Buffers - Google's data interchange format",
+  "homepage": "https://github.com/protocolbuffers/protobuf",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v35.1/protobuf-35.1.bazel.tar.gz",
+      "hash": "sha256:75b7b0b36b630c7b6e3aeb07b2e58993fb9494fbb2b08bba0891aaa231d4e4d1",
+      "bin": "protobuf-35.1.bazel.tar.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/protocolbuffers/protobuf/releases/download/v35.1/protoc-35.1-osx-x86_64.zip",
+      "hash": "sha256:537d73604a344ded6fc94e98e07e529d4fe3e4a0b09e59905353950fafc2a1f7",
+      "bin": "protoc-35.1-osx-x86_64.exe",
+      "extract_dir": ""
+    }
+  }
+}

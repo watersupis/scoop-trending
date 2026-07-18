@@ -1,0 +1,28 @@
+{
+  "version": "0.5.3",
+  "description": "Toolkit for building native desktop apps",
+  "homepage": "https://github.com/vercel-labs/native",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/vercel-labs/native/releases/download/v0.5.3/native-sdk-win32-arm64.exe",
+      "hash": "sha256:d33d39e61961e001de9235905620e09d2ad7584be864cd6f5f0d2e64079385b0",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "native-sdk-win32-arm64.exe"
+    },
+    "32bit": {
+      "url": "https://github.com/vercel-labs/native/releases/download/v0.5.3/native-sdk-win32-x64.exe",
+      "hash": "sha256:d30ecfc96f5968aba38d2fdaedc9c2ac23a5cd2f7e17cec39fcc8db0d70cda99",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "native-sdk-win32-x64.exe"
+    }
+  }
+}
