@@ -1,0 +1,10 @@
+{
+  "version": "2.2.10",
+  "description": "\ud83e\udd2f LobeHub is your Chief Agent Operator, organizing your agents into 7\u00d724 operations by hiring, scheduling, and reporting on your entire AI team.",
+  "homepage": "https://github.com/lobehub/lobehub",
+  "license": "unknown",
+  "url": "https://github.com/lobehub/lobehub/releases/download/v2.2.10/lobehub-desktop-2.2.10.tar.gz",
+  "hash": "sha256:2b4c4a27d969a8f570ac093e98db7b810dc0fdc9297119722529452ed07782e2",
+  "bin": "lobehub-desktop-2.2.10.tar.exe",
+  "extract_dir": ""
+}
