@@ -1,0 +1,20 @@
+{
+  "version": "1.49.0",
+  "description": "Kimi Code CLI is your next CLI agent.",
+  "homepage": "https://github.com/MoonshotAI/kimi-cli",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/MoonshotAI/kimi-cli/releases/download/1.49.0/kimi-1.49.0-aarch64-pc-windows-msvc-onedir.zip",
+      "hash": "sha256:56ddcf0a640a36fd987d3c283b9782b4e59c6b0c53e575cdbfa72784a2de1a8a",
+      "bin": "kimi-1.49.0-aarch64-pc-windows-msvc-onedir.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/MoonshotAI/kimi-cli/releases/download/1.49.0/kimi-1.49.0-x86_64-pc-windows-msvc-onedir.zip",
+      "hash": "sha256:fec935867e92e057a3e64b88eff81bec1f2765b26b0ccd0ef5dcdfc89f6306a1",
+      "bin": "kimi-1.49.0-x86_64-pc-windows-msvc-onedir.exe",
+      "extract_dir": ""
+    }
+  }
+}

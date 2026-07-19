@@ -1,0 +1,34 @@
+{
+  "version": "rust-v0.144.6",
+  "description": "Lightweight coding agent that runs in your terminal",
+  "homepage": "https://github.com/openai/codex",
+  "license": "unknown",
+  "architecture": {
+    "32bit": {
+      "url": "https://github.com/openai/codex/releases/download/rust-v0.144.6/codex-code-mode-host-x86_64-pc-windows-msvc.exe",
+      "hash": "sha256:8e6dfce22a24dfe09f2e53e02ede1fe12b3efba8b0255fff1357adde98da808a",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "codex-code-mode-host-x86_64-pc-windows-msvc.exe"
+    },
+    "arm64": {
+      "url": "https://github.com/openai/codex/releases/download/rust-v0.144.6/codex-aarch64-pc-windows-msvc.exe",
+      "hash": "sha256:2a23cdd00332064c27d4aa453d33d7a66a060be89fff33b8a388ba4db7e4c620",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "codex-aarch64-pc-windows-msvc.exe"
+    },
+    "64bit": {
+      "url": "https://github.com/openai/codex/releases/download/rust-v0.144.6/codex-npm-0.144.6.tgz",
+      "hash": "sha256:779eab25aa8473583b3d1d6f9316a0ab8d0643fdfd0bfef80ce76cc8cf85e401",
+      "bin": "codex-npm-0.144.6.exe",
+      "extract_dir": ""
+    }
+  }
+}
