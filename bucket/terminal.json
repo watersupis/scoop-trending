@@ -1,0 +1,26 @@
+{
+  "version": "1.24.11911.0",
+  "description": "The new Windows Terminal and the original Windows console host, all in the same place!",
+  "homepage": "https://github.com/microsoft/terminal",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/microsoft/terminal/releases/download/v1.24.11911.0/GroupPolicyTemplates_1.24.11911.0.zip",
+      "hash": "sha256:f0b80f4c15d0c2261c68b811d08986326706dfbfb279a72e21cd8a7db586b2e9",
+      "bin": "GroupPolicyTemplates_1.24.11911.0.exe",
+      "extract_dir": ""
+    },
+    "arm64": {
+      "url": "https://github.com/microsoft/terminal/releases/download/v1.24.11911.0/Microsoft.WindowsTerminal_1.24.11911.0_arm64.zip",
+      "hash": "sha256:d794a881d4b4e151d79366fac85d1cbe7e21e90fa69f4157796377c13f1ea844",
+      "bin": "Microsoft.WindowsTerminal_1.24.11911.0_arm64.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/microsoft/terminal/releases/download/v1.24.11911.0/Microsoft.WindowsTerminal_1.24.11911.0_x86.zip",
+      "hash": "sha256:d3915f02b916f2823b96b4463914a6f7c73075051d65125eaec137f4aca9c1fd",
+      "bin": "Microsoft.WindowsTerminal_1.24.11911.0_x86.exe",
+      "extract_dir": ""
+    }
+  }
+}
