@@ -1,0 +1,10 @@
+{
+  "version": "4.26.7",
+  "description": "AI Agent Assistant & development framework that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. \u2728",
+  "homepage": "https://github.com/AstrBotDevs/AstrBot",
+  "license": "unknown",
+  "url": "https://github.com/AstrBotDevs/AstrBot/releases/download/v4.26.7/AstrBot-v4.26.7-dashboard.zip",
+  "hash": "sha256:b73bc484b3172c61cba3d187911ac729175257af028626c85e4f6317f040576d",
+  "bin": "AstrBot-v4.26.7-dashboard.exe",
+  "extract_dir": ""
+}
