@@ -1,0 +1,20 @@
+{
+  "version": "0.1.11",
+  "description": "Self-hosted deployment platform",
+  "homepage": "https://github.com/oblien/openship",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/oblien/openship/releases/download/v0.1.11/openship-dashboard-v0.1.11.tar.gz",
+      "hash": "sha256:cd87327bcaa44cd73ae33b4e30b60e77d7d1e1584d8f4e0ef776f09c4fb26587",
+      "bin": "openship-dashboard-v0.1.11.tar.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/oblien/openship/releases/download/v0.1.11/Openship-win32-x64.zip",
+      "hash": "sha256:66db680fcc64e08da349ece53f4bbf7e42087175307f75f78cec46b5f9b2a067",
+      "bin": "Openship-win32-x64.exe",
+      "extract_dir": ""
+    }
+  }
+}

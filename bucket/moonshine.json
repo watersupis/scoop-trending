@@ -1,0 +1,26 @@
+{
+  "version": "0.0.69",
+  "description": "Very low latency speech to text, intent recognition, and text to speech, for building voice agents and interfaces",
+  "homepage": "https://github.com/moonshine-ai/moonshine",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/moonshine-ai/moonshine/releases/download/v0.0.69/moonshine-voice-rpi-arm64.tar.gz",
+      "hash": "sha256:febe8163e0abfce9124926d6a503fc34af3f076b9f9806a7f67a1a077400b158",
+      "bin": "moonshine-voice-rpi-arm64.tar.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/moonshine-ai/moonshine/releases/download/v0.0.69/moonshine-voice-windows-x86_64.tar.gz",
+      "hash": "sha256:9af4ba41cf471c4353f34b13fc96645fbb196a6ec35968d65dda5cce1c5f1711",
+      "bin": "moonshine-voice-windows-x86_64.tar.exe",
+      "extract_dir": ""
+    },
+    "64bit": {
+      "url": "https://github.com/moonshine-ai/moonshine/releases/download/v0.0.69/python-ollama-voice.tar.gz",
+      "hash": "sha256:6764cb99cdf5a9fa803366ecbf466f5c6853fbcd5947a989da21b9fc208f501a",
+      "bin": "python-ollama-voice.tar.exe",
+      "extract_dir": ""
+    }
+  }
+}
