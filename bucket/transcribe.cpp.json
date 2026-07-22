@@ -1,0 +1,20 @@
+{
+  "version": "0.1.3",
+  "description": " ggml speech-to-text inference for 16+ model families",
+  "homepage": "https://github.com/handy-computer/transcribe.cpp",
+  "license": "unknown",
+  "architecture": {
+    "32bit": {
+      "url": "https://github.com/handy-computer/transcribe.cpp/releases/download/v0.1.3/transcribe-native-0.1.3-windows-x86_64-cpu-vulkan.tar.gz",
+      "hash": "sha256:9f536cb0fb839bd305e6d92fb214fd417c7718a416a6c7646a9911fbd56fdad5",
+      "bin": "transcribe-native-0.1.3-windows-x86_64-cpu-vulkan.tar.exe",
+      "extract_dir": ""
+    },
+    "64bit": {
+      "url": "https://github.com/handy-computer/transcribe.cpp/releases/download/v0.1.3/TranscribeCpp.xcframework.zip",
+      "hash": "sha256:b7a3442e2f3552cac1ee71b5e164934dd4db243f6b4b16b1e3e3ed5d1645eefd",
+      "bin": "TranscribeCpp.xcframework.exe",
+      "extract_dir": ""
+    }
+  }
+}
