@@ -1,0 +1,10 @@
+{
+  "version": "0.56.0",
+  "description": "Hyprland is an independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks.",
+  "homepage": "https://github.com/hyprwm/Hyprland",
+  "license": "unknown",
+  "url": "https://github.com/hyprwm/Hyprland/releases/download/v0.56.0/source-v0.56.0.tar.gz",
+  "hash": "sha256:3e24a3b3a989cbb49621cdcd8a50b5ee442384d0f4602834ca55c8f993d0898c",
+  "bin": "source-v0.56.0.tar.exe",
+  "extract_dir": ""
+}
