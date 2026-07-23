@@ -1,0 +1,10 @@
+{
+  "version": "1.9.0",
+  "description": "CloudFlare free temp domain email \u514d\u8d39\u6536\u53d1 \u4e34\u65f6\u57df\u540d\u90ae\u7bb1 \u652f\u6301\u9644\u4ef6 IMAP SMTP TelegramBot",
+  "homepage": "https://github.com/dreamhunter2333/cloudflare_temp_email",
+  "license": "unknown",
+  "url": "https://github.com/dreamhunter2333/cloudflare_temp_email/releases/download/v1.9.0/frontend.zip",
+  "hash": "sha256:2575feffcbfa5ffba3ab8ae215f28e2edb2b9e67c1ebda4e0c162f6ba9a274b3",
+  "bin": "frontend.exe",
+  "extract_dir": ""
+}
