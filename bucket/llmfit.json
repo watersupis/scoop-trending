@@ -1,0 +1,20 @@
+{
+  "version": "1.1.6",
+  "description": "Hundreds of models & providers. One command to find what runs on your hardware.",
+  "homepage": "https://github.com/AlexsJones/llmfit",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/AlexsJones/llmfit/releases/download/v1.1.6/llmfit-v1.1.6-aarch64-pc-windows-msvc.zip",
+      "hash": "sha256:0cc8b983af7f87fe198161920eb5a66ab737b7faaf31fc9106f665fff783e587",
+      "bin": "llmfit-v1.1.6-aarch64-pc-windows-msvc.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/AlexsJones/llmfit/releases/download/v1.1.6/llmfit-v1.1.6-x86_64-pc-windows-msvc.zip",
+      "hash": "sha256:fe5f847aedc9bf7a331fbc513d4ccb51bc9b92b6885046b99716a91e0d81540c",
+      "bin": "llmfit-v1.1.6-x86_64-pc-windows-msvc.exe",
+      "extract_dir": ""
+    }
+  }
+}
