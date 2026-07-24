@@ -1,0 +1,28 @@
+{
+  "version": "1.7.15",
+  "description": "Open-source & free \u2014 Battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in fine-tuned ruleset (NPE, thread-",
+  "homepage": "https://github.com/alibaba/open-code-review",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/alibaba/open-code-review/releases/download/v1.7.15/opencodereview-windows-amd64.exe",
+      "hash": "sha256:fa8c2b0e04796a67e6096cd36606f46b2c305a4180039863e1e8185c759151e9",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "opencodereview-windows-amd64.exe"
+    },
+    "arm64": {
+      "url": "https://github.com/alibaba/open-code-review/releases/download/v1.7.15/opencodereview-windows-arm64.exe",
+      "hash": "sha256:72135692d49b8f7287c04021edf312d800c87b123bcd60ab454c4c43fcc549c1",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "opencodereview-windows-arm64.exe"
+    }
+  }
+}

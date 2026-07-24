@@ -1,0 +1,10 @@
+{
+  "version": "1.2.5",
+  "description": "The best browser for both you and your AI agents work in parallel.",
+  "homepage": "https://github.com/citrolabs/ego-lite",
+  "license": "unknown",
+  "url": "https://github.com/citrolabs/ego-lite/releases/download/v1.2.5/ego-browser-v1.2.5.zip",
+  "hash": "sha256:11d67c51ef6ccb89310a8b7c0a4ae71cc5937bcbcafd25d7ca69b9620fdf9a87",
+  "bin": "ego-browser-v1.2.5.exe",
+  "extract_dir": ""
+}

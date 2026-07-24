@@ -1,0 +1,14 @@
+{
+  "version": "0.4.24",
+  "description": "A hive mind communication platform",
+  "homepage": "https://github.com/block/buzz",
+  "license": "unknown",
+  "url": "https://github.com/block/buzz/releases/download/v0.4.24/Buzz_0.4.24_x64-setup_alpha-unsigned.exe",
+  "hash": "sha256:1931fff983f612364860f723997cd3692083a7128fe3b82c18f55d0144442c78",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "Buzz_0.4.24_x64-setup_alpha-unsigned.exe"
+}
