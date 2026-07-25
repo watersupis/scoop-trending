@@ -1,0 +1,20 @@
+{
+  "version": "2.6.0",
+  "description": "Offline, privacy-first grammar checker. Fast, open-source, Rust-powered",
+  "homepage": "https://github.com/Automattic/harper",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/Automattic/harper/releases/download/v2.6.0/harper-chrome-plugin.zip",
+      "hash": "sha256:1185e6c870747aa11de7fafaea69d4504d52195f62408abe62a745518a5f3562",
+      "bin": "harper-chrome-plugin.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/Automattic/harper/releases/download/v2.6.0/harper-cli-x86_64-pc-windows-msvc.zip",
+      "hash": "sha256:1669fe72aef1ac31af8097e85b26f3d5f056c401316bdf43deea9923423227c7",
+      "bin": "harper-cli-x86_64-pc-windows-msvc.exe",
+      "extract_dir": ""
+    }
+  }
+}
