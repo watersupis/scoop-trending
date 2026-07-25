@@ -1,0 +1,14 @@
+{
+  "version": "5.3.0",
+  "description": "\ud83d\udd25\ud83d\udd25\ud83d\udd25 AI-driven database tool and SQL client, The hottest GUI client, supporting MySQL, Oracle, PostgreSQL, DB2, SQL Server, DB2, SQLite, H2, ClickHouse, and more.",
+  "homepage": "https://github.com/OtterMind/Chat2DB",
+  "license": "unknown",
+  "url": "https://github.com/OtterMind/Chat2DB/releases/download/v5.3.0/Chat2DB-Community-5.3.0.msi",
+  "hash": "sha256:260e6fadcf2d9592fe0b1817b767606179e33e39dc0b083d945432688dd0b45d",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "Chat2DB-Community-5.3.0.exe"
+}

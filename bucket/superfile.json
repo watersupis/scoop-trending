@@ -1,0 +1,20 @@
+{
+  "version": "1.6.0",
+  "description": "Pretty fancy and modern terminal file manager",
+  "homepage": "https://github.com/yorukot/superfile",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/yorukot/superfile/releases/download/v1.6.0/superfile-windows-v1.6.0-amd64.zip",
+      "hash": "sha256:4264a84d38c5d13804960a5da9ea8dedb8a00439e2612d6b8a28699836ed0143",
+      "bin": "superfile-windows-v1.6.0-amd64.exe",
+      "extract_dir": ""
+    },
+    "arm64": {
+      "url": "https://github.com/yorukot/superfile/releases/download/v1.6.0/superfile-windows-v1.6.0-arm64.zip",
+      "hash": "sha256:981fa1e5cd38fe35de34badaa041be689506e3bc6ac75de30c34e4ac8e7f17aa",
+      "bin": "superfile-windows-v1.6.0-arm64.exe",
+      "extract_dir": ""
+    }
+  }
+}
