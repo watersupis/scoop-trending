@@ -1,0 +1,14 @@
+{
+  "version": "4.8.21.0",
+  "description": "Amnezia VPN Client (Desktop+Mobile)",
+  "homepage": "https://github.com/amnezia-vpn/amnezia-client",
+  "license": "unknown",
+  "url": "https://github.com/amnezia-vpn/amnezia-client/releases/download/4.8.21.0/AmneziaVPN_4.8.21.0_windows_x64.exe",
+  "hash": "sha256:2b6cfbf00965f34a6a3a163693041371c446842aede4dd73efaaeb3dd13ab996",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "AmneziaVPN_4.8.21.0_windows_x64.exe"
+}
