@@ -1,0 +1,14 @@
+{
+  "version": "2.3.0",
+  "description": "A lightweight, cloud-native GIS platform for visualizing, exploring, and analyzing geospatial data. It runs in the web browser, on the desktop, on mobile, and inside Jupyter notebooks.",
+  "homepage": "https://github.com/opengeos/GeoLibre",
+  "license": "unknown",
+  "url": "https://github.com/opengeos/GeoLibre/releases/download/v2.3.0/geolibre-desktop-2.3.0-x64.msix",
+  "hash": "sha256:66bdd13f9b6c9c9cdc65085088c5234eef07f596267f6079b2ef2cad5ec0f73d",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "geolibre-desktop-2.3.0-x64.exe"
+}
