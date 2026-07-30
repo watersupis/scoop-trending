@@ -1,0 +1,28 @@
+{
+  "version": "0.18.10",
+  "description": "The open-source alternative to Claude Cowork (powered by opencode)",
+  "homepage": "https://github.com/different-ai/openwork",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/different-ai/openwork/releases/download/v0.18.10/openwork-cloud-win-arm64-0.18.10.exe",
+      "hash": "sha256:9381c3ad3932c9491163cbff377a8eedb1d882f7cd9ed3dd736d2d5e8fc9b38c",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "openwork-cloud-win-arm64-0.18.10.exe"
+    },
+    "64bit": {
+      "url": "https://github.com/different-ai/openwork/releases/download/v0.18.10/openwork-cloud-win-x64-0.18.10.exe",
+      "hash": "sha256:481df1b4d0196c1bf19e41abf044818726ed4126235e6686cc07854c1a56e34c",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "openwork-cloud-win-x64-0.18.10.exe"
+    }
+  }
+}

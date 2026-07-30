@@ -1,0 +1,14 @@
+{
+  "version": "3.0.0",
+  "description": "Deepfakes Software For All",
+  "homepage": "https://github.com/deepfakes/faceswap",
+  "license": "unknown",
+  "url": "https://github.com/deepfakes/faceswap/releases/download/v3.0.0/faceswap_setup_x64.exe",
+  "hash": "sha256:4366bba43c32bfc200a3763abee142e1ea90ec9c7ce3c8261e7646c10223f307",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "faceswap_setup_x64.exe"
+}
