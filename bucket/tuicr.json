@@ -1,0 +1,10 @@
+{
+  "version": "0.19.1",
+  "description": "a code review TUI with vim keybindings",
+  "homepage": "https://github.com/agavra/tuicr",
+  "license": "unknown",
+  "url": "https://github.com/agavra/tuicr/releases/download/v0.19.1/tuicr-0.19.1-x86_64-pc-windows-msvc.zip",
+  "hash": "sha256:3116f4e82aaf6ce71b0496cbf535f4b2c0e457f785fc6bdf9cf45094261a4563",
+  "bin": "tuicr-0.19.1-x86_64-pc-windows-msvc.exe",
+  "extract_dir": ""
+}
