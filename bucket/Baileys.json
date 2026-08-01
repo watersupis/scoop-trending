@@ -1,0 +1,10 @@
+{
+  "version": "7.0.0-rc14",
+  "description": "Socket-based TS/JavaScript API for WhatsApp Web",
+  "homepage": "https://github.com/WhiskeySockets/Baileys",
+  "license": "unknown",
+  "url": "https://github.com/WhiskeySockets/Baileys/releases/download/v7.0.0-rc14/baileys.tgz",
+  "hash": "sha256:3fbcc1a85e1302755520c2baf51d3d342d42914aaf39ed2bce80c0dbd2d3483b",
+  "bin": "baileys.exe",
+  "extract_dir": ""
+}
