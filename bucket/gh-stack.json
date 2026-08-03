@@ -1,0 +1,38 @@
+{
+  "version": "0.1.0",
+  "description": "GitHub Stacked PRs",
+  "homepage": "https://github.com/github/gh-stack",
+  "license": "unknown",
+  "architecture": {
+    "32bit": {
+      "url": "https://github.com/github/gh-stack/releases/download/v0.1.0/windows-386.exe",
+      "hash": "sha256:d5f2aa8e54b463603b33aac498844580f997351100bcadec8af9bf7f1e22fced",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "windows-386.exe"
+    },
+    "64bit": {
+      "url": "https://github.com/github/gh-stack/releases/download/v0.1.0/windows-amd64.exe",
+      "hash": "sha256:6ddbb230c9467d7bcca8a2175244ddeee7951c00365d2d557d44dd797f362304",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "windows-amd64.exe"
+    },
+    "arm64": {
+      "url": "https://github.com/github/gh-stack/releases/download/v0.1.0/windows-arm64.exe",
+      "hash": "sha256:5ffdf8c0b69ae330ccc747497ad9658b70e723d63d6ec8d0928727c3725dde8d",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "windows-arm64.exe"
+    }
+  }
+}
