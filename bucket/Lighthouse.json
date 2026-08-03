@@ -1,0 +1,10 @@
+{
+  "version": "1.0.1",
+  "description": "",
+  "homepage": "https://github.com/HarbourMasters/Lighthouse",
+  "license": "unknown",
+  "url": "https://github.com/HarbourMasters/Lighthouse/releases/download/1.0.1/Lighthouse-Split-Rock-Bravo-Win64.zip",
+  "hash": "sha256:f9ff1f6a001f2994f170ec0e532ac2dae97ff2a8d4c5d41752b9983b16e6f0c0",
+  "bin": "Lighthouse-Split-Rock-Bravo-Win64.exe",
+  "extract_dir": ""
+}
