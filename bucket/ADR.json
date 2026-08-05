@@ -1,0 +1,10 @@
+{
+  "version": "sensor-v1.0.0",
+  "description": "ADR secures enterprise AI agents through observability, security benchmarking, and threat detection. Deployed at Uber.",
+  "homepage": "https://github.com/uber/ADR",
+  "license": "unknown",
+  "url": "https://github.com/uber/ADR/releases/download/sensor-v1.0.0/adr_sensor-1.0.0.tar.gz",
+  "hash": "sha256:abc99cefdcd55e5b3dff8c532fdb20dab645f4b26fbbe2b03f2e79c4e6eb37c4",
+  "bin": "adr_sensor-1.0.0.tar.exe",
+  "extract_dir": ""
+}
