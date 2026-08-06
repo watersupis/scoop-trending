@@ -1,0 +1,26 @@
+{
+  "version": "2.9.4",
+  "description": "A modern runtime for JavaScript and TypeScript.",
+  "homepage": "https://github.com/denoland/deno",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/denoland/deno/releases/download/v2.9.4/deno-aarch64-pc-windows-msvc.zip",
+      "hash": "sha256:7c8c94a603c7de90a4c41fa9b87d31bc9d3c91fb84af65dadacc8cdd97d365d4",
+      "bin": "deno-aarch64-pc-windows-msvc.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/denoland/deno/releases/download/v2.9.4/deno-x86_64-pc-windows-msvc.zip",
+      "hash": "sha256:68ed08b05c56cf887e9aa509947dc3f468f7e12f47a13e5c1abd51d46d1453ef",
+      "bin": "deno-x86_64-pc-windows-msvc.exe",
+      "extract_dir": ""
+    },
+    "64bit": {
+      "url": "https://github.com/denoland/deno/releases/download/v2.9.4/deno_src.tar.gz",
+      "hash": "sha256:95f9d8361809f2d2f3ee2d8a6955951dcf96c2f4bbeb540c2d6fdd9363e6dc94",
+      "bin": "deno_src.tar.exe",
+      "extract_dir": ""
+    }
+  }
+}
