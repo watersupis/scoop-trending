@@ -1,0 +1,10 @@
+{
+  "version": "0.6.0",
+  "description": "Graph-Native Infrastructure for Context and Accountable AI Systems",
+  "homepage": "https://github.com/semantica-agi/semantica",
+  "license": "unknown",
+  "url": "https://github.com/semantica-agi/semantica/releases/download/v0.6.0/semantica-0.6.0.tar.gz",
+  "hash": "sha256:426a7788d6c81b3ed17756eab1aa981cb8771668e76095279f0be0258c181e5b",
+  "bin": "semantica-0.6.0.tar.exe",
+  "extract_dir": ""
+}
