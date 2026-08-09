@@ -1,0 +1,20 @@
+{
+  "version": "0.3.3",
+  "description": "Why is this running? Trace any process, port, container, or file back to what started it - CLI + TUI.",
+  "homepage": "https://github.com/pranshuparmar/witr",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/pranshuparmar/witr/releases/download/v0.3.3/witr-windows-amd64.zip",
+      "hash": "sha256:1ae95a354fa7f767828ad7942497f3801e5299f8afad5844ec6d1819703a6b28",
+      "bin": "witr-windows-amd64.exe",
+      "extract_dir": ""
+    },
+    "arm64": {
+      "url": "https://github.com/pranshuparmar/witr/releases/download/v0.3.3/witr-windows-arm64.zip",
+      "hash": "sha256:e644a1e152437a0aff93c672660b363de690361ca90f35a792f88b361ca569e4",
+      "bin": "witr-windows-arm64.exe",
+      "extract_dir": ""
+    }
+  }
+}

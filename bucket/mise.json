@@ -1,0 +1,28 @@
+{
+  "version": "2026.8.3",
+  "description": "dev tools, env vars, task runner",
+  "homepage": "https://github.com/jdx/mise",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/jdx/mise/releases/download/v2026.8.3/mise-v2026.8.3-windows-arm64.exe",
+      "hash": "sha256:c6a02022bf20d44f06b631683dc63eea7736ab6beabb4b5504075bdc0de55687",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "mise-v2026.8.3-windows-arm64.exe"
+    },
+    "64bit": {
+      "url": "https://github.com/jdx/mise/releases/download/v2026.8.3/mise-v2026.8.3-windows-x64.exe",
+      "hash": "sha256:b09bfe160ffa33236f03547e6e0ef2bd937fcd7556b1feb5c2d227c174ef2a22",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "mise-v2026.8.3-windows-x64.exe"
+    }
+  }
+}

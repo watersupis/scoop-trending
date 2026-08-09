@@ -1,0 +1,10 @@
+{
+  "version": "0.7.1",
+  "description": "A self-improving RLM agent for coding workflows and long-running autonomous tasks.",
+  "homepage": "https://github.com/PrimeIntellect-ai/prime-agent",
+  "license": "unknown",
+  "url": "https://github.com/PrimeIntellect-ai/prime-agent/releases/download/v0.7.1/prime-agent-0.7.1.tgz",
+  "hash": "sha256:d68612c83239caafab72cc76c55ac572bfd07a059ea8fbd2a3ddbe1f2b55dcdb",
+  "bin": "prime-agent-0.7.1.exe",
+  "extract_dir": ""
+}
