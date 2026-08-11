@@ -1,0 +1,14 @@
+{
+  "version": "0.0.589",
+  "description": "The ultimate RAG for your monorepo. Query, understand, and edit multi-language codebases with the power of AI and knowledge graphs",
+  "homepage": "https://github.com/vitali87/code-graph-rag",
+  "license": "unknown",
+  "url": "https://github.com/vitali87/code-graph-rag/releases/download/v0.0.589/code-graph-rag-windows-amd64.exe",
+  "hash": "sha256:e9838d11a8a6664e85df0b26b3b2babd96115741de85e0bfd8b5731b1c13dbb0",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "code-graph-rag-windows-amd64.exe"
+}
