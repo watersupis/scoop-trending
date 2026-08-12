@@ -1,0 +1,10 @@
+{
+  "version": "2.0.0",
+  "description": "\u628a\u4e66\u3001\u957f\u89c6\u9891\u3001\u64ad\u5ba2\u7b49\u9ad8\u4ef7\u503c\u5185\u5bb9\u84b8\u998f\u6210\u53ef\u6267\u884c\u7684 Agent Skills",
+  "homepage": "https://github.com/kangarooking/cangjie-skill",
+  "license": "unknown",
+  "url": "https://github.com/kangarooking/cangjie-skill/releases/download/v2.0.0/cangjie-skill-v2.0.0.zip",
+  "hash": "sha256:970413e54b2903a82ab43e0a307a54bd844af0810c3745977dd2936d46e05df9",
+  "bin": "cangjie-skill-v2.0.0.exe",
+  "extract_dir": ""
+}
