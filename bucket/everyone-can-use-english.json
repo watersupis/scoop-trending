@@ -1,0 +1,14 @@
+{
+  "version": "0.7.9",
+  "description": "\u4eba\u4eba\u90fd\u80fd\u7528\u82f1\u8bed",
+  "homepage": "https://github.com/ZuodaoTech/everyone-can-use-english",
+  "license": "unknown",
+  "url": "https://github.com/ZuodaoTech/everyone-can-use-english/releases/download/v0.7.9/Enjoy-0.7.9.Setup.exe",
+  "hash": "sha256:6e7be3bf08148396cb8e5d2fd4cb0b961daee0815f73414d8c1b99379ab87b54",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "Enjoy-0.7.9.Setup.exe"
+}
