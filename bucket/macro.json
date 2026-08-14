@@ -1,0 +1,10 @@
+{
+  "version": "2026.8.12.0",
+  "description": "Macro is a unified workspace for teams: email, chat, docs, tasks, agents, calls, and CRM \u2014 @-linked together with shared AI memory.",
+  "homepage": "https://github.com/macro-inc/macro",
+  "license": "unknown",
+  "url": "https://github.com/macro-inc/macro/releases/download/v2026.8.12.0/web-app-v2026.8.12.0.tar.gz",
+  "hash": "sha256:fb9f89e918674e8109115c6b4929256851b1728f5eab3936ab4a905b049ebab9",
+  "bin": "web-app-v2026.8.12.0.tar.exe",
+  "extract_dir": ""
+}

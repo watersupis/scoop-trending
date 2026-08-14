@@ -1,0 +1,28 @@
+{
+  "version": "0.26.4",
+  "description": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs",
+  "homepage": "https://github.com/infiniflow/ragflow",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/infiniflow/ragflow/releases/download/v0.26.4/ragflow-cli-v0.26.4-windows-amd64.exe",
+      "hash": "sha256:639d67416f53effd2ace524d1eb751b58d822c45c67d6c9172db7d855e24c94c",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "ragflow-cli-v0.26.4-windows-amd64.exe"
+    },
+    "arm64": {
+      "url": "https://github.com/infiniflow/ragflow/releases/download/v0.26.4/ragflow-cli-v0.26.4-windows-arm64.exe",
+      "hash": "sha256:0bd2a179c72abc42953d91e89873e77e31a8808255bd2e3172708df83871cb4e",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "ragflow-cli-v0.26.4-windows-arm64.exe"
+    }
+  }
+}
