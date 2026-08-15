@@ -1,0 +1,34 @@
+{
+  "version": "1.4.9",
+  "description": "An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.",
+  "homepage": "https://github.com/rustdesk/rustdesk",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/rustdesk/rustdesk/releases/download/1.4.9/rustdesk-1.4.9-aarch64.exe",
+      "hash": "sha256:c717bf52fdd601c58419e46c503176dd87187d174ebf8b3b5854ca381e8e9145",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "rustdesk-1.4.9-aarch64.exe"
+    },
+    "64bit": {
+      "url": "https://github.com/rustdesk/rustdesk/releases/download/1.4.9/rustdesk-1.4.9-unsigned.tar.gz",
+      "hash": "sha256:81d03a1e0cf1a2cc2f4568b8aae58fdf76b5625892d7c61d7882a4e85b320236",
+      "bin": "rustdesk-1.4.9-unsigned.tar.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/rustdesk/rustdesk/releases/download/1.4.9/rustdesk-1.4.9-x86-sciter.exe",
+      "hash": "sha256:28e89fc56598978799b87b3d177464a112da174fceb61512919c514a7e90ea20",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "rustdesk-1.4.9-x86-sciter.exe"
+    }
+  }
+}
