@@ -1,0 +1,14 @@
+{
+  "version": "0.4.1",
+  "description": "Desktop app to generate 3D models from images using local AI \u2014 runs entirely on your GPU",
+  "homepage": "https://github.com/lightningpixel/modly",
+  "license": "unknown",
+  "url": "https://github.com/lightningpixel/modly/releases/download/v0.4.1/Modly-Setup-0.4.1.exe",
+  "hash": "sha256:8100d72d471456cc5140c8713dac54d627c981168ae21d15bc896c34ef27805a",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "Modly-Setup-0.4.1.exe"
+}

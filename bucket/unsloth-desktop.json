@@ -1,0 +1,24 @@
+{
+  "version": "0.1.701-beta",
+  "description": "Local UI to run and train LLMs and diffusion models, including Qwen3.8, Kimi K3, MiniMax-H3, Gemma 4, DeepSeek-V4, FLUX and more.",
+  "homepage": "https://github.com/unslothai/unsloth",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/unslothai/unsloth/releases/download/v0.1.701-beta/Unsloth-Desktop-0_1_701_beta-ARM64.app.tar.gz",
+      "hash": "sha256:f49c9b456e3bd63e4ed87f4fa24f957d3d8cd909a2fd2738d1bdaf53e0a71dde",
+      "bin": "Unsloth-Desktop-0_1_701_beta-ARM64.app.tar.exe",
+      "extract_dir": ""
+    },
+    "64bit": {
+      "url": "https://github.com/unslothai/unsloth/releases/download/v0.1.701-beta/Unsloth-Desktop-0_1_701_beta-Windows.exe",
+      "hash": "sha256:3f9fe4489d724d746909e082693a067f6b7e7803d99c5c95efe1ff604edf88e5",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "Unsloth-Desktop-0_1_701_beta-Windows.exe"
+    }
+  }
+}
