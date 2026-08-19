@@ -1,0 +1,14 @@
+{
+  "version": "1.8.19",
+  "description": "A full-featured download manager.",
+  "homepage": "https://github.com/agalwood/Motrix",
+  "license": "unknown",
+  "url": "https://github.com/agalwood/Motrix/releases/download/v1.8.19/Motrix-1.8.19-ia32.appx",
+  "hash": "sha256:b6b0d4dc5365dfc0d988d8cd5d2df763e594489cf5d3f6cba36e38bbe3980ee4",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "Motrix-1.8.19-ia32.exe"
+}
