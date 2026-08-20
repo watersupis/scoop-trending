@@ -1,0 +1,14 @@
+{
+  "version": "0.4.4",
+  "description": "local multi-agent harness",
+  "homepage": "https://github.com/chaitanyagiri/munder-difflin",
+  "license": "unknown",
+  "url": "https://github.com/chaitanyagiri/munder-difflin/releases/download/v0.4.4/Munder-Difflin-0.4.4-win-x64-setup.exe",
+  "hash": "sha256:d0cadba590d83832ac75e14a0a82f3c6140acb8be0492629874a2ae5f86188b1",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "Munder-Difflin-0.4.4-win-x64-setup.exe"
+}

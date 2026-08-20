@@ -1,0 +1,28 @@
+{
+  "version": "0.6.10",
+  "description": "\ud83e\uddf1 easy fast local-first microVM runtime and library",
+  "homepage": "https://github.com/superradcompany/microsandbox",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/superradcompany/microsandbox/releases/download/v0.6.10/msb-metrics-windows-aarch64.exe",
+      "hash": "sha256:169be6d1edccebedac02cd5de4ac7ab09289c9918c233464eb34010993eafd8c",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "msb-metrics-windows-aarch64.exe"
+    },
+    "32bit": {
+      "url": "https://github.com/superradcompany/microsandbox/releases/download/v0.6.10/msb-metrics-windows-x86_64.exe",
+      "hash": "sha256:56a1883ea049febf3c4ce310a79d92bc45649e491c6058871d75c5978a41d639",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "msb-metrics-windows-x86_64.exe"
+    }
+  }
+}
