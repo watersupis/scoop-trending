@@ -1,0 +1,10 @@
+{
+  "version": "4.5.2",
+  "description": "A full-stack AI Red Teaming platform securing AI ecosystems via Agent Scan, Skills Scan, MCP scan, AI Infra scan and LLM jailbreak evaluation.",
+  "homepage": "https://github.com/Tencent/AI-Infra-Guard",
+  "license": "unknown",
+  "url": "https://github.com/Tencent/AI-Infra-Guard/releases/download/v4.5.2/AI-Infra-Guard-v4.5.2.tar.gz",
+  "hash": "sha256:7ed0f0af24e0ee41a323c909da0bf8968d68a8760ccbd65b9aa1f8a6a51dbd2e",
+  "bin": "AI-Infra-Guard-v4.5.2.tar.exe",
+  "extract_dir": ""
+}
