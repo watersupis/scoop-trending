@@ -1,0 +1,14 @@
+{
+  "version": "0.1.11",
+  "description": "Apache Maka (Incubating) is a local-first AI agent workspace. Model messages, tool calls, tool results, permission decisions, and termination events are recorded as an append-only log.",
+  "homepage": "https://github.com/apache/maka",
+  "license": "unknown",
+  "url": "https://github.com/apache/maka/releases/download/v0.1.11/Maka-0.1.11-win-x64.exe",
+  "hash": "sha256:9bbae06ea45344e9feac82133f0b70ac060d1e16829b8fde47fa777a5e686abe",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "Maka-0.1.11-win-x64.exe"
+}

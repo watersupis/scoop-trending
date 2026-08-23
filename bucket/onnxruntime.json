@@ -1,0 +1,20 @@
+{
+  "version": "1.29.0",
+  "description": "ONNX Runtime: cross-platform, high performance ML inferencing and training accelerator",
+  "homepage": "https://github.com/microsoft/onnxruntime",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.29.0/onnxruntime-win-arm64-1.29.0.zip",
+      "hash": "sha256:a094a49c3ced0f9fca554647cc7566ae99d93a63a8ce6bf47975561c2de7608e",
+      "bin": "onnxruntime-win-arm64-1.29.0.exe",
+      "extract_dir": ""
+    },
+    "64bit": {
+      "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.29.0/onnxruntime-win-x64-1.29.0.zip",
+      "hash": "sha256:c9b4b7086b529ad814f428c1bad028e20a25d7dc0699836775faace4ab5b78b2",
+      "bin": "onnxruntime-win-x64-1.29.0.exe",
+      "extract_dir": ""
+    }
+  }
+}
