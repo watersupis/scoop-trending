@@ -1,0 +1,10 @@
+{
+  "version": "0.1.179",
+  "description": "Sub2API \u4e00\u7ad9\u5f0f\u5f00\u6e90\u4e2d\u8f6c\u670d\u52a1\uff0c\u8ba9 Claude\u3001Openai \u3001Gemini\u3001Grok\u8ba2\u9605\u7edf\u4e00\u63a5\u5165\uff0c\u652f\u6301\u62fc\u8f66\u5171\u4eab\uff0c\u66f4\u9ad8\u6548\u5206\u644a\u6210\u672c\uff0c\u539f\u751f\u5de5\u5177\u65e0\u7f1d\u4f7f\u7528\u3002",
+  "homepage": "https://github.com/Wei-Shaw/sub2api",
+  "license": "unknown",
+  "url": "https://github.com/Wei-Shaw/sub2api/releases/download/v0.1.179/sub2api_0.1.179_windows_amd64.zip",
+  "hash": "sha256:2df1271b8f90fd106f80363cfc753c9a32ee68eaa6170a2282bd48701c0f5f36",
+  "bin": "sub2api_0.1.179_windows_amd64.exe",
+  "extract_dir": ""
+}
