@@ -1,0 +1,14 @@
+{
+  "version": "0.18.0",
+  "description": "Your own search engine",
+  "homepage": "https://github.com/asciimoo/hister",
+  "license": "unknown",
+  "url": "https://github.com/asciimoo/hister/releases/download/v0.18.0/hister_0.18.0_windows_amd64.exe",
+  "hash": "sha256:1b55e01a290b9775e6e89f00326ebab4e0cbf876008ae84f61114e12edf51439",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "hister_0.18.0_windows_amd64.exe"
+}
