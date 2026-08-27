@@ -1,0 +1,10 @@
+{
+  "version": "2.1.1",
+  "description": "Self-organizing AI second brain for Obsidian + Claude Code. Drop any source and Claude reads, links, and files it into one connected knowledge graph of plain Markdown you own. AI note-taking, personal",
+  "homepage": "https://github.com/AgriciDaniel/claude-obsidian",
+  "license": "unknown",
+  "url": "https://github.com/AgriciDaniel/claude-obsidian/releases/download/v2.1.1/claude-obsidian-v2.1.1.zip",
+  "hash": "sha256:756258849bd36197389dc6c47deca95b2b046e10457713b4bbcb5c940cbf2b5e",
+  "bin": "claude-obsidian-v2.1.1.exe",
+  "extract_dir": ""
+}
