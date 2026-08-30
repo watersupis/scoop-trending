@@ -1,0 +1,10 @@
+{
+  "version": "0.6.6",
+  "description": "Compile PHP to Native Binaries",
+  "homepage": "https://github.com/swoole/typephp",
+  "license": "unknown",
+  "url": "https://github.com/swoole/typephp/releases/download/v0.6.6/tpc_v0.6.6_windows_x64.zip",
+  "hash": "sha256:de6bd71ef659283c4311e25838cca98b65f6314a314d3a74dcde9437a50829ec",
+  "bin": "tpc_v0.6.6_windows_x64.exe",
+  "extract_dir": ""
+}
