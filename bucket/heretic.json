@@ -1,0 +1,10 @@
+{
+  "version": "1.4.0",
+  "description": "Fully automatic censorship removal for language models",
+  "homepage": "https://github.com/p-e-w/heretic",
+  "license": "unknown",
+  "url": "https://github.com/p-e-w/heretic/releases/download/v1.4.0/heretic-1.4.0.zip",
+  "hash": "sha256:02dcaec06c513aa353d4323ca4140650291bb0f6661439fbb283f8bf3f5b9057",
+  "bin": "heretic-1.4.0.exe",
+  "extract_dir": ""
+}
