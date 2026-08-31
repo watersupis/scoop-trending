@@ -1,0 +1,10 @@
+{
+  "version": "4.0.0",
+  "description": "</> htmx - high power tools for HTML",
+  "homepage": "https://github.com/bigskysoftware/htmx",
+  "license": "unknown",
+  "url": "https://github.com/bigskysoftware/htmx/releases/download/v4.0.0/htmx-4.0.0-dist.zip",
+  "hash": "sha256:858d5fb806ed3003704bc9c9a7fc7aad15213dcfc78c5b78b005fff4211ce57c",
+  "bin": "htmx-4.0.0-dist.exe",
+  "extract_dir": ""
+}
