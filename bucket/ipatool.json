@@ -1,0 +1,20 @@
+{
+  "version": "2.4.0",
+  "description": "Command-line tool that allows searching and downloading app packages (known as ipa files) for iOS, iPadOS, tvOS, and visionOS from the App Store.",
+  "homepage": "https://github.com/majd/ipatool",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/majd/ipatool/releases/download/v2.4.0/ipatool-2.4.0-windows-amd64.tar.gz",
+      "hash": "sha256:986d4378705a51f1b8f3003a8819dc74a4141fa458999e3b5b3a590095ecd64d",
+      "bin": "ipatool-2.4.0-windows-amd64.tar.exe",
+      "extract_dir": ""
+    },
+    "arm64": {
+      "url": "https://github.com/majd/ipatool/releases/download/v2.4.0/ipatool-2.4.0-windows-arm64.tar.gz",
+      "hash": "sha256:b8da37ff1d3b1f08029fda0cb97b0e22e96d9c828271965f153ad01fcd0e95c8",
+      "bin": "ipatool-2.4.0-windows-arm64.tar.exe",
+      "extract_dir": ""
+    }
+  }
+}
