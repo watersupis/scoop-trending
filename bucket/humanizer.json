@@ -1,0 +1,10 @@
+{
+  "version": "2.11.1",
+  "description": "Agent skill that removes signs of AI-generated writing from text",
+  "homepage": "https://github.com/blader/humanizer",
+  "license": "unknown",
+  "url": "https://github.com/blader/humanizer/releases/download/v2.11.1/humanizer-skill.zip",
+  "hash": "sha256:dc8fa1fde55af77107b49213a628461e8a27ee7b07a7c054786030a6ff720c3c",
+  "bin": "humanizer-skill.exe",
+  "extract_dir": ""
+}

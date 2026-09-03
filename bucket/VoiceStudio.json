@@ -1,0 +1,24 @@
+{
+  "version": "0.5.1",
+  "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative \u2014 voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+  "homepage": "https://github.com/debpalash/VoiceStudio",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/debpalash/VoiceStudio/releases/download/v0.5.1/VoiceStudio_0.5.1_x64_en-US.msi",
+      "hash": "sha256:0e0a9b3ef7d4c48243bae2b12f610c5bc991bbb127e17700a410c24063cab2a6",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "VoiceStudio_0.5.1_x64_en-US.exe"
+    },
+    "arm64": {
+      "url": "https://github.com/debpalash/VoiceStudio/releases/download/v0.5.1/VoiceStudio_aarch64.app.tar.gz",
+      "hash": "sha256:5cc9dbf91e8ac600dff08ebe6636c833bfa37d542be99a1484636da2baf69dca",
+      "bin": "VoiceStudio_aarch64.app.tar.exe",
+      "extract_dir": ""
+    }
+  }
+}
