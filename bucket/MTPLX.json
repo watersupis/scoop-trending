@@ -1,0 +1,10 @@
+{
+  "version": "2.10.2",
+  "description": "3x faster speeds on MLX | Qwen 3.8 27B | Native MTP Speculative Decoding On Apple Silicon With No External Drafter.",
+  "homepage": "https://github.com/youssofal/MTPLX",
+  "license": "unknown",
+  "url": "https://github.com/youssofal/MTPLX/releases/download/v2.10.2/mtplx-2.10.2.tar.gz",
+  "hash": "sha256:78f71cbeb1ffcb6a76110158994de5d2b7a10d9b28aac0f38160a79dd4665f0a",
+  "bin": "mtplx-2.10.2.tar.exe",
+  "extract_dir": ""
+}
