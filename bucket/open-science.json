@@ -1,0 +1,14 @@
+{
+  "version": "0.26.0",
+  "description": "Open Science by AIPOCH is an open-source, local-first, model-agnostic AI research workbench for macOS, Windows, and Linux, with scientific agents, Python/R notebooks, data connectors, and reproducible",
+  "homepage": "https://github.com/aipoch/open-science",
+  "license": "unknown",
+  "url": "https://github.com/aipoch/open-science/releases/download/v0.26.0/aipoch-open-science-0.26.0-win-x64-setup.exe",
+  "hash": "sha256:9997cf46811c6a3bd5b657a15182520058dd5746f58c079ac37eef5897e0420b",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "aipoch-open-science-0.26.0-win-x64-setup.exe"
+}

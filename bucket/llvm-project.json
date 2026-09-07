@@ -1,0 +1,30 @@
+{
+  "version": "llvmorg-23.1.0",
+  "description": "The LLVM Project is a collection of modular and reusable compiler and toolchain technologies.",
+  "homepage": "https://github.com/llvm/llvm-project",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.0/clang%2Bllvm-23.1.0-aarch64-pc-windows-msvc.tar.xz",
+      "hash": "sha256:caec9387c7925f61de5f53ced0ccf3a9ab9effbe200ea67787f52aa188471cf8",
+      "bin": "clang+llvm-23.1.0-aarch64-pc-windows-msvc.tar.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.0/clang%2Bllvm-23.1.0-x86_64-pc-windows-msvc.tar.xz",
+      "hash": "sha256:5799ebeca6870e9e61d5b4c8bc869ca8490e8db55f22d1388c4545404864d9e3",
+      "bin": "clang+llvm-23.1.0-x86_64-pc-windows-msvc.tar.exe",
+      "extract_dir": ""
+    },
+    "64bit": {
+      "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.0/LLVM-23.1.0-win64.msi",
+      "hash": "sha256:95602d03944a7db534899adc5203988b63921ad0db71fe15748a3fe3d340416f",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "LLVM-23.1.0-win64.exe"
+    }
+  }
+}

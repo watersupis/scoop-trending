@@ -1,0 +1,10 @@
+{
+  "version": "5.0.0-beta.39",
+  "description": "Stremio - Freedom to Stream",
+  "homepage": "https://github.com/Stremio/stremio-web",
+  "license": "unknown",
+  "url": "https://github.com/Stremio/stremio-web/releases/download/v5.0.0-beta.39/stremio-web.zip",
+  "hash": "sha256:581451348995898a037f029883a2bbd6eeb3fbfd2059851c255812cde148e2f3",
+  "bin": "stremio-web.exe",
+  "extract_dir": ""
+}
