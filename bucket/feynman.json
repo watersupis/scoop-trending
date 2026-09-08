@@ -1,0 +1,10 @@
+{
+  "version": "0.3.48",
+  "description": "The open source AI research agent.",
+  "homepage": "https://github.com/advaitpaliwal/feynman",
+  "license": "unknown",
+  "url": "https://github.com/advaitpaliwal/feynman/releases/download/v0.3.48/feynman-0.3.48-win32-x64.zip",
+  "hash": "sha256:8e82c57817b998bb469940b7e5043ecc17b9055612d57ff976bf54a88d7fb246",
+  "bin": "feynman-0.3.48-win32-x64.exe",
+  "extract_dir": ""
+}
