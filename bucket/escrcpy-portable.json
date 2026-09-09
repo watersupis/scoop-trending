@@ -1,0 +1,28 @@
+{
+  "version": "3.2.0",
+  "description": "\ud83d\udcf1 Display and control your Android device graphically with scrcpy.",
+  "homepage": "https://github.com/viarotel-org/escrcpy",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/viarotel-org/escrcpy/releases/download/v3.2.0/Escrcpy-3.2.0-win-portable-arm64.exe",
+      "hash": "sha256:aa64ab191f421648414a6d79bd1bb1595487898a175ec930637d0497b85450cb",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "Escrcpy-3.2.0-win-portable-arm64.exe"
+    },
+    "64bit": {
+      "url": "https://github.com/viarotel-org/escrcpy/releases/download/v3.2.0/Escrcpy-3.2.0-win-portable-x64.exe",
+      "hash": "sha256:7379875b9b7cc0ee4940414d4f1cf0b53f5cd86a65458699b920fd024c635f8d",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "Escrcpy-3.2.0-win-portable-x64.exe"
+    }
+  }
+}
