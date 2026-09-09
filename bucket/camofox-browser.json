@@ -1,0 +1,20 @@
+{
+  "version": "camoufox-backup-380139564",
+  "description": "Stealth headless browser for AI agents \u2014 bypass Cloudflare, bot detection, and anti-scraping. Drop-in Puppeteer/Playwright replacement.",
+  "homepage": "https://github.com/jo-inc/camofox-browser",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/jo-inc/camofox-browser/releases/download/camoufox-backup-380139564/camoufox-152.0.4-beta.30-lin.arm64.zip",
+      "hash": "sha256:60447260af8bebdb0ec3f2aa72f687b879e5598367303de2e3fdbc7a5be8c124",
+      "bin": "camoufox-152.0.4-beta.30-lin.arm64.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/jo-inc/camofox-browser/releases/download/camoufox-backup-380139564/camoufox-152.0.4-beta.30-lin.x86_64.zip",
+      "hash": "sha256:5720d45b894ce1770543de024c6f10d514b38be560fa2dc3226b3d8586caf672",
+      "bin": "camoufox-152.0.4-beta.30-lin.x86_64.exe",
+      "extract_dir": ""
+    }
+  }
+}
