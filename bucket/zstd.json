@@ -1,0 +1,20 @@
+{
+  "version": "1.5.7",
+  "description": "Zstandard - Fast real-time compression algorithm",
+  "homepage": "https://github.com/facebook/zstd",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/facebook/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz",
+      "hash": "sha256:eb33e51f49a15e023950cd7825ca74a4a2b43db8354825ac24fc1b7ee09e6fa3",
+      "bin": "zstd-1.5.7.tar.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/facebook/zstd/releases/download/v1.5.7/zstd-v1.5.7-win32.zip",
+      "hash": "sha256:231265caed189d933339cda2352e0905ae9076b43c534ba24f84fbab8f719a2d",
+      "bin": "zstd-v1.5.7-win32.exe",
+      "extract_dir": ""
+    }
+  }
+}
