@@ -1,0 +1,10 @@
+{
+  "version": "1.0.6",
+  "description": "Removes 20+ patterns of AI slop from any piece of writing.",
+  "homepage": "https://github.com/petergyang/no-ai-slop",
+  "license": "unknown",
+  "url": "https://github.com/petergyang/no-ai-slop/releases/download/v1.0.6/no-ai-slop-plugin-1.0.6.zip",
+  "hash": "sha256:b945715a71ef5040e9b4c198b58da5ebf9d054b0a224af4f6193ea8f0830a94e",
+  "bin": "no-ai-slop-plugin-1.0.6.exe",
+  "extract_dir": ""
+}
