@@ -1,0 +1,10 @@
+{
+  "version": "1.10.2",
+  "description": "Run frontier MoE models on hardware you already own \u2014 pure C, zero deps, experts streamed from disk. Tiny engine, immense model. \ud83d\udc26",
+  "homepage": "https://github.com/JustVugg/colibri",
+  "license": "unknown",
+  "url": "https://github.com/JustVugg/colibri/releases/download/v1.10.2/colibri-v1.10.2-windows-x86_64.zip",
+  "hash": "sha256:8dcad7b5806b9c54e85f04e54a65f280b43583e5eca0c59512ae23b43d19e051",
+  "bin": "colibri-v1.10.2-windows-x86_64.exe",
+  "extract_dir": ""
+}

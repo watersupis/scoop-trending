@@ -1,0 +1,10 @@
+{
+  "version": "0.6.11",
+  "description": "LLM Wiki is a cross-platform desktop application that turns your documents into an organized, interlinked knowledge base \u2014 automatically. Instead of traditional RAG (retrieve-and-answer from scratch e",
+  "homepage": "https://github.com/nashsu/llm_wiki",
+  "license": "unknown",
+  "url": "https://github.com/nashsu/llm_wiki/releases/download/v0.6.11/LLM-Wiki-0.6.11-windows-x64-portable.zip",
+  "hash": "sha256:d9e3df15ac026d70c3e2716bd6d519ce67540943c1b998deef1f18c7cad2f8e6",
+  "bin": "LLM-Wiki-0.6.11-windows-x64-portable.exe",
+  "extract_dir": ""
+}
