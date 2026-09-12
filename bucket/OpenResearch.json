@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "description": "Run parallel research agents with any model",
+  "homepage": "https://github.com/alphaXiv/OpenResearch",
+  "license": "unknown",
+  "architecture": {
+    "32bit": {
+      "url": "https://github.com/alphaXiv/OpenResearch/releases/download/v0.2.0/openresearch-cli-x86_64-pc-windows-msvc.zip",
+      "hash": "sha256:ce673547318f38d046254050c617ab270c4b9bb07a2c34af5164ee2ad837cf73",
+      "bin": "openresearch-cli-x86_64-pc-windows-msvc.exe",
+      "extract_dir": ""
+    },
+    "64bit": {
+      "url": "https://github.com/alphaXiv/OpenResearch/releases/download/v0.2.0/source.tar.gz",
+      "hash": "sha256:87e9730b82703b3f80a5710072c61537988b7e70129fd0af265aee9240fd45e9",
+      "bin": "source.tar.exe",
+      "extract_dir": ""
+    }
+  }
+}

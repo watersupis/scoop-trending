@@ -1,0 +1,14 @@
+{
+  "version": "2.3.3",
+  "description": "User friendly sideloader",
+  "homepage": "https://github.com/nab138/iloader",
+  "license": "unknown",
+  "url": "https://github.com/nab138/iloader/releases/download/v2.3.3/iloader-windows-x64.exe",
+  "hash": "sha256:049c68b17a81f2312516cea4c5852e9fc58fe2a9b295bb2308ff5894eaa9b96c",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "iloader-windows-x64.exe"
+}
