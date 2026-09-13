@@ -1,0 +1,38 @@
+{
+  "version": "0.0.1",
+  "description": "Network stack research tool. TCP tunnel with pluggable transports.",
+  "homepage": "https://github.com/p1neappleXpress/OpenFlux",
+  "license": "unknown",
+  "architecture": {
+    "32bit": {
+      "url": "https://github.com/p1neappleXpress/OpenFlux/releases/download/0.0.1/universal-bypass-tool-windows-386.exe",
+      "hash": "sha256:ebfa0c524e69e454d40bf6cb17204766fcf525507db2cc78bc2ede727e1bad3b",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "universal-bypass-tool-windows-386.exe"
+    },
+    "64bit": {
+      "url": "https://github.com/p1neappleXpress/OpenFlux/releases/download/0.0.1/universal-bypass-tool-windows-amd64.exe",
+      "hash": "sha256:d53f340f0acad8342510f8f8232c0339185fe4f5c03105ff7db84c38849dd7b6",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "universal-bypass-tool-windows-amd64.exe"
+    },
+    "arm64": {
+      "url": "https://github.com/p1neappleXpress/OpenFlux/releases/download/0.0.1/universal-bypass-tool-windows-arm64.exe",
+      "hash": "sha256:3be8623aa41ff5a61fb43dd0bcba4714e2c3968b468c5df2ef0d14285946e821",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "universal-bypass-tool-windows-arm64.exe"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "version": "4.0.19.2979",
+  "description": "Smart PVR for newsgroup and bittorrent users.",
+  "homepage": "https://github.com/Sonarr/Sonarr",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/Sonarr/Sonarr/releases/download/v4.0.19.2979/Sonarr.main.4.0.19.2979.osx-arm64-app.zip",
+      "hash": "sha256:fbc2acc3984f12e1bae95f07ad7424425b5f1058fc02f8bb79e709638d2c5c94",
+      "bin": "Sonarr.main.4.0.19.2979.osx-arm64-app.exe",
+      "extract_dir": ""
+    },
+    "64bit": {
+      "url": "https://github.com/Sonarr/Sonarr/releases/download/v4.0.19.2979/Sonarr.main.4.0.19.2979.win-x64-installer.exe",
+      "hash": "sha256:a154132c26fd437b2a9b9d983f62dd62398f8601e6428f1655fc83ec510075dd",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "Sonarr.main.4.0.19.2979.win-x64-installer.exe"
+    },
+    "32bit": {
+      "url": "https://github.com/Sonarr/Sonarr/releases/download/v4.0.19.2979/Sonarr.main.4.0.19.2979.win-x86-installer.exe",
+      "hash": "sha256:2cfb404944400e0c677f70f0adc5c6d32f569972c7c7e61a5e3d9496c33150a5",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "Sonarr.main.4.0.19.2979.win-x86-installer.exe"
+    }
+  }
+}
