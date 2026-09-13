@@ -1,0 +1,10 @@
+{
+  "version": "1.9.1",
+  "description": "Open Source AI trading agent that operates autonomously across 1000+ markets - Polymarket, Kalshi, Binance, Hyperliquid, Solana DEXs, 5 EVM chains. Scans    for edge, executes instantly, manages risk ",
+  "homepage": "https://github.com/alsk1992/CloddsBot",
+  "license": "unknown",
+  "url": "https://github.com/alsk1992/CloddsBot/releases/download/v1.9.1/clodds.tgz",
+  "hash": "sha256:475965fc2ff931f838d5d35f07f01f040672d7b75921a4a20fd4b2c48469c047",
+  "bin": "clodds.exe",
+  "extract_dir": ""
+}

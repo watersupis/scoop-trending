@@ -1,0 +1,10 @@
+{
+  "version": "yue2-v0.1.6",
+  "description": "YuE2: frontier music generation with symbolic planning, zero-shot covers, and agentic music editing.",
+  "homepage": "https://github.com/multimodal-art-projection/YuE",
+  "license": "unknown",
+  "url": "https://github.com/multimodal-art-projection/YuE/releases/download/yue2-v0.1.6/yue2-music.zip",
+  "hash": "sha256:88eb19e0d3720401fbfb71ada7b9be9661c16db1471252e678fdc99ffe1cc67a",
+  "bin": "yue2-music.exe",
+  "extract_dir": ""
+}

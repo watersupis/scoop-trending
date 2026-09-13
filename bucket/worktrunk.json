@@ -1,0 +1,20 @@
+{
+  "version": "0.77.0",
+  "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+  "homepage": "https://github.com/max-sixty/worktrunk",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/max-sixty/worktrunk/releases/download/v0.77.0/source.tar.gz",
+      "hash": "sha256:f72fc99ae7bad8ea5b1c7fa994dc23c058f7f45c2115f3874d7dd045684eda05",
+      "bin": "source.tar.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/max-sixty/worktrunk/releases/download/v0.77.0/worktrunk-x86_64-pc-windows-msvc.zip",
+      "hash": "sha256:9335ff5913d39f68bf276a6715a97bf6068c29db7ca774432340522241878e15",
+      "bin": "worktrunk-x86_64-pc-windows-msvc.exe",
+      "extract_dir": ""
+    }
+  }
+}
