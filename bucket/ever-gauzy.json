@@ -1,0 +1,14 @@
+{
+  "version": "111.0.11",
+  "description": "Ever\u00ae Gauzy\u2122 - Open Business Management Platform (ERP/CRM/HRM/ATS/PM) - https://gauzy.co",
+  "homepage": "https://github.com/ever-co/ever-gauzy",
+  "license": "unknown",
+  "url": "https://github.com/ever-co/ever-gauzy/releases/download/v111.0.11/gauzy-agent-x64-111.0.11.exe",
+  "hash": "sha256:f7124d2016122b78a50168e1a97ba13d533bcda9dee91150dd7968492f6eff7e",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "gauzy-agent-x64-111.0.11.exe"
+}

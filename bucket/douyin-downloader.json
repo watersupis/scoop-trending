@@ -1,0 +1,14 @@
+{
+  "version": "desktop-v0.11.5",
+  "description": "A practical Douyin downloader for both single-item and profile batch downloads, with progress display, retries, SQLite deduplication, and browser fallback support. \u6296\u97f3\u6279\u91cf\u4e0b\u8f7d\u5de5\u5177\uff0c\u53bb\u6c34\u5370\uff0c\u652f\u6301\u89c6\u9891\u3001\u56fe\u96c6\u3001\u5408\u96c6\u3001\u97f3\u4e50(\u539f\u58f0)\u3002",
+  "homepage": "https://github.com/jiji262/douyin-downloader",
+  "license": "unknown",
+  "url": "https://github.com/jiji262/douyin-downloader/releases/download/desktop-v0.11.5/Douzy-Setup-0.11.5.exe",
+  "hash": "sha256:ae2a1544b506f787609a67cfb35d98753f866015ff18298cc0e8ef6f00f15871",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "Douzy-Setup-0.11.5.exe"
+}
