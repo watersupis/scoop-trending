@@ -1,0 +1,28 @@
+{
+  "version": "1.18.2",
+  "description": "An open-source cross-platform alternative to AirDrop",
+  "homepage": "https://github.com/localsend/localsend",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/localsend/localsend/releases/download/v1.18.2/LocalSend-CLI-1.18.2-windows-arm-64.exe",
+      "hash": "sha256:0ff4c4c90ea68f0cc586b5a08c900f89bf71c02a454c78cd035bc3c4fc879bf7",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "LocalSend-CLI-1.18.2-windows-arm-64.exe"
+    },
+    "32bit": {
+      "url": "https://github.com/localsend/localsend/releases/download/v1.18.2/LocalSend-1.18.2-windows-x86-64-unsigned.exe",
+      "hash": "sha256:f53856750ad087a17b996309171262fa7d89071c350e0dc5df6530f34dd8a2ae",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "LocalSend-1.18.2-windows-x86-64-unsigned.exe"
+    }
+  }
+}

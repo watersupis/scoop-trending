@@ -1,0 +1,10 @@
+{
+  "version": "0.8b1",
+  "description": "\ud83e\ude84 Data Formulator is an interactive AI-powered data analysis system makes it easy to connect, explore and visualize data.",
+  "homepage": "https://github.com/microsoft/data-formulator",
+  "license": "unknown",
+  "url": "https://github.com/microsoft/data-formulator/releases/download/0.8b1/Data-Formulator-Windows-x64.zip",
+  "hash": "sha256:78b2bab08a9a6260c4e8255cd2baaa6946d6599d398bd55559f3d1e3ac084ad7",
+  "bin": "Data-Formulator-Windows-x64.exe",
+  "extract_dir": ""
+}
