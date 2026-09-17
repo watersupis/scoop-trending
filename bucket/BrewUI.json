@@ -1,0 +1,10 @@
+{
+  "version": "0.4.2",
+  "description": "\ud83d\udcfa Homebrew's official macOS GUI",
+  "homepage": "https://github.com/Homebrew/BrewUI",
+  "license": "unknown",
+  "url": "https://github.com/Homebrew/BrewUI/releases/download/v0.4.2/Homebrew-0.4.2.dSYMs.zip",
+  "hash": "sha256:dde1276e6a01dcb00482d5150daca83765d957fcfb656190a216769b6121b569",
+  "bin": "Homebrew-0.4.2.dSYMs.exe",
+  "extract_dir": ""
+}
