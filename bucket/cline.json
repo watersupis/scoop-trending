@@ -1,0 +1,14 @@
+{
+  "version": "desktop-v0.0.29",
+  "description": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant.",
+  "homepage": "https://github.com/cline/cline",
+  "license": "unknown",
+  "url": "https://github.com/cline/cline/releases/download/desktop-v0.0.29/Cline_0.0.29_x64-setup.exe",
+  "hash": "sha256:be0008ad63e55cccb7f2b75aa1fae1f85301aaa9c2a3277ad147489994331cb4",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "Cline_0.0.29_x64-setup.exe"
+}

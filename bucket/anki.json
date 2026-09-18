@@ -1,0 +1,28 @@
+{
+  "version": "26.09.2",
+  "description": "Anki is a smart spaced repetition flashcard program",
+  "homepage": "https://github.com/ankitects/anki",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/ankitects/anki/releases/download/26.09.2/anki-26.09.2-win-arm64.msi",
+      "hash": "sha256:81aaaa0600de30aea8514c392de2a068f5b290cb9b6a31058dd187280e57e924",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "anki-26.09.2-win-arm64.exe"
+    },
+    "64bit": {
+      "url": "https://github.com/ankitects/anki/releases/download/26.09.2/anki-26.09.2-win-x64.msi",
+      "hash": "sha256:91e211db3d9f61e6a7dfed966966d677c9fb580cb8b1a97891a4f7bcdd8629b5",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "anki-26.09.2-win-x64.exe"
+    }
+  }
+}

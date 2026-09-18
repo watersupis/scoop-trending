@@ -1,0 +1,10 @@
+{
+  "version": "0.10.23",
+  "description": "Tinycast \u2014 a tiny, fully native macOS launcher, hotkeys, and clipboard history.",
+  "homepage": "https://github.com/abue-ammar/tinycast",
+  "license": "unknown",
+  "url": "https://github.com/abue-ammar/tinycast/releases/download/v0.10.23/Tinycast-0.10.23.zip",
+  "hash": "sha256:7ecd2e6349913da995d6c14021ab6bbe0063f1269eba994ad9c9c66bdbce3703",
+  "bin": "Tinycast-0.10.23.exe",
+  "extract_dir": ""
+}
