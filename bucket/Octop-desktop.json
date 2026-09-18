@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "description": "A smarter, self-hosted AI assistant \u2014 multi-user, multi-agent.",
+  "homepage": "https://github.com/TencentCloud/Octop",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/TencentCloud/Octop/releases/download/v1.0.0/Octop-desktop-windows-amd64-1.0.0.exe",
+      "hash": "sha256:0885d22e96cffcc79e180ab735628dc53a58d355fd9c8a1ea9fd0bc588593313",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "Octop-desktop-windows-amd64-1.0.0.exe"
+    },
+    "arm64": {
+      "url": "https://github.com/TencentCloud/Octop/releases/download/v1.0.0/Octop-desktop-windows-arm64-1.0.0.exe",
+      "hash": "sha256:2242b055d685d257e1fd9ce0956b0fb58a952cf50504b000c375ec99b5d93046",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "Octop-desktop-windows-arm64-1.0.0.exe"
+    }
+  }
+}
