@@ -1,0 +1,14 @@
+{
+  "version": "server-v0.0.8",
+  "description": "Memory and context engine + app that is extremely fast, scalable, and can be run fully locally. The Memory API for the AI era.",
+  "homepage": "https://github.com/supermemoryai/supermemory",
+  "license": "unknown",
+  "url": "https://github.com/supermemoryai/supermemory/releases/download/server-v0.0.8/supermemory-server-windows-x64.exe",
+  "hash": "sha256:d8fb2ac0d52eeb230ad15dc8bf70dbc2ae481f0f8cfaeec70d97f7955ce71c47",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "supermemory-server-windows-x64.exe"
+}

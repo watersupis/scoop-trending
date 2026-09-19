@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "description": "RustFS is an open-source, S3-compatible high-performance object storage system supporting migration and coexistence with other S3-compatible platforms such as MinIO and Ceph.",
+  "homepage": "https://github.com/rustfs/rustfs",
+  "license": "unknown",
+  "url": "https://github.com/rustfs/rustfs/releases/download/1.0.0/rustfs-windows-x86_64-latest.zip",
+  "hash": "sha256:4ccf5858ce8e6f70f01af2394c8cc0e0878ee77faa6c20d3179153476554b7d8",
+  "bin": "rustfs-windows-x86_64-latest.exe",
+  "extract_dir": ""
+}
