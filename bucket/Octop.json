@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "description": "A smarter, self-hosted AI assistant \u2014 multi-user, multi-agent.",
+  "homepage": "https://github.com/TencentCloud/Octop",
+  "license": "unknown",
+  "url": "https://github.com/TencentCloud/Octop/releases/download/v1.0.0/octop-1.0.0.tar.gz",
+  "hash": "sha256:01fddb1d8a677fc698f0747c7fba2e05a8bd760e50b562b61c042da87fadaf56",
+  "bin": "octop-1.0.0.tar.exe",
+  "extract_dir": ""
+}

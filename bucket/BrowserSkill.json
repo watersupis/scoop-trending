@@ -1,0 +1,10 @@
+{
+  "version": "cli-v0.3.0",
+  "description": "Let AI agents use your real, logged-in browser without interrupting your work. CLI + extension for browser automation across any shell-capable AI agent.",
+  "homepage": "https://github.com/Tencent/BrowserSkill",
+  "license": "unknown",
+  "url": "https://github.com/Tencent/BrowserSkill/releases/download/cli-v0.3.0/bsk-v0.3.0-x86_64-pc-windows-msvc.zip",
+  "hash": "sha256:cd31665559d0faae2cfb79ab1c3cb6854bce10b4fde510be015456e8370f629e",
+  "bin": "bsk-v0.3.0-x86_64-pc-windows-msvc.exe",
+  "extract_dir": ""
+}

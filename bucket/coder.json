@@ -1,0 +1,24 @@
+{
+  "version": "2.36.5",
+  "description": "Secure environments for developers and their agents",
+  "homepage": "https://github.com/coder/coder",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/coder/coder/releases/download/v2.36.5/coder_2.36.5_windows_amd64_installer.exe",
+      "hash": "sha256:707aa491829fb650a0834f48a4720e77914be0eaf58c85ede5a1384acc5396f4",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "coder_2.36.5_windows_amd64_installer.exe"
+    },
+    "arm64": {
+      "url": "https://github.com/coder/coder/releases/download/v2.36.5/coder_2.36.5_windows_arm64.zip",
+      "hash": "sha256:f7e541b9989a35f2e7d8480ffa25e8e56525c405a88780eea2d2081a35d946ce",
+      "bin": "coder_2.36.5_windows_arm64.exe",
+      "extract_dir": ""
+    }
+  }
+}
