@@ -1,0 +1,10 @@
+{
+  "version": "0.3.20",
+  "description": "OpenAI Codex \u684c\u9762\u7aef/CLI \u7684\u53ef\u89c6\u5316\u7ba1\u7406\u5de5\u5177\uff0c\u5177\u6709Provider/API \u5207\u6362\u3001\u4f1a\u8bdd\u540c\u6b65\u3001\u63d0\u793a\u8bcd\u6ce8\u5165\u3001Skills/MCP \u7ba1\u7406\u3001TOML \u914d\u7f6e\u53ef\u89c6\u5316\u7684\u8de8\u5e73\u53f0\u5de5\u5177\u3002",
+  "homepage": "https://github.com/yynxxxxx/Codex-X",
+  "license": "unknown",
+  "url": "https://github.com/yynxxxxx/Codex-X/releases/download/v0.3.20/Codex-X-0.3.20-windows-x64-portable.zip",
+  "hash": "sha256:044c32d0ee19039760256431ab02042607ceed7aeb1dca82d93bd8669d2ca06b",
+  "bin": "Codex-X-0.3.20-windows-x64-portable.exe",
+  "extract_dir": ""
+}
