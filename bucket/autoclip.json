@@ -1,0 +1,24 @@
+{
+  "version": "1.3.1",
+  "description": "AutoClip : AI-powered video clipping and highlight generation \u00b7 \u4e00\u6b3e\u667a\u80fd\u9ad8\u5149\u63d0\u53d6\u4e0e\u526a\u8f91\u7684\u4e8c\u521b\u5de5\u5177",
+  "homepage": "https://github.com/zhouxiaoka/autoclip",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/zhouxiaoka/autoclip/releases/download/v1.3.1/AutoClip.Desktop_1.3.1_aarch64.app.tar.gz",
+      "hash": "sha256:5a3c69df2814742f1ad359bded90b15759c7760c9843554ce23a8bc393ba0343",
+      "bin": "AutoClip.Desktop_1.3.1_aarch64.app.tar.exe",
+      "extract_dir": ""
+    },
+    "64bit": {
+      "url": "https://github.com/zhouxiaoka/autoclip/releases/download/v1.3.1/AutoClip.Desktop_1.3.1_x64-setup.exe",
+      "hash": "sha256:95d1e196e668c19e5dbac0cbf683969289e325badbb588d56d61934c4f86dcb1",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "AutoClip.Desktop_1.3.1_x64-setup.exe"
+    }
+  }
+}
