@@ -1,0 +1,10 @@
+{
+  "version": "3.2.1",
+  "description": "A community-supported supercharged document management system: scan, index and archive all your documents",
+  "homepage": "https://github.com/paperless-ngx/paperless-ngx",
+  "license": "unknown",
+  "url": "https://github.com/paperless-ngx/paperless-ngx/releases/download/v3.2.1/paperless-ngx-v3.2.1.tar.xz",
+  "hash": "sha256:7391e75706d9dafe84dd2235df12c932c0034a4f453725437d07918eee7a35b8",
+  "bin": "paperless-ngx-v3.2.1.tar.exe",
+  "extract_dir": ""
+}
