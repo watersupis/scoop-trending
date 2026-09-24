@@ -1,0 +1,10 @@
+{
+  "version": "2026.9.20",
+  "description": "Cross-vendor 3D Gaussian Splatting trainer - video to splat to mesh, Vulkan or CUDA.",
+  "homepage": "https://github.com/harry7557558/spirula-studio",
+  "license": "unknown",
+  "url": "https://github.com/harry7557558/spirula-studio/releases/download/v2026.9.20/spirula-2026.9.20-ubuntu-vulkan-x86_64.zip",
+  "hash": "sha256:eed5a327883c3f9c956f82e4cc5d0af22c6eb996127784c1c3702b0ef4c234a4",
+  "bin": "spirula-2026.9.20-ubuntu-vulkan-x86_64.exe",
+  "extract_dir": ""
+}

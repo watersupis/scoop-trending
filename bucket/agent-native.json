@@ -1,0 +1,28 @@
+{
+  "version": "0.1.264",
+  "description": "A framework for building agentic apps",
+  "homepage": "https://github.com/BuilderIO/agent-native",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/BuilderIO/agent-native/releases/download/v0.1.264/Agent-Native-arm64.exe",
+      "hash": "sha256:12434e7d86d147d2c6b552de94f0905f7829f0fd62ce5723c65d364594c394af",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "Agent-Native-arm64.exe"
+    },
+    "64bit": {
+      "url": "https://github.com/BuilderIO/agent-native/releases/download/v0.1.264/Agent-Native-x64.exe",
+      "hash": "sha256:69169fbc4c17c60af75a221b82f4f1ca36c3c89c554a39887c51c4b03052ff0c",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "Agent-Native-x64.exe"
+    }
+  }
+}
