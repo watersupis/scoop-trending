@@ -1,0 +1,10 @@
+{
+  "version": "0.10.1",
+  "description": "Hindsight: Agent Memory That Learns",
+  "homepage": "https://github.com/vectorize-io/hindsight",
+  "license": "unknown",
+  "url": "https://github.com/vectorize-io/hindsight/releases/download/v0.10.1/hindsight_all-0.10.1.tar.gz",
+  "hash": "sha256:59fd1c2873bfb506fc8ee828e124232c7bea712b8bf8decb8c8e40378f17dd47",
+  "bin": "hindsight_all-0.10.1.tar.exe",
+  "extract_dir": ""
+}

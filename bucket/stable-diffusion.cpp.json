@@ -1,0 +1,10 @@
+{
+  "version": "master-913-b167b94",
+  "description": "Diffusion model(SD,Flux,Wan,Qwen Image,Z-Image,...) inference in pure C/C++",
+  "homepage": "https://github.com/leejet/stable-diffusion.cpp",
+  "license": "unknown",
+  "url": "https://github.com/leejet/stable-diffusion.cpp/releases/download/master-913-b167b94/cudart-sd-bin-win-cu12-x64.zip",
+  "hash": "sha256:fe20366827d357c00797eebb58244dddab7fd9a348d70090c3871004c320f38d",
+  "bin": "cudart-sd-bin-win-cu12-x64.exe",
+  "extract_dir": ""
+}
