@@ -1,0 +1,20 @@
+{
+  "version": "2.7.0",
+  "description": "OpenBao is a software solution to manage, store, and distribute sensitive data including secrets, certificates, and keys.",
+  "homepage": "https://github.com/openbao/openbao",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/openbao/openbao/releases/download/v2.7.0/openbao-dist-v2.7.0.tar.xz",
+      "hash": "sha256:154f190148b8bdc526c033afaa212664b10af798fbeb826d908350b3573ed1c2",
+      "bin": "openbao-dist-v2.7.0.tar.exe",
+      "extract_dir": ""
+    },
+    "arm64": {
+      "url": "https://github.com/openbao/openbao/releases/download/v2.7.0/openbao_2.7.0_netbsd_arm64.tar.gz",
+      "hash": "sha256:a017d20395eddca58d7c3415188879c5eef19f5b6992dc14821c42a15276c34c",
+      "bin": "openbao_2.7.0_netbsd_arm64.tar.exe",
+      "extract_dir": ""
+    }
+  }
+}
