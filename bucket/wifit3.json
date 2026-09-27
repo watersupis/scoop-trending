@@ -1,0 +1,14 @@
+{
+  "version": "0.3.3",
+  "description": "Wifite but USB-only & cross-platform.",
+  "homepage": "https://github.com/derv82/wifit3",
+  "license": "unknown",
+  "url": "https://github.com/derv82/wifit3/releases/download/v0.3.3/wifit3-windows-x64.exe",
+  "hash": "sha256:9917debacbcfa7e30b315db42798395419a7f2609df658132c9f512e8f5871ce",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "wifit3-windows-x64.exe"
+}

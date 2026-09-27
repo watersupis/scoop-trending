@@ -1,0 +1,14 @@
+{
+  "version": "0.12.4",
+  "description": "A living pixel-art station where real AI agents do real work. Local-first desktop agent harness - bring your own key, watch your crew actually run.",
+  "homepage": "https://github.com/androoAGI/starnet",
+  "license": "unknown",
+  "url": "https://github.com/androoAGI/starnet/releases/download/v0.12.4/StarNet_0.12.4_x64-setup.exe",
+  "hash": "sha256:ca0bb0d790c0cef03b4663a38086c136e28c5d58eb57043d4a28097a2dd9adf2",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "StarNet_0.12.4_x64-setup.exe"
+}
