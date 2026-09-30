@@ -1,0 +1,10 @@
+{
+  "version": "0.8.94",
+  "description": "Write HTML. Render video. Built for agents.",
+  "homepage": "https://github.com/heygen-com/hyperframes",
+  "license": "unknown",
+  "url": "https://github.com/heygen-com/hyperframes/releases/download/v0.8.94/hyperframes-agent-plugin.zip",
+  "hash": "sha256:40e0aa1b7fd3ad36a158446ca20d121b80d09a4a242761ea8411fb0859766358",
+  "bin": "hyperframes-agent-plugin.exe",
+  "extract_dir": ""
+}

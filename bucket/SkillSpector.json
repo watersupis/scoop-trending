@@ -1,0 +1,10 @@
+{
+  "version": "2.12.0",
+  "description": "Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, security risks, prompt injection, data exfiltration, and supply-chain risks in Claude Code, Codex, and MCP skills befo",
+  "homepage": "https://github.com/NVIDIA/SkillSpector",
+  "license": "unknown",
+  "url": "https://github.com/NVIDIA/SkillSpector/releases/download/v2.12.0/skillspector-2.12.0.tar.gz",
+  "hash": "sha256:507c367b8f53b821adf0568bb32c7e08dd2da8f63900efa7ceccb53e9b401b53",
+  "bin": "skillspector-2.12.0.tar.exe",
+  "extract_dir": ""
+}
