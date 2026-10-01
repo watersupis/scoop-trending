@@ -1,0 +1,10 @@
+{
+  "version": "0.2.20",
+  "description": "\ud83d\udcd1 PageIndex: Document Index for Vectorless, Reasoning-based RAG",
+  "homepage": "https://github.com/VectifyAI/PageIndex",
+  "license": "unknown",
+  "url": "https://github.com/VectifyAI/PageIndex/releases/download/v0.2.20/pageindex-0.2.20.tar.gz",
+  "hash": "sha256:271ab0cae42ef4967deeebd8ea1894a1f06822ba91aa8d5686b201044940287f",
+  "bin": "pageindex-0.2.20.tar.exe",
+  "extract_dir": ""
+}
