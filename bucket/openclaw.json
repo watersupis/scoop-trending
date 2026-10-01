@@ -1,0 +1,26 @@
+{
+  "version": "2026.9.7",
+  "description": "The AI that really does things. Any OS. Any Platform. The lobster way. \ud83e\udd9e ",
+  "homepage": "https://github.com/openclaw/openclaw",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/openclaw/openclaw/releases/download/v2026.9.7/OpenClaw-2026.9.7-arm64.dSYM.zip",
+      "hash": "sha256:306706926fd2acd06f82e0c77bfbb907d470f66180bdc5578d0cdd1898b97b68",
+      "bin": "OpenClaw-2026.9.7-arm64.dSYM.exe",
+      "extract_dir": ""
+    },
+    "64bit": {
+      "url": "https://github.com/openclaw/openclaw/releases/download/v2026.9.7/openclaw-2026.9.7-dependency-evidence.zip",
+      "hash": "sha256:491b24de2011ca7bc76b30a97a300e978e7f54151032a186d0f26471a5884487",
+      "bin": "openclaw-2026.9.7-dependency-evidence.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/openclaw/openclaw/releases/download/v2026.9.7/OpenClaw-2026.9.7-x86_64.dSYM.zip",
+      "hash": "sha256:af957a63377f0866ba2efb326d9133ab34a9ab07293e82569343dffd4e65c989",
+      "bin": "OpenClaw-2026.9.7-x86_64.dSYM.exe",
+      "extract_dir": ""
+    }
+  }
+}
