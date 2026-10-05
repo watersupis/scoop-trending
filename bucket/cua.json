@@ -1,0 +1,26 @@
+{
+  "version": "cua-sdk-v0.3.1",
+  "description": "Scale computer-use 2.0 with open-source drivers, cross-OS fleets, and benchmarks for training, evaluation, and data generation.",
+  "homepage": "https://github.com/trycua/cua",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/trycua/cua/releases/download/cua-sdk-v0.3.1/cua-0.3.1-win32-arm64-msvc.tar.gz",
+      "hash": "sha256:61d25b26a8d9fe3867ee0a4c52bac9f4dffec0d5d1388b6411ebc589da074a12",
+      "bin": "cua-0.3.1-win32-arm64-msvc.tar.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/trycua/cua/releases/download/cua-sdk-v0.3.1/cua-0.3.1-win32-x64-msvc.tar.gz",
+      "hash": "sha256:5d9ab436b5cc2cbd8f573b58aa2ae87de94233d406559d621f59435a0e442205",
+      "bin": "cua-0.3.1-win32-x64-msvc.tar.exe",
+      "extract_dir": ""
+    },
+    "64bit": {
+      "url": "https://github.com/trycua/cua/releases/download/cua-sdk-v0.3.1/cua-cli-0.3.1-windows-x64.zip",
+      "hash": "sha256:a5217c4f740896beebec15911f5f40c40ee8164c17513687e4210c888685749b",
+      "bin": "cua-cli-0.3.1-windows-x64.exe",
+      "extract_dir": ""
+    }
+  }
+}

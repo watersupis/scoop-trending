@@ -1,0 +1,14 @@
+{
+  "version": "0.1.1",
+  "description": "Tool for automatic PS5 executables porting to Linux and Windows",
+  "homepage": "https://github.com/boykopovar/AnyPS5",
+  "license": "unknown",
+  "url": "https://github.com/boykopovar/AnyPS5/releases/download/v0.1.1/relinker-v0.1.1.exe",
+  "hash": "sha256:1553f254a74f10b9c6bdd97934647709a1171dec9de15248455f827f0c174521",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "relinker-v0.1.1.exe"
+}
