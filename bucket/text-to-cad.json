@@ -1,0 +1,10 @@
+{
+  "version": "0.7.12",
+  "description": "Give your agent CAD superpowers.",
+  "homepage": "https://github.com/earthtojake/text-to-cad",
+  "license": "unknown",
+  "url": "https://github.com/earthtojake/text-to-cad/releases/download/v0.7.12/cad-openai-plugin-0.7.12.zip",
+  "hash": "sha256:8c67241dc6e5ae6e23ecb3192d918cfa09ca88f539974c61a3870c84dadb1ffe",
+  "bin": "cad-openai-plugin-0.7.12.exe",
+  "extract_dir": ""
+}
