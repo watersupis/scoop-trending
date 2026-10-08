@@ -1,0 +1,10 @@
+{
+  "version": "0.65.0",
+  "description": "Open source Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents. Built for multitasking, organization, and programmability.",
+  "homepage": "https://github.com/manaflow-ai/cmux",
+  "license": "unknown",
+  "url": "https://github.com/manaflow-ai/cmux/releases/download/v0.65.0/gettext-0.24.tar.gz",
+  "hash": "sha256:c918503d593d70daf4844d175a13d816afacb667c06fba1ec9dcd5002c1518b7",
+  "bin": "gettext-0.24.tar.exe",
+  "extract_dir": ""
+}
