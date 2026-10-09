@@ -1,0 +1,14 @@
+{
+  "version": "artcraft-v0.41.0",
+  "description": "ArtCraft is an intentional crafting engine for artists, designers, and filmmakers",
+  "homepage": "https://github.com/storytold/artcraft",
+  "license": "unknown",
+  "url": "https://github.com/storytold/artcraft/releases/download/artcraft-v0.41.0/ArtCraft_0.41.0_x64-setup.exe",
+  "hash": "sha256:cb15da474ae36a7a7f930a6e9916be2794e7cc84c3340b531c38eabc82f4363e",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "ArtCraft_0.41.0_x64-setup.exe"
+}
