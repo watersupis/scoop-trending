@@ -1,0 +1,10 @@
+{
+  "version": "6.16.2",
+  "description": "Use Claude Code, Codex, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (mul",
+  "homepage": "https://github.com/Alishahryar1/free-claude-code",
+  "license": "unknown",
+  "url": "https://github.com/Alishahryar1/free-claude-code/releases/download/v6.16.2/free_claude_code-6.16.2.tar.gz",
+  "hash": "sha256:f9671aa9bc79705dd0d3871de865d83db9cd0a0714adab114f5bb3927921a465",
+  "bin": "free_claude_code-6.16.2.tar.exe",
+  "extract_dir": ""
+}
