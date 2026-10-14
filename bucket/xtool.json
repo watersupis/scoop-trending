@@ -1,0 +1,10 @@
+{
+  "version": "1.22.2",
+  "description": "Cross-platform Xcode replacement. Build and deploy iOS apps with SwiftPM on Linux, Windows, macOS.",
+  "homepage": "https://github.com/xtool-org/xtool",
+  "license": "unknown",
+  "url": "https://github.com/xtool-org/xtool/releases/download/1.22.2/xtool.app.dSYM.zip",
+  "hash": "sha256:0ccb120b0020ef0b47c9a84f6bdd727a62fc0a00c72c9bbc744a425c39dba393",
+  "bin": "xtool.app.dSYM.exe",
+  "extract_dir": ""
+}
