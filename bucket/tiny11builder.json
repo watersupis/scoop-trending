@@ -1,0 +1,20 @@
+{
+  "version": "winui-v0.1.1",
+  "description": "WinUI app for building smaller, customized Windows 11 images.",
+  "homepage": "https://github.com/ntdevlabs/tiny11builder",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/ntdevlabs/tiny11builder/releases/download/winui-v0.1.1/Tiny11Builder-0.1.1-win-arm64.zip",
+      "hash": "sha256:29c5d96b1071c49a2550a07d0ae8a1d554b78ac0e100281cff0a69e7386821ad",
+      "bin": "Tiny11Builder-0.1.1-win-arm64.exe",
+      "extract_dir": ""
+    },
+    "64bit": {
+      "url": "https://github.com/ntdevlabs/tiny11builder/releases/download/winui-v0.1.1/Tiny11Builder-0.1.1-win-x64.zip",
+      "hash": "sha256:da74c179e1f6ae0576210d3c5f138e74529de7c245ad1054e86def2f6fe63f92",
+      "bin": "Tiny11Builder-0.1.1-win-x64.exe",
+      "extract_dir": ""
+    }
+  }
+}
