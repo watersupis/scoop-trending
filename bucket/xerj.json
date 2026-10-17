@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0-rc.95",
+  "description": "XERJ is the new way for AI to search data. Its autoindex capability activates agents to know your data without the token waste of grep and sed. One command indexes code, docs, logs and PDFs for search",
+  "homepage": "https://github.com/xerj-org/xerj",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/xerj-org/xerj/releases/download/v1.0.0-rc.95/xerj-1.0.0-rc.95-aarch64-pc-windows-msvc.zip",
+      "hash": "sha256:9055c061c6c835a0000d651f31c7eda056fdbb223b6c87fe6d30aeefd2cbad79",
+      "bin": "xerj-1.0.0-rc.95-aarch64-pc-windows-msvc.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/xerj-org/xerj/releases/download/v1.0.0-rc.95/xerj-1.0.0-rc.95-x86_64-pc-windows-msvc.zip",
+      "hash": "sha256:23648a3b2e3965b60c4939876a1f3d43f1b9a609b61b3d406e752b8336220385",
+      "bin": "xerj-1.0.0-rc.95-x86_64-pc-windows-msvc.exe",
+      "extract_dir": ""
+    }
+  }
+}
