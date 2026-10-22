@@ -1,0 +1,10 @@
+{
+  "version": "0.32.0",
+  "description": "A high-throughput and memory-efficient inference and serving engine for LLMs",
+  "homepage": "https://github.com/vllm-project/vllm",
+  "license": "unknown",
+  "url": "https://github.com/vllm-project/vllm/releases/download/v0.32.0/vllm-0.32.0.tar.gz",
+  "hash": "sha256:d2c957d5eee3d0985012151315ddc62cbe0cd368fc96a5fc3510438d9dddf2ad",
+  "bin": "vllm-0.32.0.tar.exe",
+  "extract_dir": ""
+}
