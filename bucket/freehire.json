@@ -1,0 +1,10 @@
+{
+  "version": "extension-v0.1.10",
+  "description": "freehire \u2014 the open-source search engine for job seekers",
+  "homepage": "https://github.com/strelov1/freehire",
+  "license": "unknown",
+  "url": "https://github.com/strelov1/freehire/releases/download/extension-v0.1.10/freehire-extension-0.1.10-chrome.zip",
+  "hash": "sha256:848d8327a84f0ffcb7dd77e3448645aeda37dc40c2bfd25ac1d50496d7fdabea",
+  "bin": "freehire-extension-0.1.10-chrome.exe",
+  "extract_dir": ""
+}
