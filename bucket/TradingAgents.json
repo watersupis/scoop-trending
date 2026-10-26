@@ -1,0 +1,10 @@
+{
+  "version": "0.7.0",
+  "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+  "homepage": "https://github.com/TauricResearch/TradingAgents",
+  "license": "unknown",
+  "url": "https://github.com/TauricResearch/TradingAgents/releases/download/v0.7.0/tradingagents-0.7.0.tar.gz",
+  "hash": "sha256:1ae79b6d8ea0005557b611399e3613c22978aaffe6f5d661b3e3f4d78a6cca90",
+  "bin": "tradingagents-0.7.0.tar.exe",
+  "extract_dir": ""
+}

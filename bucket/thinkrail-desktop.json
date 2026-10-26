@@ -1,0 +1,10 @@
+{
+  "version": "0.2.0",
+  "description": "Vibe code with pi in a lightweight, real IDE that customises itself around the way you work \u2014 The Vibe You Need",
+  "homepage": "https://github.com/JetBrains/thinkrail",
+  "license": "unknown",
+  "url": "https://github.com/JetBrains/thinkrail/releases/download/v0.2.0/thinkrail-desktop-windows-x64.zip",
+  "hash": "sha256:9a0e51a816ecf12cf8e212feb04611fc769a15971311096f815e26274fe9efcf",
+  "bin": "thinkrail-desktop-windows-x64.exe",
+  "extract_dir": ""
+}
