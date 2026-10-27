@@ -1,0 +1,20 @@
+{
+  "version": "0.11.0",
+  "description": "A terminal window manager that knows what your agents are doing. Tiling panes, workspaces, sessions that survive restarts, and one Inbox for every coding agent. Official only at tuios.dev and this rep",
+  "homepage": "https://github.com/Gaurav-Gosain/tuios",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/Gaurav-Gosain/tuios/releases/download/v0.11.0/sketch_0.11.0_Windows_arm64.tar.gz",
+      "hash": "sha256:063fac9bacf51ee50532a73b39e909359d3187698c57fcaac4d1b4dae50de8db",
+      "bin": "sketch_0.11.0_Windows_arm64.tar.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/Gaurav-Gosain/tuios/releases/download/v0.11.0/sketch_0.11.0_Windows_x86_64.tar.gz",
+      "hash": "sha256:0e9f7864ae93a3b7e1c69bfc2eaa6ceb6da789e04dd7bfe7223f74114b687c2f",
+      "bin": "sketch_0.11.0_Windows_x86_64.tar.exe",
+      "extract_dir": ""
+    }
+  }
+}
