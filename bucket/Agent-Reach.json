@@ -1,0 +1,10 @@
+{
+  "version": "1.6.0",
+  "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu \u2014 one CLI, zero API fees.",
+  "homepage": "https://github.com/Panniantong/Agent-Reach",
+  "license": "unknown",
+  "url": "https://github.com/Panniantong/Agent-Reach/releases/download/v1.6.0/agent-reach.zip",
+  "hash": "sha256:59c37586e45e5e111a78686e98a9d11ae71a7b4b1a334c41aef82831ea5b0a05",
+  "bin": "agent-reach.exe",
+  "extract_dir": ""
+}
