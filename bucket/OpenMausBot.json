@@ -1,0 +1,24 @@
+{
+  "version": "0.1.134",
+  "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+  "homepage": "https://github.com/milind-soni/OpenMausBot",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/milind-soni/OpenMausBot/releases/download/v0.1.134/OpenMausBot-0.1.134-arm64.zip",
+      "hash": "sha256:e2fcf344640882a607b557a10c2a0d3b5d7e41e46edd9b16d104111e74b954c3",
+      "bin": "OpenMausBot-0.1.134-arm64.exe",
+      "extract_dir": ""
+    },
+    "64bit": {
+      "url": "https://github.com/milind-soni/OpenMausBot/releases/download/v0.1.134/OpenMausBot-0.1.134-setup.exe",
+      "hash": "sha256:edf8f2484f91de57b9652684317d124ec94c606f36c5119d45af4c845bdb2d64",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "OpenMausBot-0.1.134-setup.exe"
+    }
+  }
+}
