@@ -1,0 +1,10 @@
+{
+  "version": "ruview-harness-v0.9.2",
+  "description": "\u03c0 RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection \u2014 all without a single pixel of video.",
+  "homepage": "https://github.com/ruvnet/RuView",
+  "license": "unknown",
+  "url": "https://github.com/ruvnet/RuView/releases/download/ruview-harness-v0.9.2/ruvnet-ruview-0.9.2.tgz",
+  "hash": "sha256:5d0c7eadcff3816386976bdd245433c4b499d2db0acdc467047cc3d6796e4a3a",
+  "bin": "ruvnet-ruview-0.9.2.exe",
+  "extract_dir": ""
+}
