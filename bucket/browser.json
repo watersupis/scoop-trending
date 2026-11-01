@@ -1,0 +1,10 @@
+{
+  "version": "1.0.2",
+  "description": "Lightpanda: the headless browser designed for AI and automation",
+  "homepage": "https://github.com/lightpanda-io/browser",
+  "license": "unknown",
+  "url": "https://github.com/lightpanda-io/browser/releases/download/1.0.2/lightpanda-docs.tar.gz",
+  "hash": "sha256:4887869d848e35a6bbafdd9caaa03126218d5fbf706591d8e8ea86855102225e",
+  "bin": "lightpanda-docs.tar.exe",
+  "extract_dir": ""
+}
