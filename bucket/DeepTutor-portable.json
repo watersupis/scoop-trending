@@ -1,0 +1,10 @@
+{
+  "version": "1.7.1",
+  "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.",
+  "homepage": "https://github.com/HKUDS/DeepTutor",
+  "license": "unknown",
+  "url": "https://github.com/HKUDS/DeepTutor/releases/download/v1.7.1/Open-DeepTutor-Windows-v1.7.1-Portable.zip",
+  "hash": "sha256:ad61acecd2c2274241bc154c350b1208e61da72c9483ee5c81751d511e72657f",
+  "bin": "Open-DeepTutor-Windows-v1.7.1-Portable.exe",
+  "extract_dir": ""
+}

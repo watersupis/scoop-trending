@@ -1,0 +1,14 @@
+{
+  "version": "2026.10.27",
+  "description": "Orkas is an open-source (MIT), local-first AI team for your desktop: a Commander turns your goal into to-dos and coordinates 16 built-in specialist agents plus Claude Code, Codex, OpenCode, OpenClaw a",
+  "homepage": "https://github.com/Orkas-AI/Orkas",
+  "license": "unknown",
+  "url": "https://github.com/Orkas-AI/Orkas/releases/download/v2026.10.27/Orkas.Setup.1.9.5.exe",
+  "hash": "sha256:3e6c7ecb08396fd0c0a349c1bd31466542901b2bd094f2a311c21064aeaac74a",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "Orkas.Setup.1.9.5.exe"
+}
