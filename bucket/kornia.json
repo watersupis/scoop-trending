@@ -1,0 +1,10 @@
+{
+  "version": "0.9.0",
+  "description": "\ud83d\udc0d Geometric Computer Vision Library for Spatial AI",
+  "homepage": "https://github.com/kornia/kornia",
+  "license": "unknown",
+  "url": "https://github.com/kornia/kornia/releases/download/v0.9.0/kornia-0.9.0.tar.gz",
+  "hash": "sha256:65e82219b10e73289fb8cb3c739879d917e6908c0a977b1d65f388cba1741f71",
+  "bin": "kornia-0.9.0.tar.exe",
+  "extract_dir": ""
+}

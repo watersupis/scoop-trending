@@ -1,0 +1,10 @@
+{
+  "version": "21.0.0",
+  "description": "Open-source AI Security Operations Center: alert fusion, LLM-agent triage, MITRE ATT&CK investigation, and a replayable decision ledger for every agent step. Self-hostable, runs with no API keys, MIT ",
+  "homepage": "https://github.com/beenuar/AiSOC",
+  "license": "unknown",
+  "url": "https://github.com/beenuar/AiSOC/releases/download/v21.0.0/aisoc-v21.0.0-source.tar.gz",
+  "hash": "sha256:b02736f8a4b190a93bdc834c4610d39b5d925af3595f53e4d555bb9cf3529758",
+  "bin": "aisoc-v21.0.0-source.tar.exe",
+  "extract_dir": ""
+}
