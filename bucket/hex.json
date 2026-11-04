@@ -1,0 +1,28 @@
+{
+  "version": "3.3.0",
+  "description": "Local voice dictation for mac, windows and linux",
+  "homepage": "https://github.com/anomalyco/hex",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/anomalyco/hex/releases/download/v3.3.0/hex-3.3.0-windows-arm64.exe",
+      "hash": "sha256:33bf443b322552379eee83e397a383d83ef249c8270cd21658a28ee8a2759fb8",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "hex-3.3.0-windows-arm64.exe"
+    },
+    "64bit": {
+      "url": "https://github.com/anomalyco/hex/releases/download/v3.3.0/hex-3.3.0-windows-x64.exe",
+      "hash": "sha256:8eb6dfb49d59d30d7834fdbe52e4ac598a650989c2611590585fb4210d4fd1b2",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "hex-3.3.0-windows-x64.exe"
+    }
+  }
+}
