@@ -1,0 +1,20 @@
+{
+  "version": "1.1.0",
+  "description": "Computer use CLI for AI agents",
+  "homepage": "https://github.com/vercel-labs/agent-desktop",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/vercel-labs/agent-desktop/releases/download/v1.1.0/agent-desktop-ffi-v1.1.0-aarch64-pc-windows-msvc.zip",
+      "hash": "sha256:ad2162eb2da0f4b7a92ac6e7a6139777b53f413244c0cb72cf188f607c2cc634",
+      "bin": "agent-desktop-ffi-v1.1.0-aarch64-pc-windows-msvc.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/vercel-labs/agent-desktop/releases/download/v1.1.0/agent-desktop-ffi-v1.1.0-x86_64-pc-windows-msvc.zip",
+      "hash": "sha256:b6eb41a84d3dc53547c66592ba5cc22d5cd806bb3f3fc5e37c73b6b032e3c6c4",
+      "bin": "agent-desktop-ffi-v1.1.0-x86_64-pc-windows-msvc.exe",
+      "extract_dir": ""
+    }
+  }
+}
