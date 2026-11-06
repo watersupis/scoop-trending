@@ -1,0 +1,14 @@
+{
+  "version": "0.41.2",
+  "description": "Browser automation CLI for AI agents",
+  "homepage": "https://github.com/vercel-labs/agent-browser",
+  "license": "unknown",
+  "url": "https://github.com/vercel-labs/agent-browser/releases/download/v0.41.2/agent-browser-win32-x64.exe",
+  "hash": "sha256:c2eadee7b67e326dfff02d5dd51a16ce7673eb165699d134b3ea5f05b4a7a9d0",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "agent-browser-win32-x64.exe"
+}
