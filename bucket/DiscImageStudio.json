@@ -1,0 +1,24 @@
+{
+  "version": "1.4.0",
+  "description": "",
+  "homepage": "https://github.com/JiaFeiMiao-K-Cat/DiscImageStudio",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/JiaFeiMiao-K-Cat/DiscImageStudio/releases/download/v1.4.0/DiscImageStudio-CLI-v1.4.0-osx-arm64.tar.gz",
+      "hash": "sha256:103bf881daf9b1ddc1bbd06c8f9df31c833511cc559e6827320bbd51d88846bb",
+      "bin": "DiscImageStudio-CLI-v1.4.0-osx-arm64.tar.exe",
+      "extract_dir": ""
+    },
+    "64bit": {
+      "url": "https://github.com/JiaFeiMiao-K-Cat/DiscImageStudio/releases/download/v1.4.0/DiscImageStudio-v1.4.0-win-x64.exe",
+      "hash": "sha256:a9075a00459ec02ac35df45b90cfccdccce2ee8c3a7125d07c13ec651f2e7c54",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "DiscImageStudio-v1.4.0-win-x64.exe"
+    }
+  }
+}
