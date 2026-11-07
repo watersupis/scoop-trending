@@ -1,0 +1,28 @@
+{
+  "version": "0.116.1",
+  "description": "A new type of shell",
+  "homepage": "https://github.com/nushell/nushell",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/nushell/nushell/releases/download/0.116.1/nu-0.116.1-aarch64-pc-windows-msvc.msi",
+      "hash": "sha256:7a3d688a0c4574e3ba0cb70ef0aafd9a014a386bb8268595655a52f0d525a2f4",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "nu-0.116.1-aarch64-pc-windows-msvc.exe"
+    },
+    "32bit": {
+      "url": "https://github.com/nushell/nushell/releases/download/0.116.1/nu-0.116.1-x86_64-pc-windows-msvc.msi",
+      "hash": "sha256:7da310b0c49f6ca635c32f9b3a4b48b7c6d31fc8b92ddcb7b8428f5d5fc4ef30",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "nu-0.116.1-x86_64-pc-windows-msvc.exe"
+    }
+  }
+}
