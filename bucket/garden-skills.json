@@ -1,0 +1,10 @@
+{
+  "version": "motion-showreel-v0.1.0",
+  "description": "ConardLi's open-source Skills collection, featuring web design, knowledge retrieval, image generation, and more.",
+  "homepage": "https://github.com/ConardLi/garden-skills",
+  "license": "unknown",
+  "url": "https://github.com/ConardLi/garden-skills/releases/download/motion-showreel-v0.1.0/motion-showreel-0.1.0.zip",
+  "hash": "sha256:896b1707a7667f3052cb29c354b1e9579bc280c7808b111a1f251c587b677bbd",
+  "bin": "motion-showreel-0.1.0.exe",
+  "extract_dir": ""
+}
