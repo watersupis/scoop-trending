@@ -1,0 +1,26 @@
+{
+  "version": "3.16.0",
+  "description": "The Prometheus monitoring system and time series database.",
+  "homepage": "https://github.com/prometheus/prometheus",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/prometheus/prometheus/releases/download/v3.16.0/prometheus-3.16.0.dragonfly-amd64.tar.gz",
+      "hash": "sha256:be4dea93fd05e7e53e1374f7fa13f738905a555a4afd5ced6b290607373840f6",
+      "bin": "prometheus-3.16.0.dragonfly-amd64.tar.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/prometheus/prometheus/releases/download/v3.16.0/prometheus-3.16.0.netbsd-386.tar.gz",
+      "hash": "sha256:866dc111858295f7464e431c35b0a34f2fcb787b31f1e69879de9d7451e58a81",
+      "bin": "prometheus-3.16.0.netbsd-386.tar.exe",
+      "extract_dir": ""
+    },
+    "arm64": {
+      "url": "https://github.com/prometheus/prometheus/releases/download/v3.16.0/prometheus-3.16.0.netbsd-arm64.tar.gz",
+      "hash": "sha256:d00144aae7990cec8b5196a3b74b1812257335942a87e716dc6de91f28f7c721",
+      "bin": "prometheus-3.16.0.netbsd-arm64.tar.exe",
+      "extract_dir": ""
+    }
+  }
+}

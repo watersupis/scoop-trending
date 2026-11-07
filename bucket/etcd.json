@@ -1,0 +1,10 @@
+{
+  "version": "3.7.3",
+  "description": "Distributed reliable key-value store for the most critical data of a distributed system",
+  "homepage": "https://github.com/etcd-io/etcd",
+  "license": "unknown",
+  "url": "https://github.com/etcd-io/etcd/releases/download/v3.7.3/etcd-v3.7.3-windows-amd64.zip",
+  "hash": "sha256:bf5f9c92e862ce776699166ec9ac003a1609e06ea7cc4d8b11b3f9e836a86101",
+  "bin": "etcd-v3.7.3-windows-amd64.exe",
+  "extract_dir": ""
+}
