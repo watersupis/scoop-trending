@@ -1,0 +1,10 @@
+{
+  "version": "4.0.0",
+  "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+  "homepage": "https://github.com/google-deepmind/mujoco",
+  "license": "unknown",
+  "url": "https://github.com/google-deepmind/mujoco/releases/download/4.0.0/mujoco-4.0.0-windows-x86_64.zip",
+  "hash": "sha256:217f96b6146d02e5eaf93b907bc24e2fca67d6a040d243aea6ce9de8724b365b",
+  "bin": "mujoco-4.0.0-windows-x86_64.exe",
+  "extract_dir": ""
+}
