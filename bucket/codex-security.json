@@ -1,0 +1,10 @@
+{
+  "version": "npm-v0.10.0",
+  "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
+  "homepage": "https://github.com/openai/codex-security",
+  "license": "unknown",
+  "url": "https://github.com/openai/codex-security/releases/download/npm-v0.10.0/openai-codex-security-0.10.0.tgz",
+  "hash": "sha256:8e33eb2907eec78fc8c49ccbe0435282e553fc3d3623f56024bce55acd31a16f",
+  "bin": "openai-codex-security-0.10.0.exe",
+  "extract_dir": ""
+}

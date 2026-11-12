@@ -1,0 +1,10 @@
+{
+  "version": "0.9.5",
+  "description": "the runtime your coding agents live on",
+  "homepage": "https://github.com/herdrdev/herdr",
+  "license": "unknown",
+  "url": "https://github.com/herdrdev/herdr/releases/download/v0.9.5/herdr-windows-x86_64.zip",
+  "hash": "sha256:d2c6c9c971c43a0bfdde8c692a9a1a7a45c3e4807cd01ae45662b4734fac1cbf",
+  "bin": "herdr-windows-x86_64.exe",
+  "extract_dir": ""
+}
