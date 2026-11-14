@@ -1,0 +1,28 @@
+{
+  "version": "0.28.64",
+  "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click. ",
+  "homepage": "https://github.com/backnotprop/plannotator",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/backnotprop/plannotator/releases/download/v0.28.64/plannotator-paste-win32-arm64.exe",
+      "hash": "sha256:90dffb42eaaf8f7fba773729ab037a9af37befa61dddc0398352bec6d2fc531b",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "plannotator-paste-win32-arm64.exe"
+    },
+    "32bit": {
+      "url": "https://github.com/backnotprop/plannotator/releases/download/v0.28.64/plannotator-paste-win32-x64.exe",
+      "hash": "sha256:2e54e41a7c0f8445d98f2b4ba3331b284dda579a51bd4b75a88aa5efd23be86f",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "plannotator-paste-win32-x64.exe"
+    }
+  }
+}

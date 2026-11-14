@@ -1,0 +1,10 @@
+{
+  "version": "2.1.5",
+  "description": "Bring PS5 GTA6 to 120FPS with DLSS 5. An advanced Windows video player and capture enhancement tool featuring real-time preview for videos, images, and capture card sources. Combine AI-powered Super R",
+  "homepage": "https://github.com/Likely7/Veyra-NRVideo",
+  "license": "unknown",
+  "url": "https://github.com/Likely7/Veyra-NRVideo/releases/download/v2.1.5/Veyra-2.1.5-AMD-win64-portable.zip",
+  "hash": "sha256:9180d7e67cfccbca081b3e692e218e3ef9b98db836bc9d18306014ef37f600f5",
+  "bin": "Veyra-2.1.5-AMD-win64-portable.exe",
+  "extract_dir": ""
+}
