@@ -1,0 +1,10 @@
+{
+  "version": "0.1.1",
+  "description": "Open-source plugin for designing and reviewing software with agents",
+  "homepage": "https://github.com/google/elephant-goldfish-model",
+  "license": "unknown",
+  "url": "https://github.com/google/elephant-goldfish-model/releases/download/v0.1.1/egm-claude-0.1.1.zip",
+  "hash": "sha256:893945da23df29ffb7e47ee3713fc7dfd790e9d6e52cb22fcecd4be74593f8d6",
+  "bin": "egm-claude-0.1.1.exe",
+  "extract_dir": ""
+}

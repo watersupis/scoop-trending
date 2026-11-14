@@ -1,0 +1,10 @@
+{
+  "version": "2.5.11",
+  "description": "A fancy self-hosted monitoring tool",
+  "homepage": "https://github.com/louislam/uptime-kuma",
+  "license": "unknown",
+  "url": "https://github.com/louislam/uptime-kuma/releases/download/2.5.11/dist.tar.gz",
+  "hash": "sha256:0d29c1f78fdaa00b6f21d6bac104f9ac34faef188c5b6879d23b3953bb34676e",
+  "bin": "dist.tar.exe",
+  "extract_dir": ""
+}
