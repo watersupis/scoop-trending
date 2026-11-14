@@ -1,0 +1,14 @@
+{
+  "version": "1.0.2",
+  "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
+  "homepage": "https://github.com/CopilotKit/OpenBot",
+  "license": "unknown",
+  "url": "https://github.com/CopilotKit/OpenBot/releases/download/v1.0.2/OpenBot-windows-x64-setup.exe",
+  "hash": "sha256:77f14996ff3e6f69e3b6eff38cd67aabdd9749e05222e79701f91c0f92440665",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "OpenBot-windows-x64-setup.exe"
+}
