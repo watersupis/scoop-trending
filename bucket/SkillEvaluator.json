@@ -1,0 +1,10 @@
+{
+  "version": "0.9.0",
+  "description": "Multi-tier framework for evaluating AI agent skills with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect a",
+  "homepage": "https://github.com/NVIDIA/SkillEvaluator",
+  "license": "unknown",
+  "url": "https://github.com/NVIDIA/SkillEvaluator/releases/download/v0.9.0/skillevaluator-0.9.0.tar.gz",
+  "hash": "sha256:8342bb3ab0915a2723542bc889896ca535ed2677b602196a88325ad78a1388cc",
+  "bin": "skillevaluator-0.9.0.tar.exe",
+  "extract_dir": ""
+}
