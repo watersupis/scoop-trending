@@ -1,0 +1,26 @@
+{
+  "version": "0.13.9",
+  "description": "An extremely fast Python package and project manager, written in Rust.",
+  "homepage": "https://github.com/astral-sh/uv",
+  "license": "unknown",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/astral-sh/uv/releases/download/0.13.9/source.tar.gz",
+      "hash": "sha256:9ff3b8467058929c25c6be93805dd14f1ba7f35013edc8146643af0b015231c5",
+      "bin": "source.tar.exe",
+      "extract_dir": ""
+    },
+    "arm64": {
+      "url": "https://github.com/astral-sh/uv/releases/download/0.13.9/uv-aarch64-pc-windows-msvc.zip",
+      "hash": "sha256:72eed595983a4d7d22d79f21065b0f4479cc7e5c7a89104bb410c8f47559a878",
+      "bin": "uv-aarch64-pc-windows-msvc.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/astral-sh/uv/releases/download/0.13.9/uv-i686-pc-windows-msvc.zip",
+      "hash": "sha256:eb4bd7285a512ebc4122f65a21b72e3f7072610d62164f43ca6aca280c39f6fd",
+      "bin": "uv-i686-pc-windows-msvc.exe",
+      "extract_dir": ""
+    }
+  }
+}
