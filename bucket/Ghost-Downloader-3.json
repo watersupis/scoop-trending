@@ -1,0 +1,28 @@
+{
+  "version": "4.5.10",
+  "description": "The only downloader you need. \u4e0b\u8f7d\u5668\u7684\u96c6\u5927\u6210\u8005\u3002",
+  "homepage": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3/releases/download/v4.5.10/Ghost-Downloader-v4.5.10-Windows-arm64-Setup.exe",
+      "hash": "sha256:2b3a07da46f1fc892e2791d9d9e8e4648e26907c70c06cbe4578349e177f8b37",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "Ghost-Downloader-v4.5.10-Windows-arm64-Setup.exe"
+    },
+    "32bit": {
+      "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3/releases/download/v4.5.10/Ghost-Downloader-v4.5.10-Windows-x86_64-Setup.exe",
+      "hash": "sha256:94b50eb735a0dd1c6f603eb4b796b6d6603e358f1761786fff1f34fc59c00ddb",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "Ghost-Downloader-v4.5.10-Windows-x86_64-Setup.exe"
+    }
+  }
+}

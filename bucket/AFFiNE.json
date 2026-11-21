@@ -1,0 +1,28 @@
+{
+  "version": "0.27.4",
+  "description": "There can be more than Notion and Miro. AFFiNE(pronounced [\u0259\u2018fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and r",
+  "homepage": "https://github.com/toeverything/AFFiNE",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/toeverything/AFFiNE/releases/download/v0.27.4/affine-0.27.4-stable-windows-arm64.exe",
+      "hash": "sha256:25464eaaab6f23e88a98e6713383a2c28f97bb32474736978e20bf9e58cbf998",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "affine-0.27.4-stable-windows-arm64.exe"
+    },
+    "64bit": {
+      "url": "https://github.com/toeverything/AFFiNE/releases/download/v0.27.4/affine-0.27.4-stable-windows-x64.exe",
+      "hash": "sha256:b9719c96a92062abe4eddf4340a0f9c68997754d338f6c713b33af631f23983d",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "affine-0.27.4-stable-windows-x64.exe"
+    }
+  }
+}

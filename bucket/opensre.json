@@ -1,0 +1,10 @@
+{
+  "version": "0.1.2026.11.20",
+  "description": "The open-source agent for CI/CD reliability.",
+  "homepage": "https://github.com/Tracer-Cloud/opensre",
+  "license": "unknown",
+  "url": "https://github.com/Tracer-Cloud/opensre/releases/download/v0.1.2026.11.20/opensre-0.1.2026.11.20.tar.gz",
+  "hash": "sha256:312b831522b79b430e3541267766792c0046327a99f155db8eb15440a019b969",
+  "bin": "opensre-0.1.2026.11.20.tar.exe",
+  "extract_dir": ""
+}
