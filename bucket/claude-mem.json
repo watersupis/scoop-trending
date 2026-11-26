@@ -1,0 +1,10 @@
+{
+  "version": "17.0.0",
+  "description": "Persistent Context Across Sessions for Every Agent \u2013  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Cla",
+  "homepage": "https://github.com/thedotmack/claude-mem",
+  "license": "unknown",
+  "url": "https://github.com/thedotmack/claude-mem/releases/download/v17.0.0/Claude-Mem-Messages.zip",
+  "hash": "sha256:96085d5d238a74d8abbd64c0ef61d320f08421c450c5222fdab21a2563d55408",
+  "bin": "Claude-Mem-Messages.exe",
+  "extract_dir": ""
+}
