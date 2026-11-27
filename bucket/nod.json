@@ -1,0 +1,30 @@
+{
+  "version": "nod-v0.9.7",
+  "description": "Open source personal agent with its own computer. It chases invoices, preps your calls and cancels trials on real websites, and asks before it acts. Runs on your machine with the model you choose. By ",
+  "homepage": "https://github.com/n8n-io/nod",
+  "license": "unknown",
+  "architecture": {
+    "arm64": {
+      "url": "https://github.com/n8n-io/nod/releases/download/nod-v0.9.7/nod-arm64.zip",
+      "hash": "sha256:84bca3b0f497ff4839a55eebad0e5f326d8fbf71e73750e37ffa3d1380576072",
+      "bin": "nod-arm64.exe",
+      "extract_dir": ""
+    },
+    "32bit": {
+      "url": "https://github.com/n8n-io/nod/releases/download/nod-v0.9.7/nod-Runtime-win32-x64.tar.gz",
+      "hash": "sha256:ae57683dab01aec443cb038ef94332c0e67fc725f4f08091e7ff21504142ca64",
+      "bin": "nod-Runtime-win32-x64.tar.exe",
+      "extract_dir": ""
+    },
+    "64bit": {
+      "url": "https://github.com/n8n-io/nod/releases/download/nod-v0.9.7/nod-Setup-x64.exe",
+      "hash": "sha256:3d87358ebff46f5a39af71a9ab8f87e5ba310d2cd16a7ae67302da9ecbc2bf61",
+      "installer": {
+        "args": [
+          "/S"
+        ]
+      },
+      "bin": "nod-Setup-x64.exe"
+    }
+  }
+}
