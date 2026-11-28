@@ -1,0 +1,14 @@
+{
+  "version": "4.8.0",
+  "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+  "homepage": "https://github.com/mvanhorn/last30days-skill",
+  "license": "unknown",
+  "url": "https://github.com/mvanhorn/last30days-skill/releases/download/v4.8.0/last30days-core-windows-amd64.exe",
+  "hash": "sha256:71e3deee1c6cc87c8bd8afff142b081f3a19122a8d9f2049ef4cef9dd15fd632",
+  "installer": {
+    "args": [
+      "/S"
+    ]
+  },
+  "bin": "last30days-core-windows-amd64.exe"
+}
